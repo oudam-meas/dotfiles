@@ -1,0 +1,37 @@
+VIM_PATH='/usr/local/bin/vim'
+alias v=$VIM_PATH
+alias vi=$VIM_PATH
+alias vim=$VIM_PATH
+
+# NVIM_PATH='/Users/measoutdam/nvim-osx64/bin/nvim'
+NVIM_PATH='/usr/local/bin/nvim'
+alias vim=$NVIM_PATH
+
+# ls, the common ones I use a lot shortened for rapid fire usage
+alias l='ls -lFh'     #size,show type,human readable
+alias la='ls -lAFh'   #long list,show almost all,show type,human readable
+alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
+alias lst='ls -ltFh'  #long list,sorted by date,show type,human readable
+alias ll='ls -l'      #long list
+alias ldot='ls -ld .*'
+alias tmux a='tmux attach'
+alias dup='$DOTFILES/sync.sh'
+alias sym='~/dotfiles/symbolink.sh'
+alias so='source'
+
+alias zshrc='vim ~/.zshrc' # Quick access to the ~/.zshrc file
+alias vimrc='vim ~/.vimrc'
+alias gitignore='vim ~/.gitignore_global'
+alias gitconfig='vim ~/.gitconfig'
+
+alias grep='grep --color'
+
+alias t='tail -f'
+
+alias -g G='| grep'
+alias -g H='| head'
+alias -g T='| tail'
+alias -g CP='| pbcopy'
+alias rspeclf='rspec --only-failures'
+
+# alias google-chrome='open -a Google\ Chrome --args --disable-web-security'
