@@ -1,0 +1,53 @@
+" *********************************************
+" General Configuaraion
+" *********************************************
+" set hid                                           " solve problem for switch window
+
+" Setting vert line for space and set tab/trail character
+set fillchars+=vert:\ |set list listchars=tab:\ \ ,trail:∙
+
+" Specifying Ruby path
+let g:ruby_path = system('echo $HOME/.rbenv/shims')
+
+" *********************************************
+" Keys mapping
+" *********************************************
+
+" Opening current file in external app
+nmap <silent> <leader>oc :exec 'silent !open -a "Google Chrome" % &'<CR>
+nmap <silent> <leader>oa :exec 'silent !open -a "atom" % &'<CR>
+nmap <silent> <leader>oA :!atom .<CR>
+
+" Biding key for Debuging - d[*]
+map <leader>dp obinding.pry<ESC> :w<cr>
+map <leader>ds a, :js, :selenium_chrome<ESC> :w<cr>
+map <leader>dsd :%s/\,\ :js,\ :selenium_chrome//g<cr> :w<cr>
+map <leader>dsa osave_and_open_page<ESC> :w<cr>
+
+" Terminal mode
+if has("nvim")
+  tnoremap <tab> <S-tab>
+endif
+
+" Copying current file name
+map <leader>C :let @+=expand("%")<cr> :echom "file path copied: ".@%.":".line(".") <cr>
+
+" Sourcing vimrc and Installing vundle
+map <leader>vi :Sovimrc<cr> \| :PluginInstall<cr>
+
+" *********************************************
+" Custom Commands
+" *********************************************
+" Opening vimrc and source vimrc
+command! Vimrc e ~/.vimrc
+command! Sovimrc so ~/.vimrc
+
+" Showing symbol name under the cursor
+command! Symbol echo synIDattr(synID(line("."), col("."), 1), "name")
+
+" *********************************************
+" Hilighting
+" *********************************************
+" Search
+hi IncSearch cterm=bold gui=bold ctermbg=red ctermfg=white guibg=#d70000 guifg=#d7d7af "hilight in coursor search, this line must be placed below colorscheme
+

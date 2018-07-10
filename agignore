@@ -1,0 +1,5 @@
+/* ag also interpret .gigignore in current directory, it will interpret the content of .gitignore as agignore*/
+node_modules
+bower_components
+git
+tmp

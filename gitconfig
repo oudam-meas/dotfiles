@@ -7,14 +7,16 @@
   pager = true
 
 [color "status"]
-  added = green
-  changed = red bold
-  untracked = magenta bold
+  added = yellow
+  changed = red
+  untracked = magenta
 
 [color "branch"]
   remote = yellow
+
 [color "diff"]
   new = green bold
+
 [user]
 	name = Meas Outdam
 	email = mstdam@gmail.com
@@ -68,5 +70,5 @@
 	required = true
 
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = /Users/measoutdam/.gitignore_global

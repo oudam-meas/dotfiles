@@ -17,12 +17,14 @@ alias ldot='ls -ld .*'
 alias tmux a='tmux attach'
 alias dup='$DOTFILES/sync.sh'
 alias sym='~/dotfiles/symbolink.sh'
+alias dotfiles='nvim ~/dotfiles/'
 alias so='source'
 
-alias zshrc='vim ~/.zshrc' # Quick access to the ~/.zshrc file
-alias vimrc='vim ~/.vimrc'
-alias gitignore='vim ~/.gitignore_global'
-alias gitconfig='vim ~/.gitconfig'
+alias zshrc='nvim ~/.zshrc' # Quick access to the ~/.zshrc file
+alias vimrc='nvim ~/.vimrc'
+alias gitignore='nvim ~/.gitignore_global'
+alias gitconfig='nvim ~/.gitconfig'
+alias Gemfile='nvim ./Gemfile'
 
 alias grep='grep --color'
 

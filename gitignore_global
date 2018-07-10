@@ -108,4 +108,5 @@ Procfile.local
 # rails project #
 /tags*
 /*.log
-/'
+/'*
+/;*

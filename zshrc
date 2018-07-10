@@ -4,7 +4,9 @@ export ZSH=/Users/measoutdam/.oh-my-zsh
 export ZSHRC=/Users/measoutdam/.zshrc
 export VIMRC=/Users/measoutdam/.vimrc
 export DOTFILES=~/Dropbox/Backups/dotfiles
-export TERM=xterm-256color        # for common 256 color terminals (e.g. gnome-terminal)
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+# export TERM=xterm-256color-italic        # for common 256 color terminals (e.g. gnome-terminal)
 # export TERM=screen-256color       # for a tmux -2 session (also for screen)
 export OTP_ENCRYPTION_KEY=00a423caa01fdc733b93a3fa1e81c128577fd4b43b9a18b79eee092e129a30947caca06fd488fe13c5f438766fe0c7ed875f5d448cd1d4d1a990a3913d27376d
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -15,6 +17,8 @@ plugins=(
 )
 eval `gdircolors ~/.oh-my-zsh/custom/plugins/dircolors-solarized/dircolors.ansi-dark`
 source $ZSH/oh-my-zsh.sh
+
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Envinronment path
 export EDITOR=vim
@@ -27,19 +31,24 @@ export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts"
 eval "$(tmuxifier init -)"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
 # Plugin
 eval "$(direnv hook zsh)"
+eval $(thefuck --alias)
 #########################
 # Plugins Customization #
 #########################
 # Custom POWERLEVEL9K Theme
+POWERLEVEL9K_RBENV_PROMPT_ALWAYS_SHOW=true
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status rbenv time)
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 POWERLEVEL9K_SHORTEN_DELIMITER=""
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
+
+# DOCKER
+BUILDID="build-$RANDOM"
+INSTANCE="travisci/ci-garnet:packer-1512502276-986baf0"
