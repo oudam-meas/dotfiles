@@ -1,4 +1,4 @@
-# ReadMe
+# Read me
 
 ## Mac OSX
 - install Iterm
