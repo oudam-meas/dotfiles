@@ -6,6 +6,8 @@ brew install pip3
 brew install vim
 brew install neovim --tag=master
 
+git clone git@github.com:outdam/dotfiles.git ~/.dotfiles
+
 ~/.dotfiles/symbolink.sh
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
