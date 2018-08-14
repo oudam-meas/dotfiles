@@ -9,6 +9,9 @@ set fillchars+=vert:\ |set list listchars=tab:\ \ ,trail:∙
 " Specifying Ruby path
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
 
+" autocmd InsertLeave,WinEnter * setlocal foldmethod=syntax " solve insert mode performance : foldmethod stays as 'syntax' when not in insert mode
+" autocmd InsertEnter,WinLeave * setlocal foldmethod=manual " solve insert mode performance : foldmethod must be set to 'manual' to improve performance during editing
+
 " *********************************************
 " Keys mapping
 " *********************************************

@@ -104,9 +104,6 @@ set nowb
 set foldnestmax=3                                         " Folding: deepest fold is 3 levels
 set nofoldenable                                          " Folding: dont fold by default
 
-autocmd InsertLeave,WinEnter * setlocal foldmethod=syntax " solve insert mode performance : foldmethod stays as 'syntax' when not in insert mode
-autocmd InsertEnter,WinLeave * setlocal foldmethod=manual " solve insert mode performance : foldmethod must be set to 'manual' to improve performance during editing
-
 " Search
 set incsearch                                             " Search: Find as you type search
 set hlsearch                                              " Search: Highlight search terms
