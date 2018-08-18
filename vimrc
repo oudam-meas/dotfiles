@@ -5,7 +5,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'KeitaNakamura/neodark.vim'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
@@ -16,6 +15,7 @@ Plugin 'christoomey/vim-sort-motion'      " gs{motions}
 Plugin 'christoomey/vim-system-copy'      " cp{motion}, cP, cv
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'gabrielelana/vim-markdown'
+Plugin 'szw/vim-maximizer'
 Plugin 'janko-m/vim-test'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'jlanzarotta/bufexplorer'
@@ -49,7 +49,6 @@ Plugin 'tpope/vim-surround'               " cs, ds, ys + {motion}
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'wellle/targets.vim'
-Plugin 'wesQ3/vim-windowswap'
 
 if has('nvim')
   Plugin 'Shougo/deoplete.nvim'
@@ -70,13 +69,13 @@ filetype off
 set nocompatible
 set number
 set numberwidth=4
+set hidden
 syntax enable
 syntax on
 
 set backspace=indent,eol,start                            " Make backspace works like most program
 set laststatus=2                                          " Show the status line all the time
 set lazyredraw
-set nocompatible
 set nopaste
 set showcmd
 set ttyfast
@@ -112,7 +111,7 @@ set smartcase                                             " Search: But case-sen
 
 " Colorscheme
 let g:solarized_degrade=256
-let g:solarized_visibility="low"                          " pecial characters such as trailing whitespace, tabs, empty buffer `~`
+let g:solarized_visibility="low"                          " Special characters such as trailing whitespace, tabs, empty buffer `~`
 let g:solarized_statusline="normal"
 set background=dark
 colorscheme solarized
@@ -132,14 +131,14 @@ end
 " Keys mapping
 " *********************************************
 let mapleader=','
-nnoremap ; :
-nnoremap <Space> :noh<CR>
+nmap <leader>w :w!<cr>
+nmap <Space> :noh<CR>
 
 " Easier navigation between split windows
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
+nmap <c-j> <c-w>j
+nmap <c-k> <c-w>k
+nmap <c-h> <c-w>h
+nmap <c-l> <c-w>l
 map <leader>ac :RuboCop --auto-correct %<CR>
 
 " Setting indent in/indent out for visual selected

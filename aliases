@@ -17,7 +17,7 @@ alias ldot='ls -ld .*'
 alias tmux a='tmux attach'
 alias dup='$DOTFILES/sync.sh'
 alias sym='~/dotfiles/symbolink.sh'
-alias dotfiles='nvim ~/dotfiles/'
+alias dotfiles='nvim ~/.dotfiles/vimrc'
 alias so='source'
 
 alias zshrc='nvim ~/.zshrc' # Quick access to the ~/.zshrc file

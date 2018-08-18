@@ -1,7 +1,9 @@
 " *********************************************
 " General Configuaraion
 " *********************************************
-" set hid                                           " solve problem for switch window
+" More natural split opening
+set splitbelow
+set splitright
 
 " Setting vert line for space and set tab/trail character
 set fillchars+=vert:\ |set list listchars=tab:\ \ ,trail:∙
@@ -15,7 +17,6 @@ let g:ruby_path = system('echo $HOME/.rbenv/shims')
 " *********************************************
 " Keys mapping
 " *********************************************
-
 " Opening current file in external app
 nmap <silent> <leader>oc :exec 'silent !open -a "Google Chrome" % &'<CR>
 nmap <silent> <leader>oa :exec 'silent !open -a "atom" % &'<CR>
