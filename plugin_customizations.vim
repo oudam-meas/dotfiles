@@ -3,6 +3,7 @@
 " *********************************************
 " Enable at startup
 let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option('auto_complete_delay', 200)
 
 " Navigating auto-complente with tab and S-tab
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -11,6 +12,7 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " *********************************************
 " Vim Test
 " *********************************************
+let test#strategy = "dispatch"                           "Using Dispatch strategy. Plugin 'tpope/vim-dispatch' is required'
 nmap <silent> <leader>. :TestLast<CR>
 nmap <silent> <leader>A :TestSuite<CR>
 nmap <silent> <leader>R :TestFile -strategy=basic<CR>
@@ -19,7 +21,6 @@ nmap <silent> <leader>g :TestVisit<CR>
 nmap <silent> <leader>r :TestNearest -strategy=basic<CR>
 nmap <silent> <leader>t :TestNearest<CR>
 
-let test#strategy = "dispatch"        "Using Dispatch strategy. Plugin 'tpope/vim-dispatch' is required'
 
 " *********************************************
 " NERDTree
@@ -116,6 +117,7 @@ nmap <leader><leader> :CtrlPBuffer<cr>
 " *********************************************
 " Airline
 " *********************************************
+let g:airline#extensions#tagbar#enabled = 0
 let g:airline_powerline_fonts = 1
 let g:airline_section_b = ""  " hide section b (git related)
 
@@ -136,11 +138,11 @@ let g:highlightedyank_highlight_duration = 150
 highlight! link HighlightedyankRegion CursorLine
 
 " *********************************************
-" Gutentags
+" Gutentags and Tagbar
 " *********************************************
 set tags=./tags
 au FileType gitcommit,gitrebase let g:gutentags_enabled=0
-
+nmap <leader>? :TagbarToggle<CR>
 " *********************************************
 " Vim Easy Align
 " *********************************************
@@ -179,3 +181,7 @@ let g:strip_whitespace_on_save=1
 nnoremap <leader><CR> :StripWhitespace<CR> \| :w<CR>
 let g:better_whitespace_filetypes_blacklist=['vimrc']
 
+" *********************************************
+" Vim Better Whitespace
+" *********************************************
+let g:maximizer_default_mapping_key = '<F12>'
