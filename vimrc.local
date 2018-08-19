@@ -50,8 +50,9 @@ command! Sovimrc so ~/.vimrc
 command! Symbol echo synIDattr(synID(line("."), col("."), 1), "name")
 
 " *********************************************
-" Hilighting
+" Highlighting
 " *********************************************
 " Search
-hi IncSearch cterm=bold gui=bold ctermbg=red ctermfg=white guibg=#d70000 guifg=#d7d7af "hilight in coursor search, this line must be placed below colorscheme
+"" highlight in cursor search, this line must be placed below colorscheme setup
+hi IncSearch cterm=bold gui=bold ctermbg=red ctermfg=white guibg=#d70000 guifg=#d7d7af
 

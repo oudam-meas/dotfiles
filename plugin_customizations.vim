@@ -32,6 +32,7 @@ let g:NERDTreeMapCloseDir = 'h'
 let g:NERDTreeMapRefreshRoot = 'r'
 let NERDTreeStatusline = "%{fugitive#head()}"
 let NERDTreeIgnore = ['\.envrc','yarn-error.log', 'rspec_examples.txt', '\.swp$', '\.DS_Store$', '\.ebextensions', '\.git$', '\.bundle$', '.keep$', '^tags', 'tags.lock$', 'tags.temp$']
+let NERDTreeShowHidden=1
 
 " *********************************************
 " Ack - Search
