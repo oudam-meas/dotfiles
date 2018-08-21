@@ -1,10 +1,6 @@
 " *********************************************
 " General Configuaraion
 " *********************************************
-" More natural split opening
-set splitbelow
-set splitright
-
 " Setting vert line for space and set tab/trail character
 set fillchars+=vert:\ |set list listchars=tab:\ \ ,trail:∙
 
@@ -31,13 +27,23 @@ map <leader>dsa osave_and_open_page<ESC> :w<cr>
 " Terminal mode
 if has("nvim")
   tnoremap <tab> <S-tab>
+  tnoremap <c-h> <c-\><c-n><c-w>h
+  tnoremap <c-j> <c-\><c-n><c-w>j
+  tnoremap <c-k> <c-\><c-n><c-w>k
+  tnoremap <c-l> <c-\><c-n><c-w>l
 endif
 
 " Copying current file name
 map <leader>C :let @+=expand("%")<cr> :echom "file path copied: ".@%.":".line(".") <cr>
+map <leader>c :let @+=expand("%")<cr> :echom "file path copied: ".@%.":".line(".") <cr>
+
 
 " Sourcing vimrc and Installing vundle
 map <leader>vi :Sovimrc<cr> \| :PluginInstall<cr>
+
+" Resizing Split Window
+nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
 " *********************************************
 " Custom Commands

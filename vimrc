@@ -4,18 +4,18 @@
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'VundleVim/Vundle.vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'KeitaNakamura/neodark.vim'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized' " color name is 'solarized'
 Plugin 'beloglazov/vim-textobj-quotes'    " object q, iq
+Plugin 'bogado/file-line'
 Plugin 'christoomey/vim-sort-motion'      " gs{motions}
 Plugin 'christoomey/vim-system-copy'      " cp{motion}, cP, cv
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'gabrielelana/vim-markdown'
-Plugin 'szw/vim-maximizer'
 Plugin 'janko-m/vim-test'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'jlanzarotta/bufexplorer'
@@ -23,11 +23,13 @@ Plugin 'junegunn/vim-easy-align'
 Plugin 'kana/vim-operator-user'
 Plugin 'kana/vim-textobj-line'            " object l, il, al
 Plugin 'kana/vim-textobj-user'            " requires bt vim-textobj-quotes
+Plugin 'kristijanhusak/vim-carbon-now-sh'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'lifepillar/vim-solarized8'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'machakann/vim-highlightedyank'
 Plugin 'majutsushi/tagbar'
+Plugin 'mattn/emmet-vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'ngmy/vim-rubocop'
 Plugin 'ntpeters/vim-better-whitespace'
@@ -37,7 +39,9 @@ Plugin 'romainl/vim-qf'
 Plugin 'scrooloose/nerdtree'
 Plugin 'simeji/winresizer'                " To enter resizing mode : ctrl+e, and exit by enter
 Plugin 'stephpy/vim-yaml'
+Plugin 'szw/vim-maximizer'
 Plugin 'tmhedberg/SimpylFold'
+Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-commentary'             " gc{motion}, v_gc, {number}gcc
 Plugin 'tpope/vim-dispatch'
@@ -45,10 +49,13 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'                 " 'solve repeated the last native command inside that map, rather than the map as a whole'
+Plugin 'tpope/vim-rhubarb'
 Plugin 'tpope/vim-surround'               " cs, ds, ys + {motion}
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'wellle/targets.vim'
+Plugin 'wellle/visual-split.vim'
+Plugin 'zhaocai/GoldenView.Vim'
 
 if has('nvim')
   Plugin 'Shougo/deoplete.nvim'
@@ -139,6 +146,8 @@ nmap <c-j> <c-w>j
 nmap <c-k> <c-w>k
 nmap <c-h> <c-w>h
 nmap <c-l> <c-w>l
+
+" running rubocop with auto correct
 map <leader>ac :RuboCop --auto-correct %<CR>
 
 " Setting indent in/indent out for visual selected

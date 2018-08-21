@@ -12,7 +12,9 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " *********************************************
 " Vim Test
 " *********************************************
-let test#strategy = "dispatch"                           "Using Dispatch strategy. Plugin 'tpope/vim-dispatch' is required'
+let test#strategy = "dispatch"            " Using Dispatch strategy. Plugin 'tpope/vim-dispatch' is required'
+let test#ruby#bundle_exec = 0
+let test#enabled_runners = ["ruby#rspec"] " select which runners to load by default, intead load all
 nmap <silent> <leader>. :TestLast<CR>
 nmap <silent> <leader>A :TestSuite<CR>
 nmap <silent> <leader>R :TestFile -strategy=basic<CR>
@@ -186,3 +188,39 @@ let g:better_whitespace_filetypes_blacklist=['vimrc']
 " Vim Better Whitespace
 " *********************************************
 let g:maximizer_default_mapping_key = '<F12>'
+
+" *********************************************
+" Visual Split
+" *********************************************
+" Visual-mode::
+xmap <C-W>gr  <Plug>(Visual-Split-VSResize)
+xmap <C-W>gss <Plug>(Visual-Split-VSSplit)
+xmap <C-W>gsa <Plug>(Visual-Split-VSSplitAbove)
+xmap <C-W>gsb <Plug>(Visual-Split-VSSplitBelow)
+" Operator-pending mode:
+
+nmap <C-W>gr  <Plug>(Visual-Split-Resize)
+nmap <C-W>gss <Plug>(Visual-Split-Split)
+nmap <C-W>gsa <Plug>(Visual-Split-SplitAbove)
+nmap <C-W>gsb <Plug>(Visual-Split-SplitBelow)
+
+" *********************************************
+" Visual Split
+" *********************************************
+let g:goldenview__enable_default_mapping = 0
+" 1. split to tiled windows
+nmap <silent> <C-s> <Plug>GoldenViewSplit
+
+" 2. quickly switch current window with the main pane
+" and toggle back
+nmap <silent> <F8>   <Plug>GoldenViewSwitchMain
+nmap <silent> <S-F8> <Plug>GoldenViewSwitchToggle
+
+" 3. jump to next and previous window
+" nmap <silent> <C-N>  <Plug>GoldenViewNext
+" nmap <silent> <C-B>  <Plug>GoldenViewPrevious
+
+" *********************************************
+" Carbon Now Sh
+" *********************************************
+vnoremap <F5> :CarbonNowSh<CR>
