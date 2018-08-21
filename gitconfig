@@ -71,4 +71,4 @@
 
 [core]
 	editor = nvim
-	excludesfile = /Users/measoutdam/.gitignore_global
+	excludesfile = ~/.gitignore_global

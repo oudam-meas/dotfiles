@@ -47,6 +47,10 @@ Thumbs.db
 coverage/
 .bundle
 
+# Rails #
+########
+vendor/ruby
+
 # Node #
 ########
 .nvmrc

@@ -106,7 +106,7 @@ if executable('ag')
   let g:ctrlp_match_window = 'max:20'         "max items in matched list
   let g:ctrlp_use_caching = 0
   let g:ctrlp_working_path_mode = 'ra'
-  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden --skip-vcs-ignores -g ""' " skip gitignore. Hidden files such as .travis.yml will be indexed for ag search
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden --skip-vcs-ignores -g "" --path-to-ignore ./.gitignore' " skip gitignore. Hidden files such as .travis.yml will be indexed for ag search
 endif
 
 " Highlighting ctrlp prompt
