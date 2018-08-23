@@ -31,7 +31,11 @@ map \ :NERDTreeToggle<CR>
 map \| :NERDTreeFind<CR>
 let g:NERDTreeMapActivateNode = 'l'
 let g:NERDTreeMapCloseDir = 'h'
-let g:NERDTreeMapRefreshRoot = 'r'
+let g:NERDTreeMapCloseChildren = 'H'
+let g:NERDTreeMapRefresh = 'r'
+let g:NERDTreeMapRefreshRoot = 'R'
+let g:NERDTreeMapOpenSplit = 'sp'
+let g:NERDTreeMapOpenVSplit = 'sv'
 let NERDTreeStatusline = "%{fugitive#head()}"
 let NERDTreeIgnore = ['\.envrc','yarn-error.log', 'rspec_examples.txt', '\.swp$', '\.DS_Store$', '\.ebextensions', '\.git$', '\.bundle$', '.keep$', '^tags', 'tags.lock$', 'tags.temp$']
 let NERDTreeShowHidden=1
@@ -95,6 +99,7 @@ else
   let g:ale_echo_msg_warning_str = 'W'
   let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 endif
+
 " *********************************************
 " Ctrlp
 " *********************************************
@@ -116,6 +121,12 @@ highlight CtrlPPrtCursor ctermbg=50
 
 " Mapping key
 nmap <leader><leader> :CtrlPBuffer<cr>
+
+" *********************************************
+" CtrlP-CommandPalette
+" *********************************************
+nnoremap <leader>? :CtrlPCommandPalette<cr>
+let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s' " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
 
 " *********************************************
 " Airline
@@ -145,7 +156,7 @@ highlight! link HighlightedyankRegion CursorLine
 " *********************************************
 set tags=./tags
 au FileType gitcommit,gitrebase let g:gutentags_enabled=0
-nmap <leader>? :TagbarToggle<CR>
+nmap <F8> :TagbarToggle<CR>
 " *********************************************
 " Vim Easy Align
 " *********************************************
@@ -192,33 +203,29 @@ let g:maximizer_default_mapping_key = '<F12>'
 " *********************************************
 " Visual Split
 " *********************************************
-" Visual-mode::
-xmap <C-W>gr  <Plug>(Visual-Split-VSResize)
-xmap <C-W>gss <Plug>(Visual-Split-VSSplit)
-xmap <C-W>gsa <Plug>(Visual-Split-VSSplitAbove)
-xmap <C-W>gsb <Plug>(Visual-Split-VSSplitBelow)
-" Operator-pending mode:
+" Visual-mode:
+xmap <silent> gr <Plug>(Visual-Split-VSResize)
+xmap <silent> gv <Plug>(Visual-Split-VSSplit)
+xmap <silent> gk <Plug>(Visual-Split-VSSplitAbove)
+xmap <silent> gj <Plug>(Visual-Split-VSSplitBelow)
 
-nmap <C-W>gr  <Plug>(Visual-Split-Resize)
-nmap <C-W>gss <Plug>(Visual-Split-Split)
-nmap <C-W>gsa <Plug>(Visual-Split-SplitAbove)
-nmap <C-W>gsb <Plug>(Visual-Split-SplitBelow)
+" Operator-pending mode:
+nmap <silent> gr <Plug>(Visual-Split-Resize)
+nmap <silent> gv <Plug>(Visual-Split-Split)
+nmap <silent> gk <Plug>(Visual-Split-SplitAbove)
+nmap <silent> gj <Plug>(Visual-Split-SplitBelow)
 
 " *********************************************
 " Visual Split
 " *********************************************
 let g:goldenview__enable_default_mapping = 0
+
 " 1. split to tiled windows
-nmap <silent> <C-s> <Plug>GoldenViewSplit
+nmap <silent> gl <Plug>GoldenViewSplit
 
-" 2. quickly switch current window with the main pane
-" and toggle back
-nmap <silent> <F8>   <Plug>GoldenViewSwitchMain
-nmap <silent> <S-F8> <Plug>GoldenViewSwitchToggle
-
-" 3. jump to next and previous window
-" nmap <silent> <C-N>  <Plug>GoldenViewNext
-" nmap <silent> <C-B>  <Plug>GoldenViewPrevious
+" 2. quickly switch current window with the main pane and toggle back
+nmap <silent> gm <Plug>GoldenViewSwitchToggle
+" nmap <silent> <leader>gm   <Plug>GoldenViewSwitchMain
 
 " *********************************************
 " Carbon Now Sh

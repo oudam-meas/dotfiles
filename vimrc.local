@@ -1,6 +1,9 @@
 " *********************************************
 " General Configuaraion
 " *********************************************
+" Set and split to below
+set splitbelow
+
 " Setting vert line for space and set tab/trail character
 set fillchars+=vert:\ |set list listchars=tab:\ \ ,trail:∙
 
@@ -62,3 +65,8 @@ command! Symbol echo synIDattr(synID(line("."), col("."), 1), "name")
 "" highlight in cursor search, this line must be placed below colorscheme setup
 hi IncSearch cterm=bold gui=bold ctermbg=red ctermfg=white guibg=#d70000 guifg=#d7d7af
 
+" *********************************************
+" Plugin Cusomization
+" *********************************************
+" Nerdtree git
+let g:NERDTreeIndicatorMapCustom = { "Untracked" : "🟊" , "Dirty": "✘", "Modified"  : "🟓"}

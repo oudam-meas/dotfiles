@@ -15,6 +15,7 @@ Plugin 'bogado/file-line'
 Plugin 'christoomey/vim-sort-motion'      " gs{motions}
 Plugin 'christoomey/vim-system-copy'      " cp{motion}, cP, cv
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'dbeecham/ctrlp-commandpalette.vim'
 Plugin 'gabrielelana/vim-markdown'
 Plugin 'janko-m/vim-test'
 Plugin 'jiangmiao/auto-pairs'
@@ -160,7 +161,8 @@ map <leader>: :%s/:\(\w\+\)\(\s*=>\s*\)/\1: /gc<CR>
 " Convert ' to "
 map <leader>' :%s/'\([^']*\)'/"\1"/gc<CR>
 
-
+" Open the definition in a new split
+nnoremap <c-\> <c-w>g<c-]>
 " *********************************************
 " Plugin Customization
 " *********************************************
