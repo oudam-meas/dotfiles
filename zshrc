@@ -16,6 +16,8 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 
 plugins=(
   git
+  rails
+  ruby
 )
 
 eval `gdircolors ~/.oh-my-zsh/custom/plugins/dircolors-solarized/dircolors.ansi-dark`

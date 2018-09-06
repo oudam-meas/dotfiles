@@ -1,3 +1,5 @@
+set nocompatible
+
 " *********************************************
 " Vundle Plugins
 " *********************************************
@@ -5,12 +7,13 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'posva/vim-vue'
 Plugin 'KeitaNakamura/neodark.vim'
+Plugin 'Shougo/deoplete.nvim'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized' " color name is 'solarized'
-Plugin 'beloglazov/vim-textobj-quotes'    " object q, iq
 Plugin 'bogado/file-line'
 Plugin 'christoomey/vim-sort-motion'      " gs{motions}
 Plugin 'christoomey/vim-system-copy'      " cp{motion}, cP, cv
@@ -41,6 +44,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'simeji/winresizer'                " To enter resizing mode : ctrl+e, and exit by enter
 Plugin 'stephpy/vim-yaml'
 Plugin 'szw/vim-maximizer'
+Plugin 't9md/vim-ruby-xmpfilter'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-bundler'
@@ -58,15 +62,18 @@ Plugin 'wellle/targets.vim'
 Plugin 'wellle/visual-split.vim'
 Plugin 'zhaocai/GoldenView.Vim'
 
-if has('nvim')
-  Plugin 'Shougo/deoplete.nvim'
-  Plugin 'neomake/neomake'
-else
-  Plugin 'w0rp/ale'
-  Plugin 'Shougo/deoplete.nvim'
+" deoplete dependencies for normal vim
+if !has('nvim')
   Plugin 'roxma/nvim-yarp'
   Plugin 'roxma/vim-hug-neovim-rpc'
 endif
+
+" Code Linter
+if has('nvim')
+  Plugin 'neomake/neomake'
+else
+  Plugin 'w0rp/ale'
+end
 
 call vundle#end()
 
@@ -74,12 +81,11 @@ call vundle#end()
 " General Configuaraion
 " *********************************************
 filetype off
-set nocompatible
-set number
-set numberwidth=4
-set hidden
 syntax enable
 syntax on
+set hidden
+set number
+set numberwidth=4
 
 set backspace=indent,eol,start                            " Make backspace works like most program
 set laststatus=2                                          " Show the status line all the time
@@ -98,6 +104,9 @@ set smarttab
 set softtabstop=2
 set tabstop=2
 
+set foldnestmax=3                                         " Folding: deepest fold is 3 levels
+set nofoldenable                                          " Folding: dont fold by default
+
 set nowrap                                                " Don't wrap lines
 set linebreak                                             " Wrap lines at convenient points
 
@@ -108,14 +117,16 @@ set noswapfile                                            " turn off swap file
 set nobackup                                              " turn off backup file
 set nowb
 
-set foldnestmax=3                                         " Folding: deepest fold is 3 levels
-set nofoldenable                                          " Folding: dont fold by default
-
 " Search
 set incsearch                                             " Search: Find as you type search
 set hlsearch                                              " Search: Highlight search terms
 set ignorecase                                            " Search: Case-insensitive searching.
 set smartcase                                             " Search: But case-sensitive if expression contains a capital letter.
+
+" command wildmenu list
+set wildmode=list:longest
+set wildmenu                      " Enhanced command line completion.
+set wildignore=*.o,*.obj,*~       " Stuff to ignore when tab completing
 
 " Colorscheme
 let g:solarized_degrade=256
@@ -138,8 +149,13 @@ end
 " *********************************************
 " Keys mapping
 " *********************************************
+" Change default leader to ,
 let mapleader=','
+
+" Save file
 nmap <leader>w :w!<cr>
+
+" Clean up search hightlight
 nmap <Space> :noh<CR>
 
 " Easier navigation between split windows
@@ -148,21 +164,27 @@ nmap <c-k> <c-w>k
 nmap <c-h> <c-w>h
 nmap <c-l> <c-w>l
 
-" running rubocop with auto correct
-map <leader>ac :RuboCop --auto-correct %<CR>
+" Better Ruby Editing
+"" Open the definition in a new split
+nnoremap <c-\> <c-w>g<c-]>
 
-" Setting indent in/indent out for visual selected
+"" Indenting in or out for visual selected
 vmap <tab> >gv
 vmap <s-tab> <gv
 
-" Convert old hash to new Ruby 1.9 syntax
+"" Auto-indenting the whole file
+nmap <leader><tab> <esc>gg=G<C-o><C-o>zz
+
+"" Running Rubocop with auto-correct
+let g:vimrubocop_keymap = 0
+map <leader>ac :RuboCop --auto-correct %<CR><leader>q
+
+"" Converting old hash to new Ruby 1.9 syntax
 map <leader>: :%s/:\(\w\+\)\(\s*=>\s*\)/\1: /gc<CR>
 
-" Convert ' to "
+"" Converting ' to "
 map <leader>' :%s/'\([^']*\)'/"\1"/gc<CR>
 
-" Open the definition in a new split
-nnoremap <c-\> <c-w>g<c-]>
 " *********************************************
 " Plugin Customization
 " *********************************************

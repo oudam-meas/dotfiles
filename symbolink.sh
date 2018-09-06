@@ -42,3 +42,10 @@ ln -s ~/.dotfiles/plugin_customizations.vim ~/.vim/custom/plugin_customizations.
 rm -f ~/.vim/syntax/ruby.vim
 mkdir ~/.vim/syntax
 ln -s ~/.dotfiles/ruby.vim ~/.vim/syntax/ruby.vim
+
+# Atom
+rm -f ~/.atom/keymap.cson
+ln -s ~/.dotfiles/atom/keymap.cson ~/.atom/keymap.cson
+
+rm -f ~/.atom/styles.less
+ln -s ~/.dotfiles/atom/styles.less ~/.atom/styles.less

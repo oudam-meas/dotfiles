@@ -16,10 +16,14 @@ let g:ruby_path = system('echo $HOME/.rbenv/shims')
 " *********************************************
 " Keys mapping
 " *********************************************
+" Reloading file
+nmap <leader>e :e<CR>
+" Resetting size of split windows
+nmap <silent> == <C-w>=
 " Opening current file in external app
-nmap <silent> <leader>oc :exec 'silent !open -a "Google Chrome" % &'<CR>
-nmap <silent> <leader>oa :exec 'silent !open -a "atom" % &'<CR>
-nmap <silent> <leader>oA :!atom .<CR>
+nmap <silent> <leader>oc :exec 'silent !open -a "Google Chrome" % &'<CR><CR>
+nmap <silent> <leader>oa :exec 'silent !open -a "atom" % &'<CR><CR>
+nmap <silent> <leader>oA :!atom .<CR><CR>
 
 " Biding key for Debuging - d[*]
 map <leader>dp obinding.pry<ESC> :w<cr>
@@ -37,9 +41,7 @@ if has("nvim")
 endif
 
 " Copying current file name
-map <leader>C :let @+=expand("%")<cr> :echom "file path copied: ".@%.":".line(".") <cr>
-map <leader>c :let @+=expand("%")<cr> :echom "file path copied: ".@%.":".line(".") <cr>
-
+map <leader>c :let @+=expand("%").":".line(".")<cr> :echom "file path copied: ".@%.":".line(".") <cr>
 
 " Sourcing vimrc and Installing vundle
 map <leader>vi :Sovimrc<cr> \| :PluginInstall<cr>
@@ -52,7 +54,7 @@ nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 " Custom Commands
 " *********************************************
 " Opening vimrc and source vimrc
-command! Vimrc e ~/.vimrc
+command! Vimrc e ~/.dotfiles/vimrc
 command! Sovimrc so ~/.vimrc
 
 " Showing symbol name under the cursor

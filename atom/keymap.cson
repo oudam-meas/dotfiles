@@ -1,0 +1,17 @@
+'atom-workspace':
+  'cmd-shift-w': 'tabs:close-all-tabs',
+  'alt-[': 'vim-mode-plus:activate-normal-mode',
+  'ctrl-p': 'fuzzy-finder:toggle-file-finder',
+  'alt-r': 'linter-rubocop:fix-file',
+  'ctrl-cmd-v': 'toggle-packages:toggle-vim-mode-plus'
+  'ctrl-\\':'tree-view:toggle-focus'
+'.platform-darwin atom-workspace':
+  'ctrl-.':'platformio-ide-terminal:toggle'
+'.platform-darwin':
+  'cmd-|': 'tree-view:reveal-active-file'
+'body':
+  'ctrl-l': 'window:focus-pane-on-right'
+  'ctrl-h': 'window:focus-pane-on-left'
+'atom-text-editor.vim-mode-plus.normal-mode':
+  ';' : 'ex-mode:open'
+

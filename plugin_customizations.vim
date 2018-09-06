@@ -36,6 +36,7 @@ let g:NERDTreeMapRefresh = 'r'
 let g:NERDTreeMapRefreshRoot = 'R'
 let g:NERDTreeMapOpenSplit = 'sp'
 let g:NERDTreeMapOpenVSplit = 'sv'
+let NERDTreeQuitOnOpen=1
 let NERDTreeStatusline = "%{fugitive#head()}"
 let NERDTreeIgnore = ['\.envrc','yarn-error.log', 'rspec_examples.txt', '\.swp$', '\.DS_Store$', '\.ebextensions', '\.git$', '\.bundle$', '.keep$', '^tags', 'tags.lock$', 'tags.temp$']
 let NERDTreeShowHidden=1
@@ -141,7 +142,12 @@ function! InitAirline()
   call airline#parts#define_raw('modified', '%{&modified ? " " : ""}')
   call airline#parts#define_accent('modified', 'red')
   let g:airline_section_c = airline#section#create(['%f', 'modified'])
+  " let g:airline_section_a = airline#section#create(['mode'])
+  " let g:airline_section_b = airline#section#create_left(['hunks'])
+  " let g:airline_section_x = airline#section#create(['branch', 'ffenc'])
+  " let g:airline_section_y = ""
 endfunction
+
 
 autocmd VimEnter * call InitAirline()
 
@@ -230,4 +236,20 @@ nmap <silent> gm <Plug>GoldenViewSwitchToggle
 " *********************************************
 " Carbon Now Sh
 " *********************************************
-vnoremap <F5> :CarbonNowSh<CR>
+vnoremap <F3> :CarbonNowSh<CR>
+
+" *********************************************
+" seeing-is-believing with XMPFILTER
+" *********************************************
+" Enable seeing-is-believing mappings only for Ruby
+let g:xmpfilter_cmd = "seeing_is_believing"
+autocmd FileType ruby nmap <buffer> <F4> :w<CR><Plug>(seeing_is_believing-mark)
+autocmd FileType ruby xmap <buffer> <F4> <Plug>(seeing_is_believing-mark)
+autocmd FileType ruby imap <buffer> <F4> <Plug>(seeing_is_believing-mark)
+autocmd FileType ruby nmap <buffer> <F6> :w<CR><Plug>(seeing_is_believing-clean)
+autocmd FileType ruby xmap <buffer> <F6> <Plug>(seeing_is_believing-clean)
+autocmd FileType ruby imap <buffer> <F6> <Plug>(seeing_is_believing-clean)
+autocmd FileType ruby nmap <buffer> <F5> :w<CR><Plug>(seeing_is_believing-run)
+autocmd FileType ruby xmap <buffer> <F5> <Plug>(seeing_is_believing-run)
+autocmd FileType ruby imap <buffer> <F5> <Plug>(seeing_is_believing-run)
+
