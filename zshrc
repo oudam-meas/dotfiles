@@ -8,7 +8,7 @@ export PG=~/Library/Application\ Support/Postgres
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 export OTP_ENCRYPTION_KEY=00a423caa01fdc733b93a3fa1e81c128577fd4b43b9a18b79eee092e129a30947caca06fd488fe13c5f438766fe0c7ed875f5d448cd1d4d1a990a3913d27376d
-# export TERM=xterm-256color-italic        # for common 256 color terminals (e.g. gnome-terminal)
+export TERM=xterm-256color-italic        # italic color, it's required with trueclor and tmux mode
 # export TERM=screen-256color       # for a tmux -2 session (also for screen)
 
 # Custom POWERLEVEL9K Theme

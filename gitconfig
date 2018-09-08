@@ -3,7 +3,7 @@
   status = auto
   branch = auto
   interactive = auto
-  ui = true
+	ui = true
   pager = true
 
 [color "status"]
@@ -14,8 +14,8 @@
 [color "branch"]
   remote = yellow
 
-[color "diff"]
-  new = green bold
+; [color "diff"]
+  ; new = green bold
 
 [user]
 	name = Meas Outdam
@@ -72,3 +72,16 @@
 [core]
 	editor = nvim
 	excludesfile = ~/.gitignore_global
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[color "diff-highlight"]
+	oldNormal = red
+	oldHighlight = red 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse

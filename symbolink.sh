@@ -49,3 +49,7 @@ ln -s ~/.dotfiles/atom/keymap.cson ~/.atom/keymap.cson
 
 rm -f ~/.atom/styles.less
 ln -s ~/.dotfiles/atom/styles.less ~/.atom/styles.less
+
+mkdir ~/.tmux-layouts/
+rm -f ~/.tmux-layouts/bongloy.session.sh
+ln -s ~/.dotfiles/tmux-layouts/bongloy.session.sh ~/.tmux-layouts/bongloy.session.sh

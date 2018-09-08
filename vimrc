@@ -8,6 +8,7 @@ call vundle#begin()
 
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'posva/vim-vue'
+Plugin 'morhetz/gruvbox'
 Plugin 'KeitaNakamura/neodark.vim'
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'VundleVim/Vundle.vim'
@@ -37,6 +38,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'ngmy/vim-rubocop'
 Plugin 'ntpeters/vim-better-whitespace'
+" Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'qpkorr/vim-bufkill'
 Plugin 'romainl/vim-qf'
@@ -129,22 +131,30 @@ set wildmenu                      " Enhanced command line completion.
 set wildignore=*.o,*.obj,*~       " Stuff to ignore when tab completing
 
 " Colorscheme
-let g:solarized_degrade=256
-let g:solarized_visibility="low"                          " Special characters such as trailing whitespace, tabs, empty buffer `~`
-let g:solarized_statusline="normal"
+" let g:solarized_degrade=256
+" let g:solarized_visibility="low"                          " Special characters such as trailing whitespace, tabs, empty buffer `~`
+" let g:solarized_statusline="normal"
+" set background=dark
+" colorscheme solarized
+set termguicolors
 set background=dark
-colorscheme solarized
+let g:gruvbox_invert_selection = 0
+let g:gruvbox_italic = 1
+let g:gruvbox_number_column = 'bg0'
+let g:gruvbox_sign_column = 'bg1'
+let g:gruvbox_vert_split = 'bg1'
+colorscheme gruvbox
 
 " Cursor shape w/wo tmux
-if exists('$ITERM_PROFILE')
-  if exists('$TMUX')
-    let &t_SI = "\<Esc>[3 q"
-    let &t_EI = "\<Esc>[0 q"
-  else
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-  endif
-end
+" if exists('$ITERM_PROFILE')
+"   if exists('$TMUX')
+"     let &t_SI = "\<Esc>[3 q"
+"     let &t_EI = "\<Esc>[0 q"
+"   else
+"     let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+"     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+"   endif
+" end
 
 " *********************************************
 " Keys mapping
@@ -177,7 +187,7 @@ nmap <leader><tab> <esc>gg=G<C-o><C-o>zz
 
 "" Running Rubocop with auto-correct
 let g:vimrubocop_keymap = 0
-map <leader>ac :RuboCop --auto-correct %<CR><leader>q
+map <leader>ac :w<CR> :RuboCop --auto-correct %<CR><leader>q
 
 "" Converting old hash to new Ruby 1.9 syntax
 map <leader>: :%s/:\(\w\+\)\(\s*=>\s*\)/\1: /gc<CR>
