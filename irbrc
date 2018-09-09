@@ -4,6 +4,7 @@ $LOAD_PATH << '~/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/awesome_print-1.
 require 'awesome_print'
 require 'irb/ext/save-history'
 IRB.conf[:SAVE_HISTORY] = 1000
+IRB.conf[:HISTORY_FILE] = '~/.irb-history'
 # require 'irbtools'
 # require 'irbtools/more'
 # Irbtools.start

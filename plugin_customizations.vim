@@ -23,7 +23,6 @@ nmap <silent> <leader>g :TestVisit<CR>
 nmap <silent> <leader>r :TestNearest -strategy=basic<CR>
 nmap <silent> <leader>t :TestNearest<CR>
 
-
 " *********************************************
 " NERDTree
 " *********************************************
@@ -36,10 +35,10 @@ let g:NERDTreeMapRefresh = 'r'
 let g:NERDTreeMapRefreshRoot = 'R'
 let g:NERDTreeMapOpenSplit = 'sp'
 let g:NERDTreeMapOpenVSplit = 'sv'
-" let NERDTreeQuitOnOpen=1
 let NERDTreeStatusline = "%{fugitive#head()}"
 let NERDTreeIgnore = ['\.envrc','yarn-error.log', 'rspec_examples.txt', '\.swp$', '\.DS_Store$', '\.ebextensions', '\.git$', '\.bundle$', '.keep$', '^tags', 'tags.lock$', 'tags.temp$']
 let NERDTreeShowHidden=1
+" let NERDTreeQuitOnOpen=1
 
 " *********************************************
 " Ack - Search
@@ -154,7 +153,7 @@ autocmd VimEnter * call InitAirline()
 " *********************************************
 " HighlightedYank
 " *********************************************
-let g:highlightedyank_highlight_duration = 150
+let g:highlightedyank_highlight_duration = 200
 highlight! link HighlightedyankRegion CursorLine
 
 " *********************************************
@@ -220,18 +219,6 @@ nmap <silent> gr <Plug>(Visual-Split-Resize)
 nmap <silent> gv <Plug>(Visual-Split-Split)
 nmap <silent> gk <Plug>(Visual-Split-SplitAbove)
 nmap <silent> gj <Plug>(Visual-Split-SplitBelow)
-
-" *********************************************
-" Visual Split
-" *********************************************
-let g:goldenview__enable_default_mapping = 0
-
-" 1. split to tiled windows
-nmap <silent> gl <Plug>GoldenViewSplit
-
-" 2. quickly switch current window with the main pane and toggle back
-nmap <silent> gm <Plug>GoldenViewSwitchToggle
-" nmap <silent> <leader>gm   <Plug>GoldenViewSwitchMain
 
 " *********************************************
 " Carbon Now Sh

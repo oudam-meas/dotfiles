@@ -6,10 +6,11 @@ set nocompatible
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" Plugin 'KeitaNakamura/neodark.vim'
+" Plugin 'lifepillar/vim-solarized8'
+" Plugin 'morhetz/gruvbox'
 Plugin 'Chiel92/vim-autoformat'
-Plugin 'posva/vim-vue'
-Plugin 'morhetz/gruvbox'
-Plugin 'KeitaNakamura/neodark.vim'
+Plugin 'rizzatti/dash.vim'
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
@@ -30,7 +31,6 @@ Plugin 'kana/vim-textobj-line'            " object l, il, al
 Plugin 'kana/vim-textobj-user'            " requires bt vim-textobj-quotes
 Plugin 'kristijanhusak/vim-carbon-now-sh'
 Plugin 'leafgarland/typescript-vim'
-Plugin 'lifepillar/vim-solarized8'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'machakann/vim-highlightedyank'
 Plugin 'majutsushi/tagbar'
@@ -38,8 +38,8 @@ Plugin 'mattn/emmet-vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'ngmy/vim-rubocop'
 Plugin 'ntpeters/vim-better-whitespace'
-" Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
+Plugin 'posva/vim-vue'
 Plugin 'qpkorr/vim-bufkill'
 Plugin 'romainl/vim-qf'
 Plugin 'scrooloose/nerdtree'
@@ -48,6 +48,7 @@ Plugin 'stephpy/vim-yaml'
 Plugin 'szw/vim-maximizer'
 Plugin 't9md/vim-ruby-xmpfilter'
 Plugin 'tmhedberg/SimpylFold'
+Plugin 'tmux-plugins/vim-tmux-focus-events'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-commentary'             " gc{motion}, v_gc, {number}gcc
@@ -62,7 +63,6 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'wellle/targets.vim'
 Plugin 'wellle/visual-split.vim'
-Plugin 'zhaocai/GoldenView.Vim'
 
 " deoplete dependencies for normal vim
 if !has('nvim')
@@ -98,6 +98,18 @@ set ttyfast
 set visualbell                                            " Disable sound
 
 filetype plugin indent on
+
+" Dealing with files changes
+" checktime : Check if any buffers were changed outside of Vim.
+" NERDTreeFocus | execute 'normal R' : Refresh Root of NERDTree
+
+set autowrite                                             " autoload write
+set autoread                                              " autoload read
+
+au CursorHold,CursorHoldI,BufEnter * checktime
+au BufWritePost,BufReadPost * checktime | NERDTreeFocus | execute 'normal R' | wincmd p
+
+
 set autoindent
 set expandtab
 set shiftwidth=2
@@ -111,9 +123,6 @@ set nofoldenable                                          " Folding: dont fold b
 
 set nowrap                                                " Don't wrap lines
 set linebreak                                             " Wrap lines at convenient points
-
-set autowrite                                             " autoload write
-set autoread                                              " autoload read
 
 set noswapfile                                            " turn off swap file
 set nobackup                                              " turn off backup file
@@ -131,19 +140,20 @@ set wildmenu                      " Enhanced command line completion.
 set wildignore=*.o,*.obj,*~       " Stuff to ignore when tab completing
 
 " Colorscheme
-" let g:solarized_degrade=256
-" let g:solarized_visibility="low"                          " Special characters such as trailing whitespace, tabs, empty buffer `~`
-" let g:solarized_statusline="normal"
-" set background=dark
-" colorscheme solarized
-set termguicolors
+" set termguicolors
+let g:solarized_degrade=256
+let g:solarized_visibility="low"                          " Special characters such as trailing whitespace, tabs, empty buffer `~`
+let g:solarized_statusline="normal"
 set background=dark
-let g:gruvbox_invert_selection = 0
-let g:gruvbox_italic = 1
-let g:gruvbox_number_column = 'bg0'
-let g:gruvbox_sign_column = 'bg1'
-let g:gruvbox_vert_split = 'bg1'
-colorscheme gruvbox
+colorscheme solarized
+highlight Comment cterm=italic
+" set background=dark
+" let g:gruvbox_invert_selection = 0
+" let g:gruvbox_italic = 1
+" let g:gruvbox_number_column = 'bg0'
+" let g:gruvbox_sign_column = 'bg1'
+" let g:gruvbox_vert_split = 'bg1'
+" colorscheme gruvbox
 
 " Cursor shape w/wo tmux
 " if exists('$ITERM_PROFILE')
@@ -163,7 +173,7 @@ colorscheme gruvbox
 let mapleader=','
 
 " Save file
-nmap <leader>w :w!<cr>
+nmap <leader>w :w!<CR>
 
 " Clean up search hightlight
 nmap <Space> :noh<CR>

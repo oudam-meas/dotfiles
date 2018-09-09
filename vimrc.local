@@ -22,8 +22,7 @@ nmap <leader>e :e<CR>
 nmap <silent> == <C-w>=
 " Opening current file in external app
 nmap <silent> <leader>oc :exec 'silent !open -a "Google Chrome" % &'<CR><CR>
-nmap <silent> <leader>oa :exec 'silent !open -a "atom" % &'<CR><CR>
-nmap <silent> <leader>oA :!atom .<CR><CR>
+nmap <silent> <leader>oa :exec 'silent !atom . '.'%'.':'.line(".")<CR><CR>
 
 " Biding key for Debuging - d[*]
 map <leader>dp obinding.pry<ESC> :w<cr>
@@ -41,10 +40,10 @@ if has("nvim")
 endif
 
 " Copying current file name
-map <leader>c :let @+=expand("%").":".line(".")<cr> :echom "file path copied: ".@%.":".line(".") <cr>
+map <leader>c :let @+=expand("%").":".line(".")<CR> :echom "file path copied: ".@%.":".line(".") <CR>
 
 " Sourcing vimrc and Installing vundle
-map <leader>vi :Sovimrc<cr> \| :PluginInstall<cr>
+map <leader>vi :Sovimrc<CR> \| :PluginInstall<CR>
 
 " Resizing Split Window
 nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
