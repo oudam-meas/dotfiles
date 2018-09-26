@@ -6,10 +6,11 @@ set nocompatible
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Plugin 'KeitaNakamura/neodark.vim'
-" Plugin 'lifepillar/vim-solarized8'
-" Plugin 'morhetz/gruvbox'
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'xolox/vim-notes'
+Plugin 'xolox/vim-misc'
+Plugin 'StanAngeloff/php.vim'
+Plugin 'chr4/nginx.vim'
 Plugin 'rizzatti/dash.vim'
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'VundleVim/Vundle.vim'
@@ -38,7 +39,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'ngmy/vim-rubocop'
 Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'pangloss/vim-javascript'
+Plugin 'jelera/vim-javascript-syntax'
 Plugin 'posva/vim-vue'
 Plugin 'qpkorr/vim-bufkill'
 Plugin 'romainl/vim-qf'

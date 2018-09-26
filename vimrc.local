@@ -14,6 +14,10 @@ let g:ruby_path = system('echo $HOME/.rbenv/shims')
 " autocmd InsertEnter,WinLeave * setlocal foldmethod=manual " solve insert mode performance : foldmethod must be set to 'manual' to improve performance during editing
 
 " *********************************************
+" Auto load syntax
+" *********************************************
+"
+" *********************************************
 " Keys mapping
 " *********************************************
 " Reloading file
@@ -22,7 +26,7 @@ nmap <leader>e :e<CR>
 nmap <silent> == <C-w>=
 " Opening current file in external app
 nmap <silent> <leader>oc :exec 'silent !open -a "Google Chrome" % &'<CR><CR>
-nmap <silent> <leader>oa :exec 'silent !atom . '.'%'.':'.line(".")<CR><CR>
+nmap <silent> <leader>oa :exec 'silent !atom . '.'%'.':'.line(".")<CR>
 
 " Biding key for Debuging - d[*]
 map <leader>dp obinding.pry<ESC> :w<cr>

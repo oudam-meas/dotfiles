@@ -36,11 +36,11 @@ rm -f ~/.vimrc.local
 ln -s ~/.dotfiles/vimrc.local ~/.vimrc.local
 
 rm -f ~/.vim/custom/plugin_customizations.vim
-mkdir ~/.vim/custom
+mkdir -p ~/.vim/custom
 ln -s ~/.dotfiles/plugin_customizations.vim ~/.vim/custom/plugin_customizations.vim
 
 rm -f ~/.vim/syntax/ruby.vim
-mkdir ~/.vim/syntax
+mkdir -p ~/.vim/syntax
 ln -s ~/.dotfiles/ruby.vim ~/.vim/syntax/ruby.vim
 
 # Atom
@@ -50,6 +50,14 @@ ln -s ~/.dotfiles/atom/keymap.cson ~/.atom/keymap.cson
 rm -f ~/.atom/styles.less
 ln -s ~/.dotfiles/atom/styles.less ~/.atom/styles.less
 
-mkdir ~/.tmux-layouts/
+mkdir -p ~/.tmux-layouts/
 rm -f ~/.tmux-layouts/bongloy.session.sh
 ln -s ~/.dotfiles/tmux-layouts/bongloy.session.sh ~/.tmux-layouts/bongloy.session.sh
+
+mkdir -p ~/.tmux-layouts/
+rm -f ~/.tmux-layouts/aws-cloud-guru.session.sh
+ln -s ~/.dotfiles/tmux-layouts/aws-cloud-guru.session.sh ~/.tmux-layouts/aws-cloud-guru.session.sh
+
+mkdir -p ~/.tmux-layouts/
+rm -f ~/.tmux-layouts/rails-books.session.sh
+ln -s ~/.dotfiles/tmux-layouts/rails-books.session.sh ~/.tmux-layouts/rails-books.session.sh
