@@ -19,7 +19,7 @@
 	email = mstdam@gmail.com
 
 [alias]
-  aa = !git add -A && git status
+  aa = add -A
   o = browse --
   st = status
 	s = status -s

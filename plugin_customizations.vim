@@ -38,7 +38,6 @@ let g:NERDTreeMapOpenVSplit = 'sv'
 let NERDTreeStatusline = "%{fugitive#head()}"
 let NERDTreeIgnore = ['\.envrc','yarn-error.log', 'rspec_examples.txt', '\.swp$', '\.DS_Store$', '\.ebextensions', '\.git$', '\.bundle$', '.keep$', '^tags', 'tags.lock$', 'tags.temp$']
 let NERDTreeShowHidden=1
-" let NERDTreeQuitOnOpen=1
 
 " *********************************************
 " Ack - Search
@@ -131,6 +130,8 @@ let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s' " Use ag in Ct
 " *********************************************
 " Airline
 " *********************************************
+" let g:airline_theme='violet'
+let g:airline_theme='one'
 let g:airline#extensions#tagbar#enabled = 0
 let g:airline_powerline_fonts = 1
 let g:airline_section_b = ""  " hide section b (git related)
@@ -162,6 +163,7 @@ highlight! link HighlightedyankRegion CursorLine
 set tags=./tags
 au FileType gitcommit,gitrebase let g:gutentags_enabled=0
 nmap <F8> :TagbarToggle<CR>
+
 " *********************************************
 " Vim Easy Align
 " *********************************************
@@ -201,9 +203,16 @@ nnoremap <leader><CR> :StripWhitespace<CR> \| :w<CR>
 let g:better_whitespace_filetypes_blacklist=['vimrc']
 
 " *********************************************
-" Vim Better Whitespace
+" vim-maximizer
 " *********************************************
-let g:maximizer_default_mapping_key = '<F12>'
+nnoremap <silent><F3> :MaximizerToggle<CR>
+vnoremap <silent><F3> :MaximizerToggle<CR>gv
+inoremap <silent><F3> <C-o>:MaximizerToggle<CR>
+
+" *********************************************
+" Carbon Now Sh
+" *********************************************
+vnoremap <F2> :CarbonNowSh<CR>
 
 " *********************************************
 " Visual Split
@@ -219,11 +228,6 @@ nmap <silent> gr <Plug>(Visual-Split-Resize)
 nmap <silent> gv <Plug>(Visual-Split-Split)
 nmap <silent> gk <Plug>(Visual-Split-SplitAbove)
 nmap <silent> gj <Plug>(Visual-Split-SplitBelow)
-
-" *********************************************
-" Carbon Now Sh
-" *********************************************
-vnoremap <F3> :CarbonNowSh<CR>
 
 " *********************************************
 " seeing-is-believing with XMPFILTER

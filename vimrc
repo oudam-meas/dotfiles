@@ -17,6 +17,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized' " color name is 'solarized'
+Plugin 'rakr/vim-one'
 Plugin 'bogado/file-line'
 Plugin 'christoomey/vim-sort-motion'      " gs{motions}
 Plugin 'christoomey/vim-system-copy'      " cp{motion}, cP, cv
@@ -32,7 +33,7 @@ Plugin 'kana/vim-textobj-line'            " object l, il, al
 Plugin 'kana/vim-textobj-user'            " requires bt vim-textobj-quotes
 Plugin 'kristijanhusak/vim-carbon-now-sh'
 Plugin 'leafgarland/typescript-vim'
-Plugin 'ludovicchabant/vim-gutentags'
+" Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'machakann/vim-highlightedyank'
 Plugin 'majutsushi/tagbar'
 Plugin 'mattn/emmet-vim'
@@ -141,13 +142,21 @@ set wildmenu                      " Enhanced command line completion.
 set wildignore=*.o,*.obj,*~       " Stuff to ignore when tab completing
 
 " Colorscheme
+" solarize dark
 " set termguicolors
-let g:solarized_degrade=256
-let g:solarized_visibility="low"                          " Special characters such as trailing whitespace, tabs, empty buffer `~`
-let g:solarized_statusline="normal"
+" let g:solarized_degrade=256
+" let g:solarized_visibility="low"                          " Special characters such as trailing whitespace, tabs, empty buffer `~`
+" let g:solarized_statusline="normal"
+" highlight Comment cterm=italic
+
+" vim-one
+set termguicolors
+
 set background=dark
-colorscheme solarized
-highlight Comment cterm=italic
+let g:one_allow_italics = 1
+colorscheme one
+
+
 " set background=dark
 " let g:gruvbox_invert_selection = 0
 " let g:gruvbox_italic = 1
