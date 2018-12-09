@@ -154,8 +154,8 @@ autocmd VimEnter * call InitAirline()
 " *********************************************
 " HighlightedYank
 " *********************************************
-let g:highlightedyank_highlight_duration = 200
-highlight! link HighlightedyankRegion CursorLine
+let g:highlightedyank_highlight_duration = 260
+highlight! link HighlightedyankRegion Visual
 
 " *********************************************
 " Gutentags and Tagbar
@@ -218,16 +218,16 @@ vnoremap <F2> :CarbonNowSh<CR>
 " Visual Split
 " *********************************************
 " Visual-mode:
-xmap <silent> gr <Plug>(Visual-Split-VSResize)
-xmap <silent> gv <Plug>(Visual-Split-VSSplit)
-xmap <silent> gk <Plug>(Visual-Split-VSSplitAbove)
-xmap <silent> gj <Plug>(Visual-Split-VSSplitBelow)
+xmap <silent> gsr <Plug>(Visual-Split-VSResize)
+xmap <silent> gsv <Plug>(Visual-Split-VSSplit)
+xmap <silent> gsk <Plug>(Visual-Split-VSSplitAbove)
+xmap <silent> gsj <Plug>(Visual-Split-VSSplitBelow)
 
 " Operator-pending mode:
-nmap <silent> gr <Plug>(Visual-Split-Resize)
-nmap <silent> gv <Plug>(Visual-Split-Split)
-nmap <silent> gk <Plug>(Visual-Split-SplitAbove)
-nmap <silent> gj <Plug>(Visual-Split-SplitBelow)
+nmap <silent> gsr <Plug>(Visual-Split-Resize)
+nmap <silent> gsv <Plug>(Visual-Split-Split)
+nmap <silent> gsk <Plug>(Visual-Split-SplitAbove)
+nmap <silent> gsj <Plug>(Visual-Split-SplitBelow)
 
 " *********************************************
 " seeing-is-believing with XMPFILTER

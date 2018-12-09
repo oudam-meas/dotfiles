@@ -30,10 +30,11 @@ Plugin 'jlanzarotta/bufexplorer'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'kana/vim-operator-user'
 Plugin 'kana/vim-textobj-line'            " object l, il, al
+Plugin 'kana/vim-textobj-entire'          " object for entire file: ie, ae
 Plugin 'kana/vim-textobj-user'            " requires bt vim-textobj-quotes
 Plugin 'kristijanhusak/vim-carbon-now-sh'
 Plugin 'leafgarland/typescript-vim'
-" Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'machakann/vim-highlightedyank'
 Plugin 'majutsushi/tagbar'
 Plugin 'mattn/emmet-vim'
