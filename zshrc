@@ -20,6 +20,7 @@ export TERM=xterm-256color-italic        # italic color, it's required with true
 source $ZSH/oh-my-zsh.sh
 source "$HOME/.aws-secret"
 source "$HOME/.rails-secret"
+
 # Aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
@@ -53,3 +54,4 @@ eval `gdircolors ~/.oh-my-zsh/custom/plugins/dircolors-solarized/dircolors.ansi-
 BUILDID="build-$RANDOM"
 INSTANCE="travisci/ci-garnet:packer-1512502276-986baf0"
 export PATH="$HOME/.nenv/bin:$PATH"
+export PATH="/usr/local/opt/node@10/bin:$PATH"

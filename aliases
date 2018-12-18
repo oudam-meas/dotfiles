@@ -42,3 +42,4 @@ alias -g CP='| pbcopy'
 alias rspeclf='rspec --only-failures'
 
 # alias google-chrome='open -a Google\ Chrome --args --disable-web-security'
+alias brewery='brew update && brew upgrade && brew cleanup'

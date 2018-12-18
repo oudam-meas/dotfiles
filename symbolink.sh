@@ -14,8 +14,10 @@ ln -s ~/.dotfiles/aliases ~/.aliases
 rm -f ~/.zshrc
 ln -f -s ~/.dotfiles/zshrc ~/.zshrc
 
-rm -f ~/.tmux.conf
-ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
+# rm -f ~/.tmux.conf
+# ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
+rm -f ~/.tmux.conf.local
+ln -s ~/.dotfiles/tmux.conf.local ~/.tmux.conf.local
 
 rm -f ~/.agignore
 ln -s ~/.dotfiles/agignore ~/.agignore

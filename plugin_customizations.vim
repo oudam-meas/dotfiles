@@ -1,4 +1,8 @@
 " *********************************************
+" Quickfix
+" *********************************************
+" nmap <leader>q :ccl<cr>
+" *********************************************
 " Deoplete
 " *********************************************
 " Enable at startup
@@ -38,6 +42,7 @@ let g:NERDTreeMapOpenVSplit = 'sv'
 let NERDTreeStatusline = "%{fugitive#head()}"
 let NERDTreeIgnore = ['\.envrc','yarn-error.log', 'rspec_examples.txt', '\.swp$', '\.DS_Store$', '\.ebextensions', '\.git$', '\.bundle$', '.keep$', '^tags', 'tags.lock$', 'tags.temp$']
 let NERDTreeShowHidden=1
+let NERDTreeMinimalUI=1
 
 " *********************************************
 " Ack - Search
@@ -131,7 +136,7 @@ let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s' " Use ag in Ct
 " Airline
 " *********************************************
 " let g:airline_theme='violet'
-let g:airline_theme='one'
+" let g:airline_theme='one'
 let g:airline#extensions#tagbar#enabled = 0
 let g:airline_powerline_fonts = 1
 let g:airline_section_b = ""  " hide section b (git related)
@@ -154,7 +159,7 @@ autocmd VimEnter * call InitAirline()
 " *********************************************
 " HighlightedYank
 " *********************************************
-let g:highlightedyank_highlight_duration = 260
+let g:highlightedyank_highlight_duration = 270
 highlight! link HighlightedyankRegion Visual
 
 " *********************************************
@@ -172,12 +177,6 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
-
-" *********************************************
-" Quickfix
-" *********************************************
-" let g:dispatch_quickfix_height = 17
-nmap <leader>q <Plug>(qf_qf_toggle)
 
 " *********************************************
 " BufExplorer

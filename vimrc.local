@@ -20,13 +20,9 @@ let g:ruby_path = system('echo $HOME/.rbenv/shims')
 " *********************************************
 " Keys mapping
 " *********************************************
-" Reloading file
-nmap <leader>e :e<CR>
-" Resetting size of split windows
-nmap <silent> == <C-w>=
 " Opening current file in external app
 nmap <silent> <leader>oc :exec 'silent !open -a "Google Chrome" % &'<CR><CR>
-nmap <silent> <leader>oa :exec 'silent !atom . '.'%'.':'.line(".")<CR>
+nmap <silent> <leader>oa :exec 'silent !atom . \| atom '.'%'.':'.line(".")<CR>
 
 " Biding key for Debuging - d[*]
 map <leader>dp obinding.pry<ESC> :w<cr>
@@ -63,15 +59,24 @@ command! Sovimrc so ~/.vimrc
 " Showing symbol name under the cursor
 command! Symbol echo synIDattr(synID(line("."), col("."), 1), "name")
 
+" Easy Expansion of the Active File Directory
+" :e %% or ,ew
+cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
+map <leader>ew :e %%
+map <leader>es :sp %%
+map <leader>ev :vsp %%
+map <leader>et :tabe %%
 " *********************************************
 " Highlighting
 " *********************************************
 " Search
 "" highlight in cursor search, this line must be placed below colorscheme setup
-hi IncSearch cterm=bold gui=bold ctermbg=red ctermfg=white guibg=#d70000 guifg=#d7d7af
+" hi! link IncSearch MatchParen
+" hi IncSearch cterm=bold gui=bold ctermbg=red ctermfg=white guibg=#d70000 guifg=#d7d7af
 
 " *********************************************
 " Plugin Cusomization
 " *********************************************
 " Nerdtree git
 let g:NERDTreeIndicatorMapCustom = { "Untracked" : "🟊" , "Dirty": "✘", "Modified"  : "🟓"}
+

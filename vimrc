@@ -6,45 +6,41 @@ set nocompatible
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'Chiel92/vim-autoformat'
-Plugin 'xolox/vim-notes'
-Plugin 'xolox/vim-misc'
-Plugin 'StanAngeloff/php.vim'
-Plugin 'chr4/nginx.vim'
-Plugin 'rizzatti/dash.vim'
+" Plugin 'Chiel92/vim-autoformat'
+" Plugin 'StanAngeloff/php.vim'
+" Plugin 'chr4/nginx.vim'
+" Plugin 'dbeecham/ctrlp-commandpalette.vim'
+" Plugin 'gabrielelana/vim-markdown'
+" Plugin 'jlanzarotta/bufexplorer'
+" Plugin 'mattn/emmet-vim'
+" Plugin 'posva/vim-vue'
+" Plugin 'qpkorr/vim-bufkill'
+" Plugin 'romainl/vim-qf'
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'altercation/vim-colors-solarized' " color name is 'solarized'
-Plugin 'rakr/vim-one'
 Plugin 'bogado/file-line'
-Plugin 'christoomey/vim-sort-motion'      " gs{motions}
-Plugin 'christoomey/vim-system-copy'      " cp{motion}, cP, cv
+Plugin 'christoomey/vim-sort-motion'      " motion: gs
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'dbeecham/ctrlp-commandpalette.vim'
-Plugin 'gabrielelana/vim-markdown'
 Plugin 'janko-m/vim-test'
+Plugin 'jelera/vim-javascript-syntax'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'jlanzarotta/bufexplorer'
-Plugin 'junegunn/vim-easy-align'
+Plugin 'junegunn/vim-easy-align'          " motion: ga
 Plugin 'kana/vim-operator-user'
-Plugin 'kana/vim-textobj-line'            " object l, il, al
-Plugin 'kana/vim-textobj-entire'          " object for entire file: ie, ae
+Plugin 'kana/vim-textobj-entire'          " object: e
+Plugin 'kana/vim-textobj-line'            " object: l
 Plugin 'kana/vim-textobj-user'            " requires bt vim-textobj-quotes
 Plugin 'kristijanhusak/vim-carbon-now-sh'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'machakann/vim-highlightedyank'
 Plugin 'majutsushi/tagbar'
-Plugin 'mattn/emmet-vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'ngmy/vim-rubocop'
 Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'posva/vim-vue'
-Plugin 'qpkorr/vim-bufkill'
-Plugin 'romainl/vim-qf'
+Plugin 'rakr/vim-one'
+Plugin 'rizzatti/dash.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'simeji/winresizer'                " To enter resizing mode : ctrl+e, and exit by enter
 Plugin 'stephpy/vim-yaml'
@@ -63,9 +59,13 @@ Plugin 'tpope/vim-repeat'                 " 'solve repeated the last native comm
 Plugin 'tpope/vim-rhubarb'
 Plugin 'tpope/vim-surround'               " cs, ds, ys + {motion}
 Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'wellle/targets.vim'
 Plugin 'wellle/visual-split.vim'
+Plugin 'xolox/vim-misc'
+
+" Plugin 'xolox/vim-notes'
+" Plugin 'vim-airline/vim-airline-themes'
+" Plugin 'christoomey/vim-system-copy'      " cp{motion}, cP, cv
 
 " deoplete dependencies for normal vim
 if !has('nvim')
@@ -88,7 +88,7 @@ call vundle#end()
 filetype off
 syntax enable
 syntax on
-set hidden
+set hidden                                                " All hiding unsaved buffer, and move on
 set number
 set numberwidth=4
 
@@ -137,12 +137,13 @@ set hlsearch                                              " Search: Highlight se
 set ignorecase                                            " Search: Case-insensitive searching.
 set smartcase                                             " Search: But case-sensitive if expression contains a capital letter.
 
-" command wildmenu list
-set wildmode=list:longest
-set wildmenu                      " Enhanced command line completion.
+" Ex-command completion - If you’re used to the autocomplete menu provided by zsh,
+set wildmenu
+set wildmode=full
 set wildignore=*.o,*.obj,*~       " Stuff to ignore when tab completing
 
 " Colorscheme
+
 " solarize dark
 " set termguicolors
 " let g:solarized_degrade=256
@@ -152,7 +153,6 @@ set wildignore=*.o,*.obj,*~       " Stuff to ignore when tab completing
 
 " vim-one
 set termguicolors
-
 set background=dark
 let g:one_allow_italics = 1
 colorscheme one
@@ -195,6 +195,10 @@ nmap <c-k> <c-w>k
 nmap <c-h> <c-w>h
 nmap <c-l> <c-w>l
 
+" Easy tabs navigation: Command+Shift+[
+map <c-S-]> gt
+map <c-S-[> gT
+
 " Better Ruby Editing
 "" Open the definition in a new split
 nnoremap <c-\> <c-w>g<c-]>
@@ -204,7 +208,7 @@ vmap <tab> >gv
 vmap <s-tab> <gv
 
 "" Auto-indenting the whole file
-nmap <leader><tab> <esc>gg=G<C-o><C-o>zz
+" nmap <leader><tab> <esc>gg=G<C-o><C-o>zz
 
 "" Running Rubocop with auto-correct
 let g:vimrubocop_keymap = 0
