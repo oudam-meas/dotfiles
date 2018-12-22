@@ -39,6 +39,7 @@ let g:NERDTreeMapRefresh = 'r'
 let g:NERDTreeMapRefreshRoot = 'R'
 let g:NERDTreeMapOpenSplit = 'sp'
 let g:NERDTreeMapOpenVSplit = 'sv'
+let NERDTreeHighlightCursorline=1
 let NERDTreeStatusline = "%{fugitive#head()}"
 let NERDTreeIgnore = ['\.envrc','yarn-error.log', 'rspec_examples.txt', '\.swp$', '\.DS_Store$', '\.ebextensions', '\.git$', '\.bundle$', '.keep$', '^tags', 'tags.lock$', 'tags.temp$']
 let NERDTreeShowHidden=1
@@ -179,71 +180,33 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " *********************************************
-" BufExplorer
+" Yggdroot/indentLine
 " *********************************************
-let g:bufExplorerShowRelativePath=1
-nmap <leader>bb <leader>bs
-let g:bufExplorerSplitBelow=1
-let g:bufExplorerSplitHorzSize=20
-
-" *********************************************
-" Vim Indent Guide
-" *********************************************
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
-let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'startify']
-map <leader>I :IndentGuidesToggle<CR>
+let g:indentLine_enabled = 1
+let g:indentLine_char = '▏'
+map <leader>I :IndentLinesToggle<CR>
 
 " *********************************************
 " Vim Better Whitespace
 " *********************************************
 let g:strip_whitespace_on_save=1
-nnoremap <leader><CR> :StripWhitespace<CR> \| :w<CR>
 let g:better_whitespace_filetypes_blacklist=['vimrc']
 
 " *********************************************
 " vim-maximizer
 " *********************************************
-nnoremap <silent><F3> :MaximizerToggle<CR>
-vnoremap <silent><F3> :MaximizerToggle<CR>gv
-inoremap <silent><F3> <C-o>:MaximizerToggle<CR>
+nnoremap <C-W><CR> :MaximizerToggle<CR>
 
 " *********************************************
 " Carbon Now Sh
 " *********************************************
-vnoremap <F2> :CarbonNowSh<CR>
-
-" *********************************************
-" Visual Split
-" *********************************************
-" Visual-mode:
-xmap <silent> gsr <Plug>(Visual-Split-VSResize)
-xmap <silent> gsv <Plug>(Visual-Split-VSSplit)
-xmap <silent> gsk <Plug>(Visual-Split-VSSplitAbove)
-xmap <silent> gsj <Plug>(Visual-Split-VSSplitBelow)
-
-" Operator-pending mode:
-nmap <silent> gsr <Plug>(Visual-Split-Resize)
-nmap <silent> gsv <Plug>(Visual-Split-Split)
-nmap <silent> gsk <Plug>(Visual-Split-SplitAbove)
-nmap <silent> gsj <Plug>(Visual-Split-SplitBelow)
+vnoremap <F5> :CarbonNowSh<CR>
 
 " *********************************************
 " seeing-is-believing with XMPFILTER
 " *********************************************
-" Enable seeing-is-believing mappings only for Ruby
 let g:xmpfilter_cmd = "seeing_is_believing"
-autocmd FileType ruby nmap <buffer> <F4> :w<CR><Plug>(seeing_is_believing-mark)
-autocmd FileType ruby xmap <buffer> <F4> <Plug>(seeing_is_believing-mark)
-autocmd FileType ruby imap <buffer> <F4> <Plug>(seeing_is_believing-mark)
-autocmd FileType ruby nmap <buffer> <F6> :w<CR><Plug>(seeing_is_believing-clean)
-autocmd FileType ruby xmap <buffer> <F6> <Plug>(seeing_is_believing-clean)
-autocmd FileType ruby imap <buffer> <F6> <Plug>(seeing_is_believing-clean)
-autocmd FileType ruby nmap <buffer> <F5> :w<CR><Plug>(seeing_is_believing-run)
-autocmd FileType ruby xmap <buffer> <F5> <Plug>(seeing_is_believing-run)
-autocmd FileType ruby imap <buffer> <F5> <Plug>(seeing_is_believing-run)
+autocmd FileType ruby nmap <buffer> <F2> :w<CR><Plug>(seeing_is_believing-mark)
+autocmd FileType ruby nmap <buffer> <F3> :w<CR><Plug>(seeing_is_believing-clean)
+autocmd FileType ruby nmap <buffer> <F4> :w<CR><Plug>(seeing_is_believing-run)
 
-" *********************************************
-" vim-vue syntax
-" *********************************************
-autocmd FileType vue syntax sync fromstart

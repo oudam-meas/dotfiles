@@ -16,9 +16,11 @@ call vundle#begin()
 " Plugin 'posva/vim-vue'
 " Plugin 'qpkorr/vim-bufkill'
 " Plugin 'romainl/vim-qf'
+
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'Yggdroot/indentLine'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bogado/file-line'
 Plugin 'christoomey/vim-sort-motion'      " motion: gs
@@ -88,6 +90,7 @@ call vundle#end()
 filetype off
 syntax enable
 syntax on
+set cursorline
 set hidden                                                " All hiding unsaved buffer, and move on
 set number
 set numberwidth=4
@@ -102,16 +105,11 @@ set visualbell                                            " Disable sound
 
 filetype plugin indent on
 
-" Dealing with files changes
-" checktime : Check if any buffers were changed outside of Vim.
-" NERDTreeFocus | execute 'normal R' : Refresh Root of NERDTree
-
 set autowrite                                             " autoload write
 set autoread                                              " autoload read
 
 au CursorHold,CursorHoldI,BufEnter * checktime
 au BufWritePost,BufReadPost * checktime | NERDTreeFocus | execute 'normal R' | wincmd p
-
 
 set autoindent
 set expandtab
@@ -154,7 +152,7 @@ set wildignore=*.o,*.obj,*~       " Stuff to ignore when tab completing
 " vim-one
 set termguicolors
 set background=dark
-let g:one_allow_italics = 1
+" let g:one_allow_italics = 1
 colorscheme one
 
 
