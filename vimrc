@@ -6,23 +6,13 @@ set nocompatible
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Plugin 'Chiel92/vim-autoformat'
-" Plugin 'StanAngeloff/php.vim'
-" Plugin 'chr4/nginx.vim'
-" Plugin 'dbeecham/ctrlp-commandpalette.vim'
-" Plugin 'gabrielelana/vim-markdown'
-" Plugin 'jlanzarotta/bufexplorer'
-" Plugin 'mattn/emmet-vim'
-" Plugin 'posva/vim-vue'
-" Plugin 'qpkorr/vim-bufkill'
-" Plugin 'romainl/vim-qf'
-
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'Yggdroot/indentLine'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bogado/file-line'
+Plugin 'christoomey/vim-rfactory'
 Plugin 'christoomey/vim-sort-motion'      " motion: gs
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'janko-m/vim-test'
@@ -61,13 +51,11 @@ Plugin 'tpope/vim-repeat'                 " 'solve repeated the last native comm
 Plugin 'tpope/vim-rhubarb'
 Plugin 'tpope/vim-surround'               " cs, ds, ys + {motion}
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'wellle/targets.vim'
 Plugin 'wellle/visual-split.vim'
 Plugin 'xolox/vim-misc'
-
-" Plugin 'xolox/vim-notes'
-" Plugin 'vim-airline/vim-airline-themes'
-" Plugin 'christoomey/vim-system-copy'      " cp{motion}, cP, cv
+Plugin 'xolox/vim-notes'
 
 " deoplete dependencies for normal vim
 if !has('nvim')
@@ -140,6 +128,9 @@ set wildmenu
 set wildmode=full
 set wildignore=*.o,*.obj,*~       " Stuff to ignore when tab completing
 
+" Specifying Ruby path
+let g:ruby_path = system('echo $HOME/.rbenv/shims')
+
 " Colorscheme
 
 " solarize dark
@@ -150,30 +141,10 @@ set wildignore=*.o,*.obj,*~       " Stuff to ignore when tab completing
 " highlight Comment cterm=italic
 
 " vim-one
+" let g:one_allow_italics = 1
 set termguicolors
 set background=dark
-" let g:one_allow_italics = 1
 colorscheme one
-
-
-" set background=dark
-" let g:gruvbox_invert_selection = 0
-" let g:gruvbox_italic = 1
-" let g:gruvbox_number_column = 'bg0'
-" let g:gruvbox_sign_column = 'bg1'
-" let g:gruvbox_vert_split = 'bg1'
-" colorscheme gruvbox
-
-" Cursor shape w/wo tmux
-" if exists('$ITERM_PROFILE')
-"   if exists('$TMUX')
-"     let &t_SI = "\<Esc>[3 q"
-"     let &t_EI = "\<Esc>[0 q"
-"   else
-"     let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-"     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-"   endif
-" end
 
 " *********************************************
 " Keys mapping

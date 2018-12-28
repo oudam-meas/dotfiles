@@ -320,4 +320,6 @@ bind -n M-j select-pane -D
 bind -n M-k select-pane -U
 bind -n M-l select-pane -R
 
+# kills
+bind-key Q      confirm-before kill-server
 

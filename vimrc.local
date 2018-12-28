@@ -1,33 +1,15 @@
 " *********************************************
-" General Configuaraion
-" *********************************************
-" Set and split to below
-set splitbelow
-
-" Setting vert line for space and set tab/trail character
-set fillchars+=vert:\ |set list listchars=tab:\ \ ,trail:∙
-
-" Specifying Ruby path
-let g:ruby_path = system('echo $HOME/.rbenv/shims')
-
-" autocmd InsertLeave,WinEnter * setlocal foldmethod=syntax " solve insert mode performance : foldmethod stays as 'syntax' when not in insert mode
-" autocmd InsertEnter,WinLeave * setlocal foldmethod=manual " solve insert mode performance : foldmethod must be set to 'manual' to improve performance during editing
-
-" *********************************************
-" Auto load syntax
-" *********************************************
-"
-" *********************************************
 " Keys mapping
 " *********************************************
 " Opening current file in external app
 nmap <silent> <leader>oc :exec 'silent !open -a "Google Chrome" % &'<CR><CR>
 nmap <silent> <leader>oa :exec 'silent !atom . \| atom '.'%'.':'.line(".")<CR>
 
+" Copying current file name
+map <leader>c :let @+=expand("%").":".line(".")<CR> :echom "file path copied: ".@%.":".line(".") <CR>
+
 " Biding key for Debuging - d[*]
 map <leader>dp obinding.pry<ESC> :w<cr>
-map <leader>ds a, :js, :selenium_chrome<ESC> :w<cr>
-map <leader>dsd :%s/\,\ :js,\ :selenium_chrome//g<cr> :w<cr>
 map <leader>dsa osave_and_open_page<ESC> :w<cr>
 
 " Terminal mode
@@ -39,25 +21,11 @@ if has("nvim")
   tnoremap <c-l> <c-\><c-n><c-w>l
 endif
 
-" Copying current file name
-map <leader>c :let @+=expand("%").":".line(".")<CR> :echom "file path copied: ".@%.":".line(".") <CR>
-
-" Sourcing vimrc and Installing vundle
-map <leader>vi :Sovimrc<CR> \| :PluginInstall<CR>
-
-" Resizing Split Window
-nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
-nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
-
 " *********************************************
 " Custom Commands
 " *********************************************
-" Opening vimrc and source vimrc
+" Opening vimrc
 command! Vimrc e ~/.dotfiles/vimrc
-command! Sovimrc so ~/.vimrc
-
-" Showing symbol name under the cursor
-command! Symbol echo synIDattr(synID(line("."), col("."), 1), "name")
 
 " Easy Expansion of the Active File Directory
 " :e %% or ,ew
@@ -66,17 +34,4 @@ map <leader>ew :e %%
 map <leader>es :sp %%
 map <leader>ev :vsp %%
 map <leader>et :tabe %%
-" *********************************************
-" Highlighting
-" *********************************************
-" Search
-"" highlight in cursor search, this line must be placed below colorscheme setup
-" hi! link IncSearch MatchParen
-" hi IncSearch cterm=bold gui=bold ctermbg=red ctermfg=white guibg=#d70000 guifg=#d7d7af
-
-" *********************************************
-" Plugin Cusomization
-" *********************************************
-" Nerdtree git
-let g:NERDTreeIndicatorMapCustom = { "Untracked" : "🟊" , "Dirty": "✘", "Modified"  : "🟓"}
 

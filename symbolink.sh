@@ -8,6 +8,9 @@ ln -s ~/.vim ~/.config/nvim
 rm -f ~/.config/nvim/init.vim
 ln -s ~/.vimrc ~/.config/nvim/init.vim
 
+rm -f ~/.screenrc
+ln -s ~/.dotfiles/screenrc ~/.screenrc
+
 rm -f ~/.aliases
 ln -s ~/.dotfiles/aliases ~/.aliases
 

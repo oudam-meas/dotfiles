@@ -1,7 +1,12 @@
 " *********************************************
-" Quickfix
+" General mapping
 " *********************************************
-" nmap <leader>q :ccl<cr>
+" Close buffer
+command! BD bp\|bd #<CR>
+command! Vimrc e ~/.dotfiles/vimrc
+" Close quickfix
+nmap <leader>q :ccl<CR>
+
 " *********************************************
 " Deoplete
 " *********************************************
@@ -12,6 +17,10 @@ call deoplete#custom#option('auto_complete_delay', 200)
 " Navigating auto-complente with tab and S-tab
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" *********************************************
+" Vim Factory
+" *********************************************
+cnoreabbrev ff Rfactory
 
 " *********************************************
 " Vim Test
@@ -44,6 +53,11 @@ let NERDTreeStatusline = "%{fugitive#head()}"
 let NERDTreeIgnore = ['\.envrc','yarn-error.log', 'rspec_examples.txt', '\.swp$', '\.DS_Store$', '\.ebextensions', '\.git$', '\.bundle$', '.keep$', '^tags', 'tags.lock$', 'tags.temp$']
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
+
+" *********************************************
+" NERDTree GIT
+" *********************************************
+let g:NERDTreeIndicatorMapCustom = { "Untracked" : "🟊" , "Dirty": "✘", "Modified"  : "🟓"}
 
 " *********************************************
 " Ack - Search
@@ -136,8 +150,7 @@ let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s' " Use ag in Ct
 " *********************************************
 " Airline
 " *********************************************
-" let g:airline_theme='violet'
-" let g:airline_theme='one'
+let g:airline_theme='bubblegum' " use specific theme
 let g:airline#extensions#tagbar#enabled = 0
 let g:airline_powerline_fonts = 1
 let g:airline_section_b = ""  " hide section b (git related)
@@ -153,7 +166,6 @@ function! InitAirline()
   " let g:airline_section_x = airline#section#create(['branch', 'ffenc'])
   " let g:airline_section_y = ""
 endfunction
-
 
 autocmd VimEnter * call InitAirline()
 
@@ -210,3 +222,7 @@ autocmd FileType ruby nmap <buffer> <F2> :w<CR><Plug>(seeing_is_believing-mark)
 autocmd FileType ruby nmap <buffer> <F3> :w<CR><Plug>(seeing_is_believing-clean)
 autocmd FileType ruby nmap <buffer> <F4> :w<CR><Plug>(seeing_is_believing-run)
 
+" *********************************************
+" Vim-notes
+" *********************************************
+let g:notes_directories = ['~/Documents/notes']

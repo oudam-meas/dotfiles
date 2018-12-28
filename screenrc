@@ -1,0 +1,4 @@
+escape ^Tt
+hardstatus off
+hardstatus alwayslastline
+hardstatus string '%{= kG}%{= kw}%?%-Lw%?%{r}(%{W}screen ❖ %S*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}'
