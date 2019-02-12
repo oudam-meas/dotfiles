@@ -1,9 +1,8 @@
 session_root "~/projects/bongloy-core"
 
-if initialize_session "Bongloy Core"; then
+if initialize_session "bongloy"; then
 
   new_window "commands"
-  run_cmd "screen -S server"
   run_cmd "./bin/rails s"
 
   new_window "vim Bongloy"

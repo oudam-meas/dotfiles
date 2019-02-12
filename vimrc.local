@@ -1,9 +1,19 @@
 " *********************************************
+" Custom Syntax
+" *********************************************
+au BufRead,BufNewFile *.tmate.conf setfiletype ruby
+au BufRead,BufNewFile sshd_config setfiletype ruby
+
+" *********************************************
 " Keys mapping
 " *********************************************
 " Opening current file in external app
 nmap <silent> <leader>oc :exec 'silent !open -a "Google Chrome" % &'<CR><CR>
 nmap <silent> <leader>oa :exec 'silent !atom . \| atom '.'%'.':'.line(".")<CR>
+
+" set spell check on
+command! Spell setlocal spell spelllang=en_us
+command! SpellOff setlocal spell nospell
 
 " Copying current file name
 map <leader>c :let @+=expand("%").":".line(".")<CR> :echom "file path copied: ".@%.":".line(".") <CR>

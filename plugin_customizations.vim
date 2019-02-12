@@ -4,6 +4,7 @@
 " Close buffer
 command! BD bp\|bd #<CR>
 command! Vimrc e ~/.dotfiles/vimrc
+
 " Close quickfix
 nmap <leader>q :ccl<CR>
 
@@ -53,11 +54,6 @@ let NERDTreeStatusline = "%{fugitive#head()}"
 let NERDTreeIgnore = ['\.envrc','yarn-error.log', 'rspec_examples.txt', '\.swp$', '\.DS_Store$', '\.ebextensions', '\.git$', '\.bundle$', '.keep$', '^tags', 'tags.lock$', 'tags.temp$']
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
-
-" *********************************************
-" NERDTree GIT
-" *********************************************
-let g:NERDTreeIndicatorMapCustom = { "Untracked" : "🟊" , "Dirty": "✘", "Modified"  : "🟓"}
 
 " *********************************************
 " Ack - Search
@@ -158,7 +154,9 @@ let g:airline_section_b = ""  " hide section b (git related)
 " Changing 'modified' character to red 
 let g:airline_detect_modified = 0 "if you're sticking the + in section_c you probably want to disable detection
 function! InitAirline()
-  call airline#parts#define_raw('modified', '%{&modified ? " " : ""}')
+  " call airline#parts#define_raw('modified', '%{&modified ? " " : ""}')
+  " call airline#parts#define_raw('modified', '%{&modified ? " 🞊" : ""}')
+  call airline#parts#define_raw('modified', '%{&modified ? "【✚" : ""}')
   call airline#parts#define_accent('modified', 'red')
   let g:airline_section_c = airline#section#create(['%f', 'modified'])
   " let g:airline_section_a = airline#section#create(['mode'])

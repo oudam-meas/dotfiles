@@ -10,7 +10,6 @@ alias vim=$NVIM_PATH
 alias vim-ess='vi -u ~/work/Research/practical_vim/code/essential.vim'
 alias practical_vim='cd ~/work/Research/practical_vim/code'
 
-
 # ls, the common ones I use a lot shortened for rapid fire usage
 alias l='ls -lFh'     #size,show type,human readable
 alias la='ls -lAFh'   #long list,show almost all,show type,human readable
@@ -22,6 +21,7 @@ alias tmux a='tmux attach'
 alias dup='$DOTFILES/sync.sh'
 alias sym='~/dotfiles/symbolink.sh'
 alias dotfiles='nvim ~/.dotfiles'
+alias notes='cd ~/Documents/notes/ && vim'
 alias so='source'
 alias js='jobs'
 alias fgs='fg %./bin/rails'
@@ -48,3 +48,16 @@ alias rspeclf='rspec --only-failures'
 
 # alias google-chrome='open -a Google\ Chrome --args --disable-web-security'
 alias brewery='brew update && brew upgrade && brew cleanup'
+
+# Rails
+alias anti='i18n-tasks normalize | i18n-tasks missing | i18n-tasks unused'
+
+#ssh
+alias ssh="TERM=xterm-256color ssh"
+
+#tmux
+export BONGLOY_PATH=~/projects/bongloy-core
+alias tmux_bongloy='cd $BONGLOY_PATH && rm -f /tmp/tbs && tmux -S /tmp/tbs new -s bongloy && chgrp everyone /tmp/tbs'
+
+alias show_inet="ifconfig | grep 'inet ' | grep -v 'inet 127'"
+alias inet="show_inet && show_inet | pbcopy"

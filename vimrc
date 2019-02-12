@@ -141,10 +141,16 @@ let g:ruby_path = system('echo $HOME/.rbenv/shims')
 " highlight Comment cterm=italic
 
 " vim-one
-" let g:one_allow_italics = 1
+" The first two lines forces true colour on, since vim can’t detect it within tmux.
+" The last line on its own will work outside tmux, but result in no colours inside tmux.
+let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
+
+" let g:one_allow_italics = 1
 set background=dark
 colorscheme one
+highlight LineNr guifg=grey
 
 " *********************************************
 " Keys mapping
