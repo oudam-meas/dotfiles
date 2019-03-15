@@ -61,3 +61,4 @@ alias tmux_bongloy='cd $BONGLOY_PATH && rm -f /tmp/tbs && tmux -S /tmp/tbs new -
 
 alias show_inet="ifconfig | grep 'inet ' | grep -v 'inet 127'"
 alias inet="show_inet && show_inet | pbcopy"
+alias ctags="`brew --prefix`/bin/ctags"

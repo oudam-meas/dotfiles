@@ -17,8 +17,8 @@ ln -s ~/.dotfiles/aliases ~/.aliases
 rm -f ~/.zshrc
 ln -f -s ~/.dotfiles/zshrc ~/.zshrc
 
-# rm -f ~/.tmux.conf
-# ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
+rm -f ~/.tmux.conf
+ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 rm -f ~/.tmux.conf.local
 ln -s ~/.dotfiles/tmux.conf.local ~/.tmux.conf.local
 
@@ -66,3 +66,6 @@ ln -s ~/.dotfiles/tmux-layouts/aws-cloud-guru.session.sh ~/.tmux-layouts/aws-clo
 mkdir -p ~/.tmux-layouts/
 rm -f ~/.tmux-layouts/rails-books.session.sh
 ln -s ~/.dotfiles/tmux-layouts/rails-books.session.sh ~/.tmux-layouts/rails-books.session.sh
+
+rm -f ~/.ssh/config
+ln -s ~/.dotfiles/ssh_config ~/.ssh/config

@@ -58,6 +58,10 @@ let NERDTreeMinimalUI=1
 " *********************************************
 " Ack - Search
 " *********************************************
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
 " Abbreviating Ag to Ack!
 cnoreabbrev Ag Ack!
 
@@ -122,7 +126,6 @@ let g:ctrlp_clear_cache_on_exit = 0
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
 if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
   let g:ctrlp_show_hidden = 1
   let g:ctrlp_prompt_mappings = { 'PrtInsert("c")':       ['<c-p>']}
   let g:ctrlp_match_window = 'max:20'         "max items in matched list
