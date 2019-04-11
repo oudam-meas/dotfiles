@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-$LOAD_PATH << '~/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/awesome_print-1.8.0/lib'
+$LOAD_PATH << '~/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/awesome_print-1.8.0/lib/'
 require 'awesome_print'
 require 'irb/ext/save-history'
-IRB.conf[:SAVE_HISTORY] = 1000
+IRB.conf[:SAVE_HISTORY] = 200
 IRB.conf[:HISTORY_FILE] = '~/.irb-history'
 # require 'irbtools'
 # require 'irbtools/more'

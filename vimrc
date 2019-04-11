@@ -35,7 +35,7 @@ Plugin 'rakr/vim-one'
 Plugin 'rizzatti/dash.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'simeji/winresizer'                " To enter resizing mode : ctrl+e, and exit by enter
-Plugin 'stephpy/vim-yaml'
+" Plugin 'stephpy/vim-yaml'
 Plugin 'szw/vim-maximizer'
 Plugin 't9md/vim-ruby-xmpfilter'
 Plugin 'tmhedberg/SimpylFold'
@@ -208,3 +208,7 @@ endif
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
+
+au! BufNewFile,BufReadPost *.{yaml,yml,config} set filetype=yaml foldmethod=indent
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+

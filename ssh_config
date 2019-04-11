@@ -3,3 +3,8 @@ Host mesa
   Port 22
   User pair
 
+Host vpnmumbai
+  HostName 13.234.164.6
+  Port 22
+  User ubuntu
+  IdentityFile ~/.ssh/pems/macbook-mumbai.pem

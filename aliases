@@ -51,6 +51,7 @@ alias brewery='brew update && brew upgrade && brew cleanup'
 
 # Rails
 alias anti='i18n-tasks normalize | i18n-tasks missing | i18n-tasks unused'
+alias ss='spring stop'
 
 #ssh
 alias ssh="TERM=xterm-256color ssh"
@@ -62,3 +63,4 @@ alias tmux_bongloy='cd $BONGLOY_PATH && rm -f /tmp/tbs && tmux -S /tmp/tbs new -
 alias show_inet="ifconfig | grep 'inet ' | grep -v 'inet 127'"
 alias inet="show_inet && show_inet | pbcopy"
 alias ctags="`brew --prefix`/bin/ctags"
+alias spoof="spoof-mac.py"
