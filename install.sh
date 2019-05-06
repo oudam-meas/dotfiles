@@ -1,15 +1,21 @@
-brew install curl git the_silver_searcher zsh zsh-completions ctags
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 
-chsh -s $(which zsh) # chsh -s /bin/zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+brew uninstall neovim
+brew install tmux diff-so-fancy curl git the_silver_searcher zsh zsh-completions ctags node rbenv reattach-to-user-namespace
 
-brew install pip3
-brew install vim
-brew install neovim --tag=master
+brew install --HEAD neovim
 
-git clone git@github.com:outdam/dotfiles.git ~/.dotfiles
+npm install neovim
+
+rbenv init
+brew upgrade rbenv ruby-build
+
+pip3 install --user pynvim
 
 ~/.dotfiles/symbolink.sh
 
+rm -rf ~/.vim/bundle/Vundle.vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 nvim +PluginInstall +qall
+
+tmux source-file ~/.tmux.conf

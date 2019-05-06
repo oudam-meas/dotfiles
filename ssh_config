@@ -1,7 +1,7 @@
-Host mesa
-  HostName 10.0.10.198
-  Port 22
-  User pair
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_rsa
 
 Host vpnmumbai
   HostName 13.234.164.6
