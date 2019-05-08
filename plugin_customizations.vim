@@ -226,4 +226,4 @@ autocmd FileType ruby nmap <buffer> <F4> :w<CR><Plug>(seeing_is_believing-run)
 " *********************************************
 " Vim-notes
 " *********************************************
-let g:notes_directories = ['~/Documents/notes']
+let g:notes_directories = ['~/Documents/VimNotes']
