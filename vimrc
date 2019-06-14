@@ -3,74 +3,81 @@ set nocompatible
 " *********************************************
 " Vundle Plugins
 " *********************************************
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'Yggdroot/indentLine'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'bogado/file-line'
-Plugin 'christoomey/vim-rfactory'
-Plugin 'christoomey/vim-sort-motion'      " motion: gs
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'janko-m/vim-test'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'junegunn/vim-easy-align'          " motion: ga
-Plugin 'kana/vim-operator-user'
-Plugin 'kana/vim-textobj-entire'          " object: e
-Plugin 'kana/vim-textobj-line'            " object: l
-Plugin 'kana/vim-textobj-user'            " requires bt vim-textobj-quotes
-Plugin 'kristijanhusak/vim-carbon-now-sh'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'machakann/vim-highlightedyank'
-Plugin 'majutsushi/tagbar'
-Plugin 'mileszs/ack.vim'
-Plugin 'ngmy/vim-rubocop'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'rakr/vim-one'
-Plugin 'rizzatti/dash.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'simeji/winresizer'                " To enter resizing mode : ctrl+e, and exit by enter
-" Plugin 'stephpy/vim-yaml'
-Plugin 'szw/vim-maximizer'
-Plugin 't9md/vim-ruby-xmpfilter'
-Plugin 'tmhedberg/SimpylFold'
-Plugin 'tmux-plugins/vim-tmux-focus-events'
-Plugin 'tpope/vim-abolish'
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-commentary'             " gc{motion}, v_gc, {number}gcc
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-repeat'                 " 'solve repeated the last native command inside that map, rather than the map as a whole'
-Plugin 'tpope/vim-rhubarb'
-Plugin 'tpope/vim-surround'               " cs, ds, ys + {motion}
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'wellle/targets.vim'
-Plugin 'wellle/visual-split.vim'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-notes'
-
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'VundleVim/Vundle.vim'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Yggdroot/indentLine'
+Plug 'airblade/vim-gitgutter'
+Plug 'bogado/file-line'
+Plug 'christoomey/vim-rfactory'
+Plug 'christoomey/vim-sort-motion'      " motion: gs
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'janko-m/vim-test'
+Plug 'ternjs/tern_for_vim'
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+Plug 'elzr/vim-json'
+Plug 'pangloss/vim-javascript'
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/vim-easy-align'          " motion: ga
+Plug 'kana/vim-operator-user'
+Plug 'kana/vim-textobj-entire'          " object: e
+Plug 'kana/vim-textobj-line'            " object: l
+Plug 'kana/vim-textobj-user'            " requires bt vim-textobj-quotes
+Plug 'kristijanhusak/vim-carbon-now-sh'
+Plug 'leafgarland/typescript-vim'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'machakann/vim-highlightedyank'
+Plug 'majutsushi/tagbar'
+Plug 'mileszs/ack.vim'
+Plug 'ngmy/vim-rubocop'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'rakr/vim-one'
+Plug 'rizzatti/dash.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'simeji/winresizer'                " To enter resizing mode : ctrl+e, and exit by enter
+Plug 'szw/vim-maximizer'
+Plug 't9md/vim-ruby-xmpfilter'
+Plug 'tmhedberg/SimpylFold'
+Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-commentary'             " gc{motion}, v_gc, {number}gcc
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-repeat'                 " 'solve repeated the last native command inside that map, rather than the map as a whole'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-surround'               " cs, ds, ys + {motion}
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'wellle/targets.vim'
+Plug 'wellle/visual-split.vim'
+" Plug 'xolox/vim-misc'
+" Plug 'xolox/vim-notes'
+Plug 'hashivim/vim-terraform'
+Plug 'derekwyatt/vim-scala'
+Plug 'mattn/emmet-vim'
 " deoplete dependencies for normal vim
 if !has('nvim')
-  Plugin 'roxma/nvim-yarp'
-  Plugin 'roxma/vim-hug-neovim-rpc'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
 " Code Linter
 if has('nvim')
-  Plugin 'neomake/neomake'
+  Plug 'neomake/neomake'
 else
-  Plugin 'w0rp/ale'
+  Plug 'w0rp/ale'
 end
 
-call vundle#end()
+call plug#end()
+
+" call vundle#end()
 
 " *********************************************
 " General Configuaraion
@@ -130,6 +137,8 @@ set wildignore=*.o,*.obj,*~       " Stuff to ignore when tab completing
 
 " Specifying Ruby path
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
+
+let g:python3_host_prog = '/usr/local/bin/python3'
 
 " Colorscheme
 
@@ -211,4 +220,3 @@ endif
 
 au! BufNewFile,BufReadPost *.{yaml,yml,config} set filetype=yaml foldmethod=indent
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-

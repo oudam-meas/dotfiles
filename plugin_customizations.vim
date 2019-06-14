@@ -9,15 +9,37 @@ command! Vimrc e ~/.dotfiles/vimrc
 nmap <leader>q :ccl<CR>
 
 " *********************************************
+" Vim-json
+" *********************************************
+let g:vim_json_syntax_conceal = 0
+
+" *********************************************
+" Vim-terraform
+" *********************************************
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1
+
+" *********************************************
 " Deoplete
 " *********************************************
-" Enable at startup
+" general config
 let g:deoplete#enable_at_startup = 1
-call deoplete#custom#option('auto_complete_delay', 200)
-
+" call deoplete#custom#option('auto_complete_delay', 200)
 " Navigating auto-complente with tab and S-tab
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" *********************************************
+" deoplete-ternjs
+" *********************************************
+" " Whether to include the types of the completions in the result data. Default: 0
+let g:deoplete#sources#ternjs#types = 1
+"Add extra filetypes
+let g:deoplete#sources#ternjs#filetypes = [
+                \ 'jsx',
+                \ 'javascript.jsx',
+                \ 'vue'
+                \ ]
 " *********************************************
 " Vim Factory
 " *********************************************
@@ -54,7 +76,7 @@ let NERDTreeStatusline = "%{fugitive#head()}"
 let NERDTreeIgnore = ['\.envrc','yarn-error.log', 'rspec_examples.txt', '\.swp$', '\.DS_Store$', '\.git$', '\.bundle$', '.keep$', '^tags', 'tags.lock$', 'tags.temp$']
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
-
+let g:NERDTreeNodeDelimiter = "\u00a0" " hide ^G
 " *********************************************
 " Ack - Search
 " *********************************************
@@ -96,6 +118,7 @@ endfunction
 " *********************************************
 if has("nvim")
   " Using Neomake
+  " let g:neomake_javascript_enabled_makers = ['eslint']
   let g:neomake_serialize = 1
   let g:neomake_serialize_abort_on_error = 1
   let g:neomake_place_signs=0                 " Hide sign on sing column
@@ -227,3 +250,4 @@ autocmd FileType ruby nmap <buffer> <F4> :w<CR><Plug>(seeing_is_believing-run)
 " Vim-notes
 " *********************************************
 let g:notes_directories = ['~/Documents/VimNotes']
+

@@ -12,6 +12,9 @@ source ~/.zshrc
 
 ln -s ~/.dotfiles/vimrc ~/.vimrc
 
+rm -rf ~/.tern-project
+ln -s ~/.dotfiles/tern-project ~/.tern-project
+
 rm -rf ~/.config/nvim/
 mkdir ~/.vim
 ln -s ~/.vim ~/.config/nvim
@@ -24,8 +27,8 @@ ln -s ~/.dotfiles/screenrc ~/.screenrc
 
 rm -f ~/.tmux.conf
 ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
-rm -f ~/.tmux.conf.local
-ln -s ~/.dotfiles/tmux.conf.local ~/.tmux.conf.local
+# rm -f ~/.tmux.conf.local
+# ln -s ~/.dotfiles/tmux.conf.local ~/.tmux.conf.local
 
 rm -f ~/.agignore
 ln -s ~/.dotfiles/agignore ~/.agignore

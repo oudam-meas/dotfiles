@@ -8,3 +8,10 @@ Host vpnmumbai
   Port 22
   User ubuntu
   IdentityFile ~/.ssh/pems/macbook-mumbai.pem
+
+Host terraform
+  HostName 13.54.237.21
+  Port 22
+  User ec2-user
+  IdentityFile ~/.ssh/pems/mstdam-ec2.pem
+

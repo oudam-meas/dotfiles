@@ -114,3 +114,7 @@ Procfile.local
 ###########
 *@neomake*
 
+# Terraform #
+# ###########
+.terraform/
+*.tfstate
