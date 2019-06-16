@@ -14,6 +14,16 @@ nmap <leader>q :ccl<CR>
 let g:vim_json_syntax_conceal = 0
 
 " *********************************************
+" Emmet-vim
+" *********************************************
+" let g:user_emmet_leader_key='<Tab>'
+let g:user_emmet_settings = {
+  \  'javascript.jsx' : {
+    \      'extends' : 'jsx',
+    \  },
+  \}
+
+" *********************************************
 " Vim-terraform
 " *********************************************
 let g:terraform_align=1
@@ -24,7 +34,6 @@ let g:terraform_fmt_on_save=1
 " *********************************************
 " general config
 let g:deoplete#enable_at_startup = 1
-" call deoplete#custom#option('auto_complete_delay', 200)
 " Navigating auto-complente with tab and S-tab
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -40,6 +49,7 @@ let g:deoplete#sources#ternjs#filetypes = [
                 \ 'javascript.jsx',
                 \ 'vue'
                 \ ]
+
 " *********************************************
 " Vim Factory
 " *********************************************
@@ -77,6 +87,15 @@ let NERDTreeIgnore = ['\.envrc','yarn-error.log', 'rspec_examples.txt', '\.swp$'
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
 let g:NERDTreeNodeDelimiter = "\u00a0" " hide ^G
+
+" *********************************************
+" NERDTree Syntax Highlighting
+" *********************************************
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
+let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
+let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
 " *********************************************
 " Ack - Search
 " *********************************************
@@ -226,6 +245,7 @@ map <leader>I :IndentLinesToggle<CR>
 " Vim Better Whitespace
 " *********************************************
 let g:strip_whitespace_on_save=1
+let g:strip_whitespace_confirm=0
 let g:better_whitespace_filetypes_blacklist=['vimrc']
 
 " *********************************************

@@ -118,3 +118,8 @@ Procfile.local
 # ###########
 .terraform/
 *.tfstate
+
+.vscode
+
+.idea/
+.idea/*

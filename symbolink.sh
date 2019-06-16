@@ -15,6 +15,9 @@ ln -s ~/.dotfiles/vimrc ~/.vimrc
 rm -rf ~/.tern-project
 ln -s ~/.dotfiles/tern-project ~/.tern-project
 
+rm -rf ~/.ctags
+ln -s ~/.dotfiles/ctags ~/.ctags
+
 rm -rf ~/.config/nvim/
 mkdir ~/.vim
 ln -s ~/.vim ~/.config/nvim

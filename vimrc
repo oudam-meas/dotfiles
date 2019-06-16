@@ -21,6 +21,10 @@ Plug 'ternjs/tern_for_vim'
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'elzr/vim-json'
 Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'romainl/ctags-patterns-for-javascript'
+Plug 'jparise/vim-graphql'
+Plug 'lepture/vim-velocity'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align'          " motion: ga
 Plug 'kana/vim-operator-user'
@@ -38,6 +42,8 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'rakr/vim-one'
 Plug 'rizzatti/dash.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" Plug 'ryanoasis/vim-devicons'
 Plug 'simeji/winresizer'                " To enter resizing mode : ctrl+e, and exit by enter
 Plug 'szw/vim-maximizer'
 Plug 't9md/vim-ruby-xmpfilter'
@@ -57,11 +63,15 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'wellle/targets.vim'
 Plug 'wellle/visual-split.vim'
-" Plug 'xolox/vim-misc'
-" Plug 'xolox/vim-notes'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-notes'
 Plug 'hashivim/vim-terraform'
 Plug 'derekwyatt/vim-scala'
 Plug 'mattn/emmet-vim'
+ " Plug 'prettier/vim-prettier', {
+ "   \ 'do': 'npm install',
+ "   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+
 " deoplete dependencies for normal vim
 if !has('nvim')
   Plug 'roxma/nvim-yarp'
