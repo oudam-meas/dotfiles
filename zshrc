@@ -12,6 +12,7 @@ export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 export PATH="/usr/local/opt/node@10/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home
 
 # If you come from bash you might have to change your $PATH.  export
 export EDITOR=nvim

@@ -60,6 +60,7 @@ vendor/ruby
 ########
 .nvmrc
 **/flow-typed/npm
+node_modules/
 
 # Erlang #
 ##########
