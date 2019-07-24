@@ -59,8 +59,11 @@ alias ssh="TERM=xterm-256color ssh"
 #tmux
 export BONGLOY_PATH=~/projects/bongloy-core
 alias tmux_bongloy='cd $BONGLOY_PATH && rm -f /tmp/tbs && tmux -S /tmp/tbs new -s bongloy && chgrp everyone /tmp/tbs'
+# export SESSION="vscode`pwd | md5`"
+# alias code_tmux='tmux attach-session -d -t $SESSION || tmux new-session -s $SESSION'
 
 alias show_inet="ifconfig | grep 'inet ' | grep -v 'inet 127'"
 alias inet="show_inet && show_inet | pbcopy"
 alias ctags="`brew --prefix`/bin/ctags"
 alias spoof="spoof-mac.py"
+

@@ -83,7 +83,7 @@ let g:NERDTreeMapOpenSplit = 'sp'
 let g:NERDTreeMapOpenVSplit = 'sv'
 let NERDTreeHighlightCursorline=1
 let NERDTreeStatusline = "%{fugitive#head()}"
-let NERDTreeIgnore = ['\.editorconfig','node_modules$','\.idea$','\.envrc','yarn-error.log', 'rspec_examples.txt', '\.swp$', '\.DS_Store$', '\.git$', '\.bundle$', '.keep$', '^tags', 'tags.lock$', 'tags.temp$']
+let NERDTreeIgnore = ['\.settings$', '\.editorconfig','node_modules$','\.idea$','\.envrc','yarn-error.log', 'rspec_examples.txt', '\.swp$', '\.DS_Store$', '\.git$', '\.bundle$', '.keep$', '^tags', 'tags.lock$', 'tags.temp$']
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
 let g:NERDTreeNodeDelimiter = "\u00a0" " hide ^G
@@ -224,6 +224,23 @@ highlight! link HighlightedyankRegion Visual
 set tags=./tags
 au FileType gitcommit,gitrebase let g:gutentags_enabled=0
 nmap <F8> :TagbarToggle<CR>
+
+let g:tagbar_type_javascript = {
+      \ 'ctagstype': 'javascript',
+      \ 'kinds': [
+      \ 'A:arrays',
+      \ 'P:properties',
+      \ 'T:tags',
+      \ 'O:objects',
+      \ 'G:generator functions',
+      \ 'F:functions',
+      \ 'C:constructors/classes',
+      \ 'M:methods',
+      \ 'V:variables',
+      \ 'I:imports',
+      \ 'E:exports',
+      \ 'S:styled components'
+      \ ]}
 
 " *********************************************
 " Vim Easy Align

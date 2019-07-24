@@ -8,7 +8,8 @@ ln -f -s ~/.dotfiles/zshrc ~/.zshrc
 rm -f ~/.aliases
 ln -s ~/.dotfiles/aliases ~/.aliases
 
-source ~/.zshrc
+rm -f ~/bin/code_tmux_shell
+ln -s ~/.dotfiles/code_tmux_shell ~/bin/code_tmux_shell
 
 ln -s ~/.dotfiles/vimrc ~/.vimrc
 
