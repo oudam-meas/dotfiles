@@ -29,6 +29,7 @@ export TF_CLI_ARGS_apply="-auto-approve"
 export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
 
 eval "$(rbenv init -)"
+eval "$(ssh-agent -s)"
 
 source $ZSH/oh-my-zsh.sh
 

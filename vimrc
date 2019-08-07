@@ -43,7 +43,6 @@ Plug 'rakr/vim-one'
 Plug 'rizzatti/dash.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-" Plug 'ryanoasis/vim-devicons'
 Plug 'simeji/winresizer'                " To enter resizing mode : ctrl+e, and exit by enter
 Plug 'szw/vim-maximizer'
 Plug 't9md/vim-ruby-xmpfilter'
@@ -68,6 +67,10 @@ Plug 'xolox/vim-notes'
 Plug 'hashivim/vim-terraform'
 Plug 'derekwyatt/vim-scala'
 Plug 'mattn/emmet-vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'godlygeek/tabular' " tabular must come before vim-markdown
+Plug 'plasticboy/vim-markdown'
+Plug 'moll/vim-bbye'
  " Plug 'prettier/vim-prettier', {
  "   \ 'do': 'npm install',
  "   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }

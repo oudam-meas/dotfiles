@@ -1,13 +1,14 @@
 " *********************************************
 " General mapping
 " *********************************************
-" Close buffer
-command! BD bp\|bd #<CR>
-command! Vimrc e ~/.dotfiles/vimrc
-
 " Close quickfix
 nmap <leader>q :ccl<CR>
 
+" *********************************************
+" Vim-bbye Buffer Bye
+" *********************************************
+" https://github.com/moll/vim-bbye
+"
 " *********************************************
 " Vim-json
 " *********************************************
@@ -60,7 +61,7 @@ cnoreabbrev ff Rfactory
 " *********************************************
 let test#strategy = "dispatch"            " Using Dispatch strategy. Plugin 'tpope/vim-dispatch' is required'
 let test#ruby#bundle_exec = 0
-let test#enabled_runners = ["ruby#rspec"] " select which runners to load by default, intead load all
+" let test#enabled_runners = ["ruby#rspec"] " select which runners to load by default, intead load all
 nmap <silent> <leader>. :TestLast<CR>
 nmap <silent> <leader>A :TestSuite<CR>
 nmap <silent> <leader>R :TestFile -strategy=basic<CR>
@@ -288,3 +289,25 @@ autocmd FileType ruby nmap <buffer> <F4> :w<CR><Plug>(seeing_is_believing-run)
 " *********************************************
 let g:notes_directories = ['~/Documents/VimNotes']
 
+" *********************************************
+" vim-markdown
+" *********************************************
+let g:vim_markdown_conceal = 0
+
+"" *********************************************
+" markdown-preview
+" *********************************************
+" set to 1, nvim will open the preview window after entering the markdown buffer
+" default: 0
+let g:mkdp_auto_start = 0
+
+" set to 1, the nvim will auto close current preview window when change
+" from markdown buffer to another buffer
+" default: 1
+let g:mkdp_auto_close = 1
+
+" set to 1, the vim will refresh markdown when save the buffer or
+" leave from insert mode, default 0 is auto refresh markdown as you edit or
+" move the cursor
+" default: 0
+let g:mkdp_refresh_slow = 0

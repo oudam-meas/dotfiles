@@ -35,8 +35,9 @@ endif
 " *********************************************
 " Custom Commands
 " *********************************************
-" Opening vimrc
+" vimrc file related
 command! Vimrc e ~/.dotfiles/vimrc
+command! SoVimrc so ~/.vimrc
 
 " Easy Expansion of the Active File Directory
 " :e %% or ,ew
@@ -46,3 +47,7 @@ map <leader>es :sp %%
 map <leader>ev :vsp %%
 map <leader>et :tabe %%
 
+" replace currently selected text with default register
+" without yanking it
+vnoremap <leader>p "0p
+vnoremap <leader>P "0P
