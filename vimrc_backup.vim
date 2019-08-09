@@ -65,8 +65,6 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'                 " 'solve repeated the last native command inside that map, rather than the map as a whole'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'               " cs, ds, ys + {motion}
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'wellle/targets.vim'
 Plug 'wellle/visual-split.vim'
 Plug 'xolox/vim-misc'

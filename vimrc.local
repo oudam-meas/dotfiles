@@ -1,3 +1,14 @@
+au! BufNewFile,BufReadPost *.{yaml,yml,config} set filetype=yaml foldmethod=indent
+
+map <leader>' :%s/'\([^']*\)'/"\1"/gc<CR> " Converting ' to "
+
+" ** RUBY **
+" Converting old hash to new Ruby 1.9 syntax
+map <leader>: :%s/:\(\w\+\)\(\s*=>\s*\)/\1: /gc<CR>
+" Running Rubocop with auto-correct
+let g:vimrubocop_keymap = 0
+map <leader>ac :w<CR> :RuboCop --auto-correct %<CR><leader>q
+
 " set clipboard=unnamed " share clipboard with os
 " *********************************************
 " Custom Syntax
@@ -51,3 +62,4 @@ map <leader>et :tabe %%
 " without yanking it
 vnoremap <leader>p "0p
 vnoremap <leader>P "0P
+
