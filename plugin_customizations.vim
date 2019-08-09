@@ -137,13 +137,15 @@ endfunction
 " Lint - Neomake or Ale
 " *********************************************
 if has("nvim")
-  " Using Neomake
-  " let g:neomake_javascript_enabled_makers = ['eslint']
+  " Language specific
   let g:neomake_serialize = 1
   let g:neomake_serialize_abort_on_error = 1
   let g:neomake_place_signs=0                 " Hide sign on sing column
   call neomake#configure#automake('w')        " When writing a buffer (no delay).
   autocmd! BufReadPost,BufWritePost * Neomake " Run NeoMake on read and write operations
+
+  let g:neomake_javascript_eslint_exe = system('PATH=$(npm bin):$PATH && which eslint | tr -d "\n"')
+  let g:neomake_javascript_enabled_makers = ['eslint']
 
   " Disable inherited syntastic
   let g:syntastic_mode_map = {
@@ -192,7 +194,8 @@ let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s' " Use ag in Ct
 " *********************************************
 " Airline
 " *********************************************
-let g:airline_theme='bubblegum' " use specific theme
+" let g:airline_theme='bubblegum' " use specific theme
+let g:airline_theme='oceanicnext'
 let g:airline#extensions#tagbar#enabled = 0
 let g:airline_powerline_fonts = 1
 let g:airline_section_b = ""  " hide section b (git related)

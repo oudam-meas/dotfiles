@@ -1,14 +1,10 @@
-VIM_PATH='/usr/local/bin/vim'
-alias v=$VIM_PATH
-alias vi=$VIM_PATH
+# VIM_PATH='/usr/local/bin/vim'
+# alias v=$VIM_PATH
+# alias vi=$VIM_PATH
 
 #NVIM_PATH='/Users/measoutdam/nvim-osx64/bin/nvim'
-NVIM_PATH='/usr/local/bin/nvim'
-alias vim=$NVIM_PATH
-
-# Practical Vim
-alias vim-ess='vi -u ~/work/Research/practical_vim/code/essential.vim'
-alias practical_vim='cd ~/work/Research/practical_vim/code'
+# NVIM_PATH='/usr/local/bin/nvim'
+alias vim=nvim
 
 # ls, the common ones I use a lot shortened for rapid fire usage
 alias l='ls -lFh'     #size,show type,human readable
