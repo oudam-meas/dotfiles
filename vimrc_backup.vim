@@ -7,9 +7,21 @@ set nocompatible
 " call vundle#begin()
 call plug#begin('~/.vim/plugged')
 
+" *** UI
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'scrooloose/nerdtree'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" *** Fugitive
+Plug 'tpope/vim-fugitive'
+
+" *** Editing
+Plug 'tpope/vim-commentary'             " gc{motion}, v_gc, {number}gcc
+
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'VundleVim/Vundle.vim'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'bogado/file-line'
@@ -48,8 +60,6 @@ Plug 'ngmy/vim-rubocop'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'rakr/vim-one'
 Plug 'rizzatti/dash.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'simeji/winresizer'                " To enter resizing mode : ctrl+e, and exit by enter
 Plug 'szw/vim-maximizer'
 Plug 't9md/vim-ruby-xmpfilter'
@@ -57,10 +67,8 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-commentary'             " gc{motion}, v_gc, {number}gcc
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'                 " 'solve repeated the last native command inside that map, rather than the map as a whole'
 Plug 'tpope/vim-rhubarb'

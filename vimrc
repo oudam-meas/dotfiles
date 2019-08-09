@@ -18,6 +18,10 @@ Plug 'vim-airline/vim-airline-themes'
 
 Plug 'tpope/vim-fugitive'
 
+" *** Editing
+
+Plug 'tpope/vim-commentary'             " gc{motion}, v_gc, {number}gcc
+
 call plug#end()
 
 " *********************************************
