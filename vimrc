@@ -26,6 +26,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'             " gc{motion}, v_gc, {number}gcc
 
 " *** Dev tools
+
 Plug 'dense-analysis/ale'               " linter, fix code style
 
 call plug#end()
@@ -122,6 +123,8 @@ if filereadable($HOME . "/.vim/custom/vimrc_plugins_conf.vim")
 endif
 
 " *********************************************
-" Local Vimrc Customization
+" Local custom config
 " *********************************************
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+if filereadable($HOME . "/.dotfiles/vimrc_local.vim")
+	source ~/.dotfiles/vimrc_local.vim
+endif
