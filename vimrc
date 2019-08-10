@@ -24,6 +24,7 @@ Plug 'tpope/vim-fugitive'
 " *** Editing
 
 Plug 'tpope/vim-commentary'             " gc{motion}, v_gc, {number}gcc
+Plug 'ludovicchabant/vim-gutentags'
 
 " *** Dev tools
 

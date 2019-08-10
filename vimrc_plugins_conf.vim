@@ -73,6 +73,13 @@ let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exac
 let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
 
 " *********************************************
+" Editing
+" *********************************************
+" *** Gutentags
+" *********************************************
+au FileType gitcommit,gitrebase let g:gutentags_enabled=0
+
+" *********************************************
 " DEV tools
 " *********************************************
 " *** Ale
