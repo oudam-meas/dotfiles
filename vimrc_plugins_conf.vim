@@ -129,3 +129,28 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " *********************************************
 " " Whether to include the types of the completions in the result data. Default: 0
 let g:deoplete#sources#ternjs#types = 1
+
+"
+" *** Ctrlp
+" *********************************************
+let g:ctrlp_clear_cache_on_exit = 0
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+
+if executable('ag')
+  let g:ctrlp_show_hidden = 1
+  let g:ctrlp_prompt_mappings = { 'PrtInsert("c")':       ['<c-p>']}
+  let g:ctrlp_match_window = 'max:20'         "max items in matched list
+  let g:ctrlp_use_caching = 0
+  let g:ctrlp_working_path_mode = 'ra'
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden --skip-vcs-ignores -g "" --path-to-ignore ./.gitignore' " skip gitignore. Hidden files such as .travis.yml will be indexed for ag search
+endif
+
+" Highlighting ctrlp prompt
+highlight CtrlPPrtCursor ctermbg=50
+
+" Mapping key
+nmap <leader><leader> :CtrlPBuffer<cr>
+
+" CtrlP-CommandPalette
+nnoremap <leader>? :CtrlPCommandPalette<cr>
+let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s' " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore

@@ -33,6 +33,7 @@ Plug 'dense-analysis/ale'               " linter, fix code style
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   " " javascript
   Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
 

@@ -25,6 +25,7 @@ Plug 'mileszs/ack.vim'
 " Dev tools
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'VundleVim/Vundle.vim'
 Plug 'Yggdroot/indentLine'
@@ -32,7 +33,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'bogado/file-line'
 Plug 'christoomey/vim-rfactory'
 Plug 'christoomey/vim-sort-motion'      " motion: gs
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'janko-m/vim-test'
 Plug 'ternjs/tern_for_vim'
 Plug 'elzr/vim-json'
