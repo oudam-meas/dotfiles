@@ -83,3 +83,8 @@ let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
 let g:deoplete#enable_at_startup = 1
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" *** Deoplete-ternjs
+" *********************************************
+" " Whether to include the types of the completions in the result data. Default: 0
+let g:deoplete#sources#ternjs#types = 1

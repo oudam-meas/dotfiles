@@ -29,6 +29,8 @@ Plug 'tpope/vim-commentary'             " gc{motion}, v_gc, {number}gcc
 
 Plug 'dense-analysis/ale'               " linter, fix code style
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  " " javascript
+  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 
 call plug#end()
 
