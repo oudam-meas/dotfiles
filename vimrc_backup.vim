@@ -26,6 +26,7 @@ Plug 'mileszs/ack.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'jiangmiao/auto-pairs'
 
 Plug 'VundleVim/Vundle.vim'
 Plug 'Yggdroot/indentLine'
@@ -48,7 +49,6 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'romainl/ctags-patterns-for-javascript'
 Plug 'jparise/vim-graphql'
 Plug 'lepture/vim-velocity'
-Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align'          " motion: ga
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-entire'          " object: e
@@ -56,7 +56,6 @@ Plug 'kana/vim-textobj-line'            " object: l
 Plug 'kana/vim-textobj-user'            " requires bt vim-textobj-quotes
 Plug 'kristijanhusak/vim-carbon-now-sh'
 Plug 'leafgarland/typescript-vim'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'machakann/vim-highlightedyank'
 Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
