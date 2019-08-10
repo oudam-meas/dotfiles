@@ -25,6 +25,7 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'tpope/vim-commentary'             " gc{motion}, v_gc, {number}gcc
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'mileszs/ack.vim'
 
 " *** Dev tools
 

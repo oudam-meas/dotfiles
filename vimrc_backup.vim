@@ -20,6 +20,7 @@ Plug 'tpope/vim-fugitive'
 " *** Editing
 Plug 'tpope/vim-commentary'             " gc{motion}, v_gc, {number}gcc
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'mileszs/ack.vim'
 
 " Dev tools
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }

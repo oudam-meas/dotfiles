@@ -1,7 +1,6 @@
 " *********************************************
 " UI
 " *********************************************
-
 " *** Colorscheme
 " *********************************************
 set termguicolors
@@ -78,6 +77,41 @@ let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
 " *** Gutentags
 " *********************************************
 au FileType gitcommit,gitrebase let g:gutentags_enabled=0
+
+" *** Ack - Search
+" *********************************************
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+" Abbreviating Ag to Ack!
+cnoreabbrev Ag Ack!
+
+" Quick Search - Binding ,f to find the word under cursor
+nnoremap <leader>f :Ack! "\b<C-R><C-W>\b"<CR>
+
+" Quick Search in visual mode
+vmap <leader>f y:Ack! '<C-R>"'<CR>
+
+" Write "Ack! `current word`" to vim command
+nnoremap <leader>F :Ack!<Space>'<C-R><C-W>'
+
+" Write "Ack! `current word`" to vim command - in visual mode
+vmap <leader>F y:Ack! '<C-R>"'
+
+" Promping Search and replace
+nnoremap <leader>/ :call FindReplace('<C-R><C-W>','')<left><left>
+
+" Promping Search and replace - Find and Replace
+vmap <leader>/ y:call FindReplace('<C-R>"','')<left><left>
+
+function! FindReplace(pattern,replace,...)
+  let pattern = a:pattern
+  let replace = a:replace
+  let scope = a:0 >= 1 ? " -G ".a:1 : ""
+  execute "Ack! '".pattern."'".scope
+  execute "cdo %s/".pattern."/".replace."/gc | update"
+endfunction
 
 " *********************************************
 " DEV tools
