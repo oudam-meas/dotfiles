@@ -4,6 +4,13 @@
 
 " *** Colorscheme
 " *********************************************
+set termguicolors
+
+" Force true colour on, since vim can’t detect it within tmux.
+" The last line on its own will work outside tmux, but result in no colours inside tmux.
+let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+let &t_9b="\<Esc>[48;2;%lu;%lu;%lum"
+
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
 "(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
@@ -26,12 +33,12 @@ colorscheme onedark
 " *** Airline
 " *********************************************
 let g:airline_theme='onedark'
-let g:airline#extensions#tagbar#enabled = 0
+" let g:airline#extensions#tagbar#enabled = 0
 let g:airline_powerline_fonts = 1
 let g:airline_section_b = ""  " hide section b (git related)
 
 " Changing 'modified' character to red 
-let g:airline_detect_modified = 0 "if you're sticking the + in section_c you probably want to disable detection
+" let g:airline_detect_modified = 0 "if you're sticking the + in section_c you probably want to disable detection
 function! InitAirline()
   call airline#parts#define_raw('modified', '%{&modified ? "【✚" : ""}')
   call airline#parts#define_accent('modified', 'red')
@@ -64,3 +71,9 @@ let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
 let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
+
+" *********************************************
+" DEV tools
+" *********************************************
+" *** Ale
+" *********************************************

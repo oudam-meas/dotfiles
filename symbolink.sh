@@ -52,6 +52,9 @@ ln -s ~/.dotfiles/irbrc ~/.irbrc
 rm -f ~/.vimrc.local
 ln -s ~/.dotfiles/vimrc.local ~/.vimrc.local
 
+rm -f ~/.eslintrc
+ln -s ~/.dotfiles/eslintrc ~/.eslintrc
+
 rm -f ~/.vim/custom/plugin_customizations.vim
 mkdir -p ~/.vim/custom
 ln -s ~/.dotfiles/plugin_customizations.vim ~/.vim/custom/plugin_customizations.vim

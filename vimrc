@@ -14,6 +14,9 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" *** Syntax
+Plug 'sheerun/vim-polyglot'             " Improve syntax for different languages
+
 " *** Git
 
 Plug 'tpope/vim-fugitive'
@@ -21,6 +24,9 @@ Plug 'tpope/vim-fugitive'
 " *** Editing
 
 Plug 'tpope/vim-commentary'             " gc{motion}, v_gc, {number}gcc
+
+" *** Dev tools
+Plug 'dense-analysis/ale'               " linter, fix code style
 
 call plug#end()
 
@@ -84,34 +90,6 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 let mapleader=','
 
 " *********************************************
-" Colorschemes
-" *********************************************
-set termguicolors
-
-" Force true colour on, since vim can’t detect it within tmux.
-" The last line on its own will work outside tmux, but result in no colours inside tmux.
-let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
-
-" " solarize dark
-" set termguicolors
-" let g:solarized_degrade=256
-" let g:solarized_visibility="low"                          " Special characters such as trailing whitespace, tabs, empty buffer `~`
-" let g:solarized_statusline="normal"
-" highlight Comment cterm=italic
-
-" " vim-one
-" let g:one_allow_italics = 1
-" set background=dark
-" highlight LineNr guifg=grey
-" colorscheme one
-
-" " Oceanic Next
-" let g:oceanic_next_terminal_bold = 1
-" let g:oceanic_next_terminal_italic = 1
-" colorscheme OceanicNext
-
-" *********************************************
 " Windows
 " *********************************************
 " navigations between splitted windows
@@ -123,8 +101,7 @@ nmap <c-l> <c-w>l
 " *********************************************
 " Keys mapping
 " *********************************************
-nmap <leader>w :w!<CR> " Save file
-nmap <Space> :noh<CR> " Clear last search highlighting
+nmap <leader><Space> :noh<CR>
 
 " *********************************************
 " Navigations
