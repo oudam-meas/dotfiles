@@ -20,7 +20,10 @@ Plug 'tpope/vim-fugitive'
 " *** Editing
 Plug 'tpope/vim-commentary'             " gc{motion}, v_gc, {number}gcc
 
+" Dev tools
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+
 Plug 'VundleVim/Vundle.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
@@ -30,7 +33,6 @@ Plug 'christoomey/vim-sort-motion'      " motion: gs
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'janko-m/vim-test'
 Plug 'ternjs/tern_for_vim'
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'elzr/vim-json'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'

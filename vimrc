@@ -28,6 +28,7 @@ Plug 'tpope/vim-commentary'             " gc{motion}, v_gc, {number}gcc
 " *** Dev tools
 
 Plug 'dense-analysis/ale'               " linter, fix code style
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 call plug#end()
 
