@@ -28,6 +28,13 @@ Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jiangmiao/auto-pairs'
 
+" Vim ways
+Plug 'kana/vim-operator-user'
+Plug 'kana/vim-textobj-entire'          " object: e
+Plug 'kana/vim-textobj-line'            " object: l
+Plug 'kana/vim-textobj-user'            " requires bt vim-textobj-quotes
+Plug 'wellle/targets.vim'               " object: a - arguments
+
 Plug 'VundleVim/Vundle.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
@@ -50,10 +57,6 @@ Plug 'romainl/ctags-patterns-for-javascript'
 Plug 'jparise/vim-graphql'
 Plug 'lepture/vim-velocity'
 Plug 'junegunn/vim-easy-align'          " motion: ga
-Plug 'kana/vim-operator-user'
-Plug 'kana/vim-textobj-entire'          " object: e
-Plug 'kana/vim-textobj-line'            " object: l
-Plug 'kana/vim-textobj-user'            " requires bt vim-textobj-quotes
 Plug 'kristijanhusak/vim-carbon-now-sh'
 Plug 'leafgarland/typescript-vim'
 Plug 'machakann/vim-highlightedyank'
@@ -76,7 +79,6 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'                 " 'solve repeated the last native command inside that map, rather than the map as a whole'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'               " cs, ds, ys + {motion}
-Plug 'wellle/targets.vim'
 Plug 'wellle/visual-split.vim'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'

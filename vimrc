@@ -36,6 +36,12 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jiangmiao/auto-pairs'
 
+" *** Vim ways
+Plug 'kana/vim-operator-user'
+Plug 'kana/vim-textobj-entire'          " object: e
+Plug 'kana/vim-textobj-line'            " object: l
+Plug 'kana/vim-textobj-user'            " requires bt vim-textobj-quotes
+
 call plug#end()
 
 " *********************************************
