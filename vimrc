@@ -26,6 +26,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'             " gc{motion}, v_gc, {number}gcc
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-surround'               " cs, ds, ys + {motion}
+Plug 'tpope/vim-repeat'                 " 'solve repeated the last native command inside that map, rather than the map as a whole'
 
 " *** Dev tools
 

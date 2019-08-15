@@ -1,0 +1,30 @@
+set ideajoin                                              " to perform a join via the IDE
+set commentary
+set surround
+
+" Search
+set incsearch                                             " Search: Find as you type search
+set hlsearch                                              " Search: Highlight search terms
+set ignorecase                                            " Search: Case-insensitive searching.
+set smartcase                                             " Search: But case-sensitive if expression contains a capital letter.
+
+" Change default leader to ,
+let mapleader=','
+
+nmap <Space> :noh<CR>
+nmap <leader><Space> :noh<CR>
+
+" replace currently selected text with default register
+" without yanking it
+vnoremap <leader>p "0p
+vnoremap <leader>P "0P
+
+" *********************************************
+" Windows
+" *********************************************
+" navigations between splitted windows
+nmap <c-j> <c-w>j
+nmap <c-k> <c-w>k
+nmap <c-h> <c-w>h
+nmap <c-l> <c-w>l
+

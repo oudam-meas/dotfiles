@@ -1,10 +1,13 @@
 au! BufNewFile,BufReadPost *.{yaml,yml,config} set filetype=yaml foldmethod=indent
 
-map <leader>' :%s/'\([^']*\)'/"\1"/gc<CR> " Converting ' to "
 
 " ** RUBY **
+" Converting ' to "
+map <leader>' :%s/'\([^']*\)'/"\1"/gc<CR> 
+
 " Converting old hash to new Ruby 1.9 syntax
 map <leader>: :%s/:\(\w\+\)\(\s*=>\s*\)/\1: /gc<CR>
+
 " Running Rubocop with auto-correct
 let g:vimrubocop_keymap = 0
 map <leader>ac :w<CR> :RuboCop --auto-correct %<CR><leader>q

@@ -5,6 +5,9 @@ tic -x ~/.dotfiles/tmux-256color.terminfo
 rm -f ~/.zshrc
 ln -f -s ~/.dotfiles/zshrc ~/.zshrc
 
+rm -f ~/.p10k.zsh
+ln -f -s ~/.dotfiles/p10k.zsh ~/.p10k.zsh
+
 rm -f ~/.aliases
 ln -s ~/.dotfiles/aliases ~/.aliases
 
@@ -54,6 +57,9 @@ ln -s ~/.dotfiles/vimrc.local ~/.vimrc.local
 
 rm -f ~/.eslintrc
 ln -s ~/.dotfiles/eslintrc ~/.eslintrc
+
+rm -f ~/.ideavimrc
+ln -s ~/.dotfiles/ideavimrc ~/.ideavimrc
 
 rm -f ~/.vim/custom/plugin_customizations.vim
 mkdir -p ~/.vim/custom

@@ -21,6 +21,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'             " gc{motion}, v_gc, {number}gcc
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-surround'               " cs, ds, ys + {motion}
+Plug 'tpope/vim-repeat'                 " 'solve repeated the last native command inside that map, rather than the map as a whole'
 
 " Dev tools
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -76,9 +78,7 @@ Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails'
-Plug 'tpope/vim-repeat'                 " 'solve repeated the last native command inside that map, rather than the map as a whole'
 Plug 'tpope/vim-rhubarb'
-Plug 'tpope/vim-surround'               " cs, ds, ys + {motion}
 Plug 'wellle/visual-split.vim'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'

@@ -63,3 +63,7 @@ alias inet="show_inet && show_inet | pbcopy"
 alias ctags="`brew --prefix`/bin/ctags"
 alias spoof="spoof-mac.py"
 
+# Boostnote
+export BOOSTNOTE="~/Library/Mobile\ Documents/com~apple~CloudDocs/Bootnote"
+alias bnote="cd $BOOSTNOTE"
+
