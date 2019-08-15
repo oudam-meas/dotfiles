@@ -37,6 +37,10 @@ Plug 'kana/vim-textobj-line'            " object: l
 Plug 'kana/vim-textobj-user'            " requires bt vim-textobj-quotes
 Plug 'wellle/targets.vim'               " object: a - arguments
 
+" Other plugins
+Plug 'godlygeek/tabular' " tabular must come before vim-markdown
+Plug 'plasticboy/vim-markdown'
+
 Plug 'VundleVim/Vundle.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
@@ -86,8 +90,6 @@ Plug 'hashivim/vim-terraform'
 Plug 'derekwyatt/vim-scala'
 Plug 'mattn/emmet-vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
-Plug 'godlygeek/tabular' " tabular must come before vim-markdown
-Plug 'plasticboy/vim-markdown'
 Plug 'moll/vim-bbye'
 
 " Python programming

@@ -44,6 +44,9 @@ Plug 'kana/vim-textobj-entire'          " object: e
 Plug 'kana/vim-textobj-line'            " object: l
 Plug 'kana/vim-textobj-user'            " requires bt vim-textobj-quotes
 
+" *** Other plugins
+Plug 'godlygeek/tabular' " tabular must come before vim-markdown
+Plug 'plasticboy/vim-markdown'
 call plug#end()
 
 " *********************************************
