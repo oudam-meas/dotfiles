@@ -22,8 +22,11 @@ export PG=~/Library/Application\ Support/Postgres
 export TERM=xterm-256color-italic        # italic color is required for trueclor in tmux mode
 # export CLICOLOR=1
 
+# eval
 eval "$(rbenv init -)"
-# eval "$(ssh-agent -s)"
+
+#plugins
+plugins=(zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
