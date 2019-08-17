@@ -40,6 +40,8 @@ Plug 'wellle/targets.vim'               " object: a - arguments
 " Other plugins
 Plug 'godlygeek/tabular' " tabular must come before vim-markdown
 Plug 'plasticboy/vim-markdown'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'machakann/vim-highlightedyank'
 
 Plug 'VundleVim/Vundle.vim'
 Plug 'Yggdroot/indentLine'
@@ -65,7 +67,6 @@ Plug 'lepture/vim-velocity'
 Plug 'junegunn/vim-easy-align'          " motion: ga
 Plug 'kristijanhusak/vim-carbon-now-sh'
 Plug 'leafgarland/typescript-vim'
-Plug 'machakann/vim-highlightedyank'
 Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
 Plug 'ngmy/vim-rubocop'
@@ -89,7 +90,6 @@ Plug 'xolox/vim-notes'
 Plug 'hashivim/vim-terraform'
 Plug 'derekwyatt/vim-scala'
 Plug 'mattn/emmet-vim'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'moll/vim-bbye'
 
 " Python programming

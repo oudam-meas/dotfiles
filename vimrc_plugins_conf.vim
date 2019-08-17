@@ -154,3 +154,19 @@ nmap <leader><leader> :CtrlPBuffer<cr>
 " CtrlP-CommandPalette
 nnoremap <leader>? :CtrlPCommandPalette<cr>
 let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s' " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+
+"
+" *** MarkdownPreview
+" *********************************************
+nmap <C-s> <Plug>MarkdownPreview
+nmap <M-s> <Plug>MarkdownPreviewStop
+nmap <C-p> <Plug>MarkdownPreviewToggle
+
+"
+" *** Vim-Markdown
+" *********************************************
+nmap <leader>m\ :Toc<cr> 
+" *** HighlightedYank
+" *********************************************
+let g:highlightedyank_highlight_duration = 270
+highlight! link HighlightedyankRegion Visual

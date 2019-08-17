@@ -33,12 +33,15 @@ Plug 'tpope/vim-repeat'                 " 'solve repeated the last native comman
 
 Plug 'dense-analysis/ale'               " linter, fix code style
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  " " javascript
-  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jiangmiao/auto-pairs'
 
+  " " javascript
+  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+  Plug 'metakirby5/codi.vim' "  interactive scratchpad like Numi, for programming languages
+
 " *** Vim ways
+
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-entire'          " object: e
 Plug 'kana/vim-textobj-line'            " object: l
@@ -47,6 +50,9 @@ Plug 'kana/vim-textobj-user'            " requires bt vim-textobj-quotes
 " *** Other plugins
 Plug 'godlygeek/tabular' " tabular must come before vim-markdown
 Plug 'plasticboy/vim-markdown'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+Plug 'machakann/vim-highlightedyank'
+
 call plug#end()
 
 " *********************************************
