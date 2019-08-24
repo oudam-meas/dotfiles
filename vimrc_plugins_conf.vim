@@ -133,14 +133,27 @@ endfunction
 
 " *** Deoplete
 " *********************************************
-let g:deoplete#enable_at_startup = 1
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" *** Deoplete-ternjs
+" let g:deoplete#enable_at_startup = 1
+" " *** Deoplete-ternjs
+" " *********************************************
+" " " Whether to include the types of the completions in the result data. Default: 0
+" let g:deoplete#sources#ternjs#types = 1
+"
+" *** COC
 " *********************************************
-" " Whether to include the types of the completions in the result data. Default: 0
-let g:deoplete#sources#ternjs#types = 1
+set updatetime=300
+" selections
+  " Use tab for trigger completion with characters ahead and navigate.
+  " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+  inoremap <silent><expr> <TAB>
+        \ pumvisible() ? "\<C-n>" :
+        \ <SID>check_back_space() ? "\<TAB>" :
+        \ coc#refresh()
+  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+  " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+  " Coc only does snippet and additional edit on confirm.
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 "
 " *** Ctrlp
@@ -177,10 +190,10 @@ nmap <C-p> <Plug>MarkdownPreviewToggle
 "
 " *** Vim-Markdown
 " *********************************************
-nmap <leader>m\ :Toc<cr> 
-autocmd FileType markdown nmap <leader>todo C- [ ] 
+nmap <leader>m\ :Toc<cr>
+autocmd FileType markdown nmap <leader>todo C- [ ]
 let g:vim_markdown_new_list_item_indent = 2
-autocmd FileType markdown imap ,todo <esc>C- [ ] 
+autocmd FileType markdown imap ,todo <esc>C- [ ]
 
 " *** HighlightedYank
 " *********************************************

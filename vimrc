@@ -34,7 +34,9 @@ Plug 'tpope/vim-repeat'                 " 'solve repeated the last native comman
 " *** Dev tools
 
 Plug 'dense-analysis/ale'               " linter, fix code style
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
+
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'yggdroot/indentline'
@@ -45,7 +47,7 @@ Plug 'bogado/file-line'
   Plug 'tpope/vim-dispatch'
 
   " " javascript
-  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+  " Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
   Plug 'pangloss/vim-javascript' " dependency for vim-jsx
   Plug 'mxw/vim-jsx'
 
