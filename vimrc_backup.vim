@@ -14,8 +14,9 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" *** Fugitive
+" *** Git
 Plug 'tpope/vim-fugitive'
+plug 'airblade/vim-gitgutter'
 
 " *** Editing
 Plug 'tpope/vim-commentary'             " gc{motion}, v_gc, {number}gcc
@@ -29,32 +30,32 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 plug 'ctrlpvim/ctrlp.vim'
 plug 'jiangmiao/auto-pairs'
+plug 'yggdroot/indentline'
+Plug 'ntpeters/vim-better-whitespace'
+plug 'bogado/file-line'
   " " test
   plug 'janko-m/vim-test'
   plug 'tpope/vim-dispatch'
 
 " vim ways
-plug 'kana/vim-operator-user'
-plug 'kana/vim-textobj-entire'          " object: e
-plug 'kana/vim-textobj-line'            " object: l
-plug 'kana/vim-textobj-user'            " requires bt vim-textobj-quotes
-plug 'wellle/targets.vim'               " object: a - arguments
+Plug 'kana/vim-operator-user'
+Plug 'kana/vim-textobj-entire'          " object: e
+Plug 'kana/vim-textobj-line'            " object: l
+Plug 'kana/vim-textobj-user'            " requires bt vim-textobj-quotes
+Plug 'wellle/targets.vim'               " object: a - arguments
 
 " other plugins
-plug 'godlygeek/tabular' " tabular must come before vim-markdown
-plug 'plasticboy/vim-markdown'
-plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
-plug 'machakann/vim-highlightedyank'
+Plug 'godlygeek/tabular' " tabular must come before vim-markdown
+Plug 'plasticboy/vim-markdown'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'machakann/vim-highlightedyank'
 
-plug 'vundlevim/vundle.vim'
-plug 'yggdroot/indentline'
-plug 'airblade/vim-gitgutter'
-plug 'bogado/file-line'
-plug 'christoomey/vim-rfactory'
-plug 'christoomey/vim-sort-motion'      " motion: gs
-plug 'ternjs/tern_for_vim'
-plug 'elzr/vim-json'
-plug 'pangloss/vim-javascript'
+Plug 'vundlevim/vundle.vim'
+Plug 'christoomey/vim-rfactory'
+Plug 'christoomey/vim-sort-motion'      " motion: gs
+Plug 'ternjs/tern_for_vim'
+Plug 'elzr/vim-json'
+Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 
 " oceanic next with syntax
@@ -72,7 +73,6 @@ Plug 'leafgarland/typescript-vim'
 Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
 Plug 'ngmy/vim-rubocop'
-Plug 'ntpeters/vim-better-whitespace'
 Plug 'rakr/vim-one'
 Plug 'rizzatti/dash.vim'
 Plug 'simeji/winresizer'                " To enter resizing mode : ctrl+e, and exit by enter

@@ -29,7 +29,7 @@ alias udacity='cd ~/go/src/github.com/udacity/d615'
 
 alias zshrc='nvim ~/.zshrc' # Quick access to the ~/.zshrc file
 alias vimrc='nvim ~/.dotfiles/vimrc'
-alias vimrc='nvim ~/.dotfiles/vimrc'
+alias vimrc_plug='nvim ~/.dotfiles/vimrc_plugins_conf.vim'
 alias gitignore='nvim ~/.gitignore_global'
 alias gitconfig='nvim ~/.gitconfig'
 alias Gemfile='nvim ./Gemfile'

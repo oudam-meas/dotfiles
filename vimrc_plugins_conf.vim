@@ -26,12 +26,24 @@ if (empty($TMUX))
   endif
 endif
 
-let g:onedark_terminal_italics=1
-colorscheme onedark
+" OneDark
+" let g:onedark_terminal_italics=1
+" colorscheme onedark
+"
+" Gruvbox
+let g:gruvbox_italic=1
+let g:gruvbox_hls_cursor="aqua" " yank highlight
+let g:gruvbox_invert_selection=0
+let g:gruvbox_sign_column="bg0"
+let g:gruvbox_vert_split="bg1"
+let g:gruvbox_invert_tabline=1
+" let g:gruvbox_italicize_strings=0
+" let g:gruvbox_improved_strings=1
+colorscheme gruvbox
 
 " *** Airline
 " *********************************************
-let g:airline_theme='onedark'
+let g:airline_theme='gruvbox'
 " let g:airline#extensions#tagbar#enabled = 0
 let g:airline_powerline_fonts = 1
 let g:airline_section_b = ""  " hide section b (git related)
@@ -167,15 +179,17 @@ nmap <C-p> <Plug>MarkdownPreviewToggle
 " *********************************************
 nmap <leader>m\ :Toc<cr> 
 autocmd FileType markdown nmap <leader>todo C- [ ] 
+let g:vim_markdown_new_list_item_indent = 2
 autocmd FileType markdown imap ,todo <esc>C- [ ] 
 
 " *** HighlightedYank
 " *********************************************
 let g:highlightedyank_highlight_duration = 270
-highlight! link HighlightedyankRegion Visual
+" highlight! link HighlightedyankRegion Visual
 
-" 
-" *** Vim Test
+"
+"
+"" *** Vim Test
 " *********************************************
 let test#strategy = "dispatch"            " Using Dispatch strategy. Plugin 'tpope/vim-dispatch' is required'
 let test#ruby#bundle_exec = 0
@@ -187,3 +201,16 @@ nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>g :TestVisit<CR>
 nmap <silent> <leader>r :TestNearest -strategy=basic<CR>
 nmap <silent> <leader>t :TestNearest<CR>
+
+" *********************************************
+" Yggdroot/indentLine
+" *********************************************
+let g:indentLine_enabled = 1
+let g:indentLine_char = '▏'
+map <leader>I :IndentLinesToggle<CR>
+
+" Vim Better Whitespace
+" *********************************************
+let g:strip_whitespace_on_save=1
+let g:strip_whitespace_confirm=0
+let g:better_whitespace_filetypes_blacklist=['vimrc']

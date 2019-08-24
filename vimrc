@@ -8,6 +8,7 @@ call plug#begin('~/.vim/plugged')
 " *** Editor UI
 
 Plug 'joshdick/onedark.vim'
+Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -20,6 +21,7 @@ Plug 'sheerun/vim-polyglot'             " Improve syntax for different languages
 " *** Git
 
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 " *** Editing
 
@@ -35,6 +37,9 @@ Plug 'dense-analysis/ale'               " linter, fix code style
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'yggdroot/indentline'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'bogado/file-line'
   " " Test
   Plug 'janko-m/vim-test'
   Plug 'tpope/vim-dispatch'
@@ -67,7 +72,6 @@ call plug#end()
 " General Configuaraion
 " *********************************************
 filetype off
-filetype plugin indent on
 syntax enable
 syntax on
 set cursorline
@@ -134,7 +138,8 @@ nmap <c-l> <c-w>l
 " *********************************************
 " Keys mapping
 " *********************************************
-nmap <leader><Space> :noh<CR>
+" nmap <leader><Space> :noh<CR>
+nmap <Space> :noh<CR>
 
 " *********************************************
 " Navigations
