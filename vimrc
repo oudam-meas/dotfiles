@@ -49,8 +49,9 @@ Plug 'bogado/file-line'
   " " javascript
   " Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
   Plug 'pangloss/vim-javascript' " dependency for vim-jsx
-  Plug 'mxw/vim-jsx'
-
+  Plug 'mxw/vim-jsx', { 'for': [ 'javascript', 'javascript.jsx' ] }
+  Plug 'Valloric/MatchTagAlways'
+  Plug 'mattn/emmet-vim'
   " " Devops
   Plug 'ekalinin/Dockerfile.vim'
   Plug 'andrewstuart/vim-kubernetes'
@@ -169,3 +170,6 @@ endif
 if filereadable($HOME . "/.dotfiles/vimrc_local.vim")
 	source ~/.dotfiles/vimrc_local.vim
 endif
+
+" TODO
+" [ ] React auto import

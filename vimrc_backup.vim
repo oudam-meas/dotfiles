@@ -36,7 +36,10 @@ plug 'bogado/file-line'
   " " test
   plug 'janko-m/vim-test'
   plug 'tpope/vim-dispatch'
-
+  " Javascript
+  Plug 'pangloss/vim-javascript'
+  Plug 'mxw/vim-jsx'
+  Plug 'mattn/emmet-vim'
 " vim ways
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-entire'          " object: e
@@ -55,8 +58,6 @@ Plug 'christoomey/vim-rfactory'
 Plug 'christoomey/vim-sort-motion'      " motion: gs
 Plug 'ternjs/tern_for_vim'
 Plug 'elzr/vim-json'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
 
 " oceanic next with syntax
 Plug 'mhartington/oceanic-next'
@@ -90,7 +91,6 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
 Plug 'hashivim/vim-terraform'
 Plug 'derekwyatt/vim-scala'
-Plug 'mattn/emmet-vim'
 Plug 'moll/vim-bbye'
 
 " Python programming
