@@ -46,7 +46,8 @@ Plug 'bogado/file-line'
 
   " " javascript
   Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-  Plug 'metakirby5/codi.vim' "  interactive scratchpad like Numi, for programming languages
+  Plug 'pangloss/vim-javascript' " dependency for vim-jsx
+  Plug 'mxw/vim-jsx'
 
   " " Devops
   Plug 'ekalinin/Dockerfile.vim'
@@ -58,6 +59,7 @@ Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-entire'          " object: e
 Plug 'kana/vim-textobj-line'            " object: l
 Plug 'kana/vim-textobj-user'            " requires bt vim-textobj-quotes
+Plug 'metakirby5/codi.vim' "  interactive scratchpad like Numi, for programming languages
 
 " *** Other plugins
 Plug 'godlygeek/tabular' " tabular must come before vim-markdown
