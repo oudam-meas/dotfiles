@@ -10,7 +10,7 @@ export PATH="$HOME/.tmuxifier/bin:$PATH"
 export PATH="/usr/local/opt/node@10/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/Library/Python/3.7/bin:$PATH"
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home
+export PATH=$PATH:/usr/local/go/bin
 
 # If you come from bash you might have to change your $PATH.  export
 export EDITOR=nvim
@@ -20,13 +20,19 @@ export vimrc=~/.vimrc
 export dotfiles=~/Dropbox/Backups/dotfiles
 export PG=~/Library/Application\ Support/Postgres
 export TERM=xterm-256color-italic        # italic color is required for trueclor in tmux mode
+unset LSCOLORS
+export CLICOLOR=1
+export CLICOLOR_FORCE=1
 # export CLICOLOR=1
 
 # eval
 eval "$(rbenv init -)"
 
 #plugins
-plugins=(zsh-syntax-highlighting)
+plugins=(
+  zsh-syntax-highlighting
+  docker
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -41,3 +47,4 @@ export NVM_DIR="$HOME/.nvm"
 # jenv
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
+export GOPATH=~/go

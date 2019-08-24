@@ -166,7 +166,24 @@ nmap <C-p> <Plug>MarkdownPreviewToggle
 " *** Vim-Markdown
 " *********************************************
 nmap <leader>m\ :Toc<cr> 
+autocmd FileType markdown nmap <leader>todo C- [ ] 
+autocmd FileType markdown imap ,todo <esc>C- [ ] 
+
 " *** HighlightedYank
 " *********************************************
 let g:highlightedyank_highlight_duration = 270
 highlight! link HighlightedyankRegion Visual
+
+" 
+" *** Vim Test
+" *********************************************
+let test#strategy = "dispatch"            " Using Dispatch strategy. Plugin 'tpope/vim-dispatch' is required'
+let test#ruby#bundle_exec = 0
+" let test#enabled_runners = ["ruby#rspec"] " select which runners to load by default, intead load all
+nmap <silent> <leader>. :TestLast<CR>
+nmap <silent> <leader>A :TestSuite<CR>
+nmap <silent> <leader>R :TestFile -strategy=basic<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>g :TestVisit<CR>
+nmap <silent> <leader>r :TestNearest -strategy=basic<CR>
+nmap <silent> <leader>t :TestNearest<CR>

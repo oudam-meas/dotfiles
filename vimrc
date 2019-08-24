@@ -35,12 +35,19 @@ Plug 'dense-analysis/ale'               " linter, fix code style
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jiangmiao/auto-pairs'
+  " " Test
+  Plug 'janko-m/vim-test'
+  Plug 'tpope/vim-dispatch'
 
   " " javascript
   Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
   Plug 'metakirby5/codi.vim' "  interactive scratchpad like Numi, for programming languages
 
-" *** Vim ways
+  " " Devops
+  Plug 'ekalinin/Dockerfile.vim'
+  Plug 'andrewstuart/vim-kubernetes'
+
+  " *** Vim ways
 
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-entire'          " object: e
@@ -52,6 +59,7 @@ Plug 'godlygeek/tabular' " tabular must come before vim-markdown
 Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'machakann/vim-highlightedyank'
+Plug 'simeji/winresizer'
 
 call plug#end()
 

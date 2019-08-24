@@ -8,7 +8,18 @@ set hlsearch                                              " Search: Highlight se
 set ignorecase                                            " Search: Case-insensitive searching.
 set smartcase                                             " Search: But case-sensitive if expression contains a capital letter.
 
-" Change default leader to ,
+" Tab to indent
+vmap <tab> >gv
+vmap <s-tab> <gv
+
+" Indenting in or out for visual selected
+vmap <tab> >gv
+vmap <s-tab> <gv
+
+" Indenting in or out for visual selected
+vmap <tab> >gv
+vmap <s-tab> <gv
+
 let mapleader=','
 
 nmap <Space> :noh<CR>
@@ -27,4 +38,7 @@ nmap <c-j> <c-w>j
 nmap <c-k> <c-w>k
 nmap <c-h> <c-w>h
 nmap <c-l> <c-w>l
+
+" \ should work while on editor normal mode
+nnoremap \ :action ActivateProjectToolWindow<CR>
 

@@ -24,7 +24,8 @@ alias fgs='fg %./bin/rails'
 alias sr='screen -r'
 alias ss='screen -r server'
 alias sl='screen -list'
-alias road_to_react='cd ~/PlayGround/react/road_to_react'
+alias react='cd ~/PlayGround/react'
+alias udacity='cd ~/go/src/github.com/udacity/d615'
 
 alias zshrc='nvim ~/.zshrc' # Quick access to the ~/.zshrc file
 alias vimrc='nvim ~/.dotfiles/vimrc'
@@ -32,6 +33,7 @@ alias vimrc='nvim ~/.dotfiles/vimrc'
 alias gitignore='nvim ~/.gitignore_global'
 alias gitconfig='nvim ~/.gitconfig'
 alias Gemfile='nvim ./Gemfile'
+alias todo='nvim ~/Documents/notes/todo.md'
 
 alias grep='grep --color'
 

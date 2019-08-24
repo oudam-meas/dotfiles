@@ -27,32 +27,34 @@ Plug 'tpope/vim-repeat'                 " 'solve repeated the last native comman
 " Dev tools
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'jiangmiao/auto-pairs'
+plug 'ctrlpvim/ctrlp.vim'
+plug 'jiangmiao/auto-pairs'
+  " " test
+  plug 'janko-m/vim-test'
+  plug 'tpope/vim-dispatch'
 
-" Vim ways
-Plug 'kana/vim-operator-user'
-Plug 'kana/vim-textobj-entire'          " object: e
-Plug 'kana/vim-textobj-line'            " object: l
-Plug 'kana/vim-textobj-user'            " requires bt vim-textobj-quotes
-Plug 'wellle/targets.vim'               " object: a - arguments
+" vim ways
+plug 'kana/vim-operator-user'
+plug 'kana/vim-textobj-entire'          " object: e
+plug 'kana/vim-textobj-line'            " object: l
+plug 'kana/vim-textobj-user'            " requires bt vim-textobj-quotes
+plug 'wellle/targets.vim'               " object: a - arguments
 
-" Other plugins
-Plug 'godlygeek/tabular' " tabular must come before vim-markdown
-Plug 'plasticboy/vim-markdown'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
-Plug 'machakann/vim-highlightedyank'
+" other plugins
+plug 'godlygeek/tabular' " tabular must come before vim-markdown
+plug 'plasticboy/vim-markdown'
+plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+plug 'machakann/vim-highlightedyank'
 
-Plug 'VundleVim/Vundle.vim'
-Plug 'Yggdroot/indentLine'
-Plug 'airblade/vim-gitgutter'
-Plug 'bogado/file-line'
-Plug 'christoomey/vim-rfactory'
-Plug 'christoomey/vim-sort-motion'      " motion: gs
-Plug 'janko-m/vim-test'
-Plug 'ternjs/tern_for_vim'
-Plug 'elzr/vim-json'
-Plug 'pangloss/vim-javascript'
+plug 'vundlevim/vundle.vim'
+plug 'yggdroot/indentline'
+plug 'airblade/vim-gitgutter'
+plug 'bogado/file-line'
+plug 'christoomey/vim-rfactory'
+plug 'christoomey/vim-sort-motion'      " motion: gs
+plug 'ternjs/tern_for_vim'
+plug 'elzr/vim-json'
+plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 
 " oceanic next with syntax
@@ -80,7 +82,6 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rhubarb'

@@ -12,3 +12,5 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 " Close quickfix
 nmap <leader>q :ccl<CR>
 
+" Copying current file name
+map <leader>c :let @+=expand("%").":".line(".")<CR> :echom "file path copied: ".@%.":".line(".") <CR>
