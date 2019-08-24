@@ -33,7 +33,8 @@ Plug 'tpope/vim-repeat'                 " 'solve repeated the last native comman
 
 " *** Dev tools
 
-Plug 'dense-analysis/ale'               " linter, fix code style
+" Plug 'dense-analysis/ale'               " linter, fix code style
+Plug 'neomake/neomake'
 " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
 
