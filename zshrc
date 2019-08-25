@@ -48,3 +48,11 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 export GOPATH=~/go
+
+# Google cloud
+export CLOUDSDK_COMPUTE_ZONE=australia-southeast1-a
+export CLOUDSDK_COMPUTE_REGION=australia-southeast1
+
+function vaml() {
+  vim -R -c 'set syntax=yaml' -;
+}

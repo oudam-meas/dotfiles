@@ -251,6 +251,7 @@ nmap <leader>m\ :Toc<cr>
 autocmd FileType markdown nmap <leader>todo C- [ ]
 let g:vim_markdown_new_list_item_indent = 2
 autocmd FileType markdown imap ,todo <esc>C- [ ]
+autocmd FileType markdown imap kkk <esc>ciw k8s
 
 " *** HighlightedYank
 " *********************************************

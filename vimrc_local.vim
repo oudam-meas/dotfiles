@@ -18,3 +18,4 @@ nmap <leader>q :ccl<CR>
 
 " Copying current file name
 map <leader>c :let @+=expand("%").":".line(".")<CR> :echom "file path copied: ".@%.":".line(".") <CR>
+

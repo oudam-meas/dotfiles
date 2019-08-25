@@ -70,3 +70,8 @@ alias spoof="spoof-mac.py"
 export BOOSTNOTE="~/Library/Mobile\ Documents/com~apple~CloudDocs/Bootnote"
 alias bnote="cd $BOOSTNOTE"
 
+# Kubernetes
+alias k=kubectl
+
+alias hi=highlight
+alias hil="hi -l "
