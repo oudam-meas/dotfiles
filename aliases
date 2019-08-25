@@ -70,8 +70,11 @@ alias spoof="spoof-mac.py"
 export BOOSTNOTE="~/Library/Mobile\ Documents/com~apple~CloudDocs/Bootnote"
 alias bnote="cd $BOOSTNOTE"
 
-# Kubernetes
+# Kubernetes - most shortcuts are already defined by zsh plugin
 alias k=kubectl
+alias kcsn='kcn kccc --namespace ' # kubectl config set-context $(kubectl config current-context) --namespace
 
 alias hi=highlight
 alias hil="hi -l "
+
+#
