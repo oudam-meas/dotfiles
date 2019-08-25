@@ -252,6 +252,9 @@ autocmd FileType markdown nmap <leader>todo C- [ ]
 let g:vim_markdown_new_list_item_indent = 2
 autocmd FileType markdown imap ,todo <esc>C- [ ]
 autocmd FileType markdown imap kkk <esc>ciw k8s
+autocmd FileType markdown imap cbsh <esc>ciw```shell<cr><esc>O
+autocmd FileType markdown imap cbjs <esc>ciw```javascript<cr><esc>O
+autocmd FileType markdown imap cbyaml <esc>ciw```yaml<cr><esc>O
 
 " *** HighlightedYank
 " *********************************************
