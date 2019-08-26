@@ -46,6 +46,7 @@ Plug 'kana/vim-textobj-entire'          " object: e
 Plug 'kana/vim-textobj-line'            " object: l
 Plug 'kana/vim-textobj-user'            " requires bt vim-textobj-quotes
 Plug 'wellle/targets.vim'               " object: a - arguments
+Plug 'junegunn/vim-easy-align'          " motion: ga
 
 " other plugins
 Plug 'godlygeek/tabular' " tabular must come before vim-markdown
@@ -68,7 +69,6 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'romainl/ctags-patterns-for-javascript'
 Plug 'jparise/vim-graphql'
 Plug 'lepture/vim-velocity'
-Plug 'junegunn/vim-easy-align'          " motion: ga
 Plug 'kristijanhusak/vim-carbon-now-sh'
 Plug 'leafgarland/typescript-vim'
 Plug 'majutsushi/tagbar'

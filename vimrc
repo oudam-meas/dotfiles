@@ -34,8 +34,8 @@ Plug 'tpope/vim-repeat'                 " 'solve repeated the last native comman
 " *** Dev tools
 
 " Plug 'dense-analysis/ale'               " linter, fix code style
-Plug 'neomake/neomake'
 " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'neomake/neomake'
 Plug 'Shougo/neco-vim'
 Plug 'neoclide/coc-neco'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
@@ -66,6 +66,7 @@ Plug 'kana/vim-textobj-entire'          " object: e
 Plug 'kana/vim-textobj-line'            " object: l
 Plug 'kana/vim-textobj-user'            " requires bt vim-textobj-quotes
 Plug 'metakirby5/codi.vim' "  interactive scratchpad like Numi, for programming languages
+Plug 'junegunn/vim-easy-align'          " motion: ga
 
 " *** Other plugins
 Plug 'godlygeek/tabular' " tabular must come before vim-markdown
