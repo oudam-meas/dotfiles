@@ -247,14 +247,23 @@ nmap <C-p> <Plug>MarkdownPreviewToggle
 "
 " *** Vim-Markdown
 " *********************************************
-nmap <leader>m\ :Toc<cr>
-autocmd FileType markdown nmap <leader>todo C- [ ]
 let g:vim_markdown_new_list_item_indent = 2
+
+" concealcursor is not working with indentLine
+autocmd FileType markdown let g:indentLine_enabled = 0
+autocmd FileType markdown set concealcursor="ni"
+
+autocmd FileType markdown nmap <leader>m\ :Toc<cr>
+autocmd FileType markdown nmap <leader>todo C- [ ]
+autocmd FileType markdown nmap <leader>todo C- [ ]
 autocmd FileType markdown imap ,todo <esc>C- [ ]
 autocmd FileType markdown imap kkk <esc>ciw k8s
 autocmd FileType markdown imap cbsh <esc>ciw```shell<cr><esc>O
 autocmd FileType markdown imap cbjs <esc>ciw```javascript<cr><esc>O
 autocmd FileType markdown imap cbyaml <esc>ciw```yaml<cr><esc>O
+" autocmd Filetype markdown call ConfigMarkdown()
+" function ConfigMarkdown()
+" endfunction
 
 " *** HighlightedYank
 " *********************************************
@@ -279,8 +288,10 @@ nmap <silent> <leader>t :TestNearest<CR>
 " *********************************************
 " Yggdroot/indentLine
 " *********************************************
-let g:indentLine_enabled = 1
+" let g:indentLine_enabled = 0
 let g:indentLine_char = '▏'
+" let g:indentLine_concealcursor = 'inc'
+" let g:indentLine_conceallevel = 2
 map <leader>I :IndentLinesToggle<CR>
 
 " Vim Better Whitespace

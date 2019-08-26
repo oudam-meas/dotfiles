@@ -36,6 +36,8 @@ Plug 'tpope/vim-repeat'                 " 'solve repeated the last native comman
 " Plug 'dense-analysis/ale'               " linter, fix code style
 Plug 'neomake/neomake'
 " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/neco-vim'
+Plug 'neoclide/coc-neco'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
 
 Plug 'ctrlpvim/ctrlp.vim'
@@ -93,7 +95,6 @@ set showcmd
 set ttyfast
 set visualbell                                            " Disable sound
 
-
 set autowrite                                             " autoload write
 set autoread                                              " autoload read
 au CursorHold,CursorHoldI,BufEnter * checktime
@@ -119,6 +120,10 @@ set incsearch                                             " Search: Find as you 
 set hlsearch                                              " Search: Highlight search terms
 set ignorecase                                            " Search: Case-insensitive searching.
 set smartcase                                             " Search: But case-sensitive if expression contains a capital letter.
+
+" Concealing
+set conceallevel=2
+set concealcursor="ni"
 
 " " Ex-command completion - If you’re used to the autocomplete menu provided by zsh,
 " set wildmenu
