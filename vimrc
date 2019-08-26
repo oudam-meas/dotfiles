@@ -74,6 +74,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'machakann/vim-highlightedyank'
 Plug 'simeji/winresizer'
+Plug 'kshenoy/vim-signature'
 
 call plug#end()
 
@@ -88,7 +89,7 @@ set hidden                                                " All hiding unsaved b
 set number
 set numberwidth=4
 
-set backspace=indent,eol,start                            " Make backspace works like most program
+" set backspace=indent,eol,start                            " Make backspace works like most program
 set laststatus=2                                          " Show the status line all the time
 set lazyredraw
 set nopaste
