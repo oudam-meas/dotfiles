@@ -44,7 +44,7 @@ colorscheme gruvbox
 " *** Airline
 " *********************************************
 let g:airline_theme='gruvbox'
-" let g:airline#extensions#tagbar#enabled = 0
+let g:airline#extensions#tagbar#enabled = 0
 let g:airline_powerline_fonts = 1
 let g:airline_section_b = ""  " hide section b (git related)
 
@@ -69,7 +69,7 @@ let g:NERDTreeMapRefreshRoot = 'R'
 let g:NERDTreeMapOpenSplit = 'sp'
 let g:NERDTreeMapOpenVSplit = 'sv'
 let NERDTreeHighlightCursorline=1
-let NERDTreeStatusline = "%{fugitive#head()}"
+let NERDTreeStatusline = " %{fugitive#head()}"
 let NERDTreeIgnore = ['\.settings$', '\.editorconfig','node_modules$','\.idea$','\.envrc','yarn-error.log', 'rspec_examples.txt', '\.swp$', '\.DS_Store$', '\.git$', '\.bundle$', '.keep$', '^tags', 'tags.lock$', 'tags.temp$']
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
@@ -272,7 +272,7 @@ let g:highlightedyank_highlight_duration = 270
 
 "
 "
-"" *** Vim Test
+" *** Vim Test
 " *********************************************
 let test#strategy = "dispatch"            " Using Dispatch strategy. Plugin 'tpope/vim-dispatch' is required'
 let test#ruby#bundle_exec = 0
@@ -285,8 +285,9 @@ nmap <silent> <leader>g :TestVisit<CR>
 nmap <silent> <leader>r :TestNearest -strategy=basic<CR>
 nmap <silent> <leader>t :TestNearest<CR>
 
-" *********************************************
-" Yggdroot/indentLine
+"
+"
+"" Yggdroot/indentLine
 " *********************************************
 " let g:indentLine_enabled = 0
 let g:indentLine_char = '▏'
@@ -299,3 +300,16 @@ map <leader>I :IndentLinesToggle<CR>
 let g:strip_whitespace_on_save=1
 let g:strip_whitespace_confirm=0
 let g:better_whitespace_filetypes_blacklist=['vimrc']
+
+"
+" TagBar
+" *********************************************
+let g:tagbar_type_markdown = {
+    \ 'ctagstype' : 'markdown',
+    \ 'kinds' : [
+        \ 'h:Heading_L1',
+        \ 'i:Heading_L2',
+        \ 'k:Heading_L3'
+    \ ]
+  \ }
+

@@ -15,6 +15,10 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" /* Tags
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'majutsushi/tagbar'
+
 " *** Syntax
 Plug 'sheerun/vim-polyglot'             " Improve syntax for different languages
 
@@ -26,7 +30,6 @@ Plug 'airblade/vim-gitgutter'
 " *** Editing
 
 Plug 'tpope/vim-commentary'             " gc{motion}, v_gc, {number}gcc
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-surround'               " cs, ds, ys + {motion}
 Plug 'tpope/vim-repeat'                 " 'solve repeated the last native command inside that map, rather than the map as a whole'
