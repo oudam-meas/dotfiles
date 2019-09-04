@@ -45,9 +45,11 @@ Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'Valloric/MatchTagAlways'
 Plug 'yggdroot/indentline'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'bogado/file-line'
+
   " " Test
   Plug 'janko-m/vim-test'
   Plug 'tpope/vim-dispatch'
@@ -56,8 +58,8 @@ Plug 'bogado/file-line'
   " Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
   Plug 'pangloss/vim-javascript' " dependency for vim-jsx
   Plug 'mxw/vim-jsx', { 'for': [ 'javascript', 'javascript.jsx' ] }
-  Plug 'Valloric/MatchTagAlways'
   Plug 'mattn/emmet-vim'
+
   " " Devops
   Plug 'ekalinin/Dockerfile.vim'
   Plug 'andrewstuart/vim-kubernetes'
@@ -167,6 +169,8 @@ map <c-S-[> gT
 " Indenting in or out for visual selected
 vmap <tab> >gv
 vmap <s-tab> <gv
+
+autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " *********************************************
 " Plugin Customization

@@ -29,6 +29,9 @@ ln -s ~/.vim ~/.config/nvim
 rm -f ~/.config/nvim/init.vim
 ln -s ~/.vimrc ~/.config/nvim/init.vim
 
+rm -f ~/.vim/coc-settings.json
+ln -s ~/.dotfiles/.vim/coc-settings.json ~/.vim/coc-settings.json
+
 rm -f ~/.screenrc
 ln -s ~/.dotfiles/screenrc ~/.screenrc
 
