@@ -26,15 +26,13 @@ unset LSCOLORS
 export CLICOLOR=1
 export CLICOLOR_FORCE=1
 
-# ** Evaluate plugins ** #
-eval "$(rbenv init -)"
-
 # ** Plugins ** #
 plugins=(
- zsh-syntax-highlighting
- docker
- kubectl
+  zsh-syntax-highlighting
 )
+
+# ** Evaluate plugins ** #
+# eval "$(rbenv init -)"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -46,7 +44,6 @@ export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
 # ** Custom powerlevel 10k ** #
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 # ** Other Functions ** #
