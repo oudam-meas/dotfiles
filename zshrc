@@ -40,8 +40,6 @@ source $ZSH/oh-my-zsh.sh
 
 # ** Programming languages version manager ** #
 # nvm for node
-export NVM_DIR="$HOME/.nvm"
-alias loadnvm=". /usr/local/opt/nvm/nvm.sh" # Load nvm mannually
 
 # jenv for java
 export PATH="$HOME/.jenv/bin:$PATH"
