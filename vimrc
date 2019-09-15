@@ -64,7 +64,11 @@ Plug 'bogado/file-line'
   Plug 'ekalinin/Dockerfile.vim'
   Plug 'andrewstuart/vim-kubernetes'
 
-  " *** Vim ways
+  " " Ruby
+  Plug 'tpope/vim-bundler'
+  Plug 'tpope/vim-endwise'
+  Plug 'tpope/vim-rails'
+"*** Vim ways
 
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-entire'          " object: e
@@ -119,8 +123,9 @@ set nowrap                                                " Don't wrap lines
 set linebreak                                             " Wrap lines at convenient points
 
 set noswapfile                                            " turn off swap file
-set nobackup                                              " turn off backup file
-set nowb
+" Turn off backup file, and writebackup
+set nobackup
+set nowritebackup
 
 " Search
 set incsearch                                             " Search: Find as you type search
