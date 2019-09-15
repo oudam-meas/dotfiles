@@ -31,19 +31,27 @@ endif
 " colorscheme onedark
 "
 " Gruvbox
-let g:gruvbox_italic=1
-let g:gruvbox_hls_cursor="aqua" " yank highlight
-let g:gruvbox_invert_selection=0
-let g:gruvbox_sign_column="bg0"
-let g:gruvbox_vert_split="bg1"
-let g:gruvbox_invert_tabline=1
-" let g:gruvbox_italicize_strings=0
-" let g:gruvbox_improved_strings=1
-colorscheme gruvbox
+" let g:gruvbox_italic=1
+" let g:gruvbox_hls_cursor="aqua" " yank highlight
+" let g:gruvbox_invert_selection=0
+" let g:gruvbox_sign_column="bg0"
+" let g:gruvbox_vert_split="bg1"
+" let g:gruvbox_invert_tabline=1
+" colorscheme gruvbox
 
+" Ayu
+" let ayucolor="mirage" " for mirage version of theme
+" let ayucolor="dark"   " for dark version of theme
+" colorscheme ayu
+
+set background=dark
+let g:palenight_terminal_italics=1
+colorscheme palenight
+"
 " *** Airline
 " *********************************************
-let g:airline_theme='gruvbox'
+" let g:airline_theme='gruvbox'
+let g:airline_theme = "palenight"
 let g:airline#extensions#tagbar#enabled = 0
 let g:airline_powerline_fonts = 1
 let g:airline_section_b = ""  " hide section b (git related)
@@ -69,7 +77,7 @@ let g:NERDTreeMapRefreshRoot = 'R'
 let g:NERDTreeMapOpenSplit = 'sp'
 let g:NERDTreeMapOpenVSplit = 'sv'
 let NERDTreeHighlightCursorline=1
-let NERDTreeStatusline = " %{fugitive#head()}"
+let NERDTreeStatusline = "On %{fugitive#head()}"
 let NERDTreeIgnore = ['\.settings$', '\.editorconfig','node_modules$','\.idea$','\.envrc','yarn-error.log', 'rspec_examples.txt', '\.swp$', '\.DS_Store$', '\.git$', '\.bundle$', '.keep$', '^tags', 'tags.lock$', 'tags.temp$']
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
@@ -158,44 +166,78 @@ endif
 "
 " *** COC
 " *********************************************
-" Highlight symbol under cursor on CursorHold
+" TODO
+" - [ ] learn codeAction
+" - [ ] learn fix-current
+"
+"
+"" Better display for messages
+set cmdheight=2
+
+" You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
+
+" always show signcolumns
+set signcolumn=yes
+
 " selections
   " Use tab for trigger completion with characters ahead and navigate.
   " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+  inoremap <silent><expr> <TAB>
+        \ pumvisible() ? "\<C-n>" :
+        \ <SID>check_back_space() ? "\<TAB>" :
+        \ coc#refresh()
   function! s:check_back_space() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~# '\s'
   endfunction
 
-  inoremap <silent><expr> <TAB>
-        \ pumvisible() ? "\<C-n>" :
-        \ <SID>check_back_space() ? "\<TAB>" :
-        \ coc#refresh()
   inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
   " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
   " Coc only does snippet and additional edit on confirm.
-  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+  " inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+  " Use <c-space> to trigger completion.
+  inoremap <silent><expr> <c-space> coc#refresh()
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-" Use K to show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
 
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
+" Use K to show documentation in preview window
+  nnoremap <silent> K :call <SID>show_documentation()<CR>
+  function! s:show_documentation()
+    if (index(['vim','help'], &filetype) >= 0)
+      execute 'h '.expand('<cword>')
+    else
+      call CocAction('doHover')
+    endif
+  endfunction
+
+" Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap for do codeAction of current line
+nmap <leader>ac  <Plug>(coc-codeaction)
+
+" Formatting
+  " Use `:Format` to format current buffer
+  command! -nargs=0 Format :call CocAction('format')
+
+  " Remap for format selected region
+  xmap <c-f>  <Plug>(coc-format-selected)
+  nmap <c-f>  <Plug>(coc-format-selected)
+
+" Fix autofix problem of current line
+nmap <leader>qf  <Plug>(coc-fix-current)
 
 " coc-yank
 nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
@@ -210,7 +252,6 @@ let g:mta_filetypes = {
     \ 'xml' : 1,
     \ 'jinja' : 1,
 \}
-
 
 "
 " *** Ctrlp

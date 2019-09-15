@@ -8,12 +8,14 @@ call plug#begin('~/.vim/plugged')
 " *** Editor UI
 
 Plug 'joshdick/onedark.vim'
-Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'morhetz/gruvbox'
+Plug 'ayu-theme/ayu-vim'
+Plug 'drewtempelmeyer/palenight.vim'
 
 " /* Tags
 Plug 'ludovicchabant/vim-gutentags'
@@ -65,9 +67,9 @@ Plug 'bogado/file-line'
   Plug 'andrewstuart/vim-kubernetes'
 
   " " Ruby
-  Plug 'tpope/vim-bundler'
+  " Plug 'tpope/vim-bundler'
   Plug 'tpope/vim-endwise'
-  Plug 'tpope/vim-rails'
+  " Plug 'tpope/vim-rails'
 "*** Vim ways
 
 Plug 'kana/vim-operator-user'
