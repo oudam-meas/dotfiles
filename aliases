@@ -6,6 +6,9 @@
 # NVIM_PATH='/usr/local/bin/nvim'
 alias vim=nvim
 
+# Make nvim load in zsh faster
+# alias loadnvm=". /usr/local/opt/nvm/nvm.sh"
+
 # ls, the common ones I use a lot shortened for rapid fire usage
 alias l='ls -lFh'     #size,show type,human readable
 alias la='ls -lAFh'   #long list,show almost all,show type,human readable
@@ -77,4 +80,5 @@ alias kcsn='kcn kccc --namespace ' # kubectl config set-context $(kubectl config
 alias hi=highlight
 alias hil="hi -l "
 
+alias clear_asl='sudo rm -rf /private/var/log/asl/*.asl'
 #
