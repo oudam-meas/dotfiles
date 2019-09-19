@@ -7,6 +7,7 @@
 
 " vimrc file related
 command! Vimrc e ~/.dotfiles/vimrc
+command! VimrcConf e ~/.dotfiles/vimrc_plugins_conf.vim
 command! SoVimrc w | so ~/.vimrc | e |echo "sourced vimrc...!"
 nmap <silent> <leader>PI :so ~/.vimrc<CR> \| :PlugInstall<CR> \| :echo "reload and install plugins!"<CR>
 nmap <silent> <leader>PC :so ~/.vimrc<CR> \| :PlugClean<CR> \| :echo "reload and clean plugins!"<CR>
@@ -19,3 +20,9 @@ nmap <leader>q :ccl<CR>
 " Copying current file name
 map <leader>c :let @+=expand("%").":".line(".")<CR> :echom "file path copied: ".@%.":".line(".") <CR>
 
+command! RetabFixTab set tabstop=2 shiftwidth=2 expandtab | retab | w
+
+command! PyRun exec '!python' shellescape(@%, 1)
+
+" hh to delete current word
+imap hh <c-w>
