@@ -28,13 +28,12 @@ export CLICOLOR_FORCE=1
 
 # ** Plugins ** #
 plugins=(
+  ssh-agent
   zsh-syntax-highlighting
 )
 
 # ** Evaluate plugins ** #
-# eval "$(rbenv init -)"
-
-source $ZSH/oh-my-zsh.sh
+eval "$(rbenv init -)"
 
 # ** Programming languages version manager ** #
 # nvm for node
@@ -42,6 +41,8 @@ source $ZSH/oh-my-zsh.sh
 # jenv for java
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
+
+source $ZSH/oh-my-zsh.sh
 
 # ** Custom powerlevel 10k ** #
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
