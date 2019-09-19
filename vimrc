@@ -201,6 +201,3 @@ endif
 if filereadable($HOME . "/.dotfiles/vimrc_local.vim")
 	source ~/.dotfiles/vimrc_local.vim
 endif
-
-" TODO
-" [ ] React auto import
