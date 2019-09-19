@@ -24,9 +24,6 @@ Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 Plug 'jszakmeister/markdown2ctags'
 Plug 'tmm1/ripper-tags'
 
-" *** Syntax
-Plug 'sheerun/vim-polyglot'             " Improve syntax for different languages
-
 " *** Git
 
 Plug 'tpope/vim-fugitive'
