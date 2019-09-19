@@ -38,9 +38,8 @@ Plug 'tpope/vim-repeat'                 " 'solve repeated the last native comman
 
 " *** Dev tools
 
-" Plug 'dense-analysis/ale'               " linter, fix code style
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'neomake/neomake'
+" Plug 'neomake/neomake'
+
 Plug 'Shougo/neco-vim'
 Plug 'neoclide/coc-neco'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
@@ -49,29 +48,30 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Valloric/MatchTagAlways'
 Plug 'yggdroot/indentline'
+  let g:indentLine_enabled = 0 " disable by default
+
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'bogado/file-line'
 
-  " " Test
-  Plug 'janko-m/vim-test'
-  Plug 'tpope/vim-dispatch'
+ " " Test
+ Plug 'janko-m/vim-test'
+ Plug 'tpope/vim-dispatch'
 
-  " " javascript
-  Plug 'pangloss/vim-javascript' " dependency for vim-jsx
-  Plug 'mxw/vim-jsx'
-  " Plug 'chemzqm/vim-jsx-improve'
+ " " javascript
+ Plug 'pangloss/vim-javascript' " dependency for vim-jsx
+ Plug 'mxw/vim-jsx'
 
-  " HTML
-  Plug 'mattn/emmet-vim'
+ " HTML
+ Plug 'mattn/emmet-vim'
 
   " " Devops
   Plug 'ekalinin/Dockerfile.vim'
   Plug 'andrewstuart/vim-kubernetes'
 
   " " Ruby
-  " Plug 'tpope/vim-bundler'
+  Plug 'tpope/vim-bundler'
   Plug 'tpope/vim-endwise'
-  " Plug 'tpope/vim-rails'
+  Plug 'tpope/vim-rails'
 "*** Vim ways
 
 Plug 'kana/vim-operator-user'
