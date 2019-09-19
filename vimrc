@@ -1,4 +1,5 @@
 set nocompatible
+filetype off
 
 " *********************************************
 " Plugins
@@ -19,7 +20,9 @@ Plug 'drewtempelmeyer/palenight.vim'
 
 " /* Tags
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+Plug 'jszakmeister/markdown2ctags'
+Plug 'tmm1/ripper-tags'
 
 " *** Syntax
 Plug 'sheerun/vim-polyglot'             " Improve syntax for different languages
@@ -57,9 +60,11 @@ Plug 'bogado/file-line'
   Plug 'tpope/vim-dispatch'
 
   " " javascript
-  " Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
   Plug 'pangloss/vim-javascript' " dependency for vim-jsx
-  Plug 'mxw/vim-jsx', { 'for': [ 'javascript', 'javascript.jsx' ] }
+  Plug 'mxw/vim-jsx'
+  " Plug 'chemzqm/vim-jsx-improve'
+
+  " HTML
   Plug 'mattn/emmet-vim'
 
   " " Devops
@@ -76,23 +81,30 @@ Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-entire'          " object: e
 Plug 'kana/vim-textobj-line'            " object: l
 Plug 'kana/vim-textobj-user'            " requires bt vim-textobj-quotes
+Plug 'wellle/targets.vim'               " object: a - arguments
 Plug 'metakirby5/codi.vim' "  interactive scratchpad like Numi, for programming languages
 Plug 'junegunn/vim-easy-align'          " motion: ga
+Plug 'zhou13/vim-easyescape'            " A visual distraction-free jj/jk to esc
 
 " *** Other plugins
-Plug 'godlygeek/tabular' " tabular must come before vim-markdown
-Plug 'plasticboy/vim-markdown'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'machakann/vim-highlightedyank'
 Plug 'simeji/winresizer'
 Plug 'kshenoy/vim-signature'
+
+  " markdown
+  Plug 'godlygeek/tabular' " tabular must come before vim-markdown
+  Plug 'plasticboy/vim-markdown'
+  Plug 'jkramer/vim-checkbox'
+  Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
 call plug#end()
 
 " *********************************************
 " General Configuaraion
 " *********************************************
-filetype off
+
+filetype plugin indent on
+
 syntax enable
 syntax on
 set cursorline

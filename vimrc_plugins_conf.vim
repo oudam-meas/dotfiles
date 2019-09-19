@@ -54,7 +54,24 @@ colorscheme palenight
 let g:airline_theme = "palenight"
 let g:airline#extensions#tagbar#enabled = 0
 let g:airline_powerline_fonts = 1
-let g:airline_section_b = ""  " hide section b (git related)
+" let g:airline#extensions#hunks#enabled = 1
+let g:airline#extensions#hunks#non_zero_only = 1
+let g:airline_mode_map = {
+    \ '__' : '-',
+    \ 'n'  : 'N',
+    \ 'i'  : 'I',
+    \ 'R'  : 'R',
+    \ 'c'  : 'C',
+    \ 'v'  : 'V',
+    \ 'V'  : 'V',
+    \ '' : 'V',
+    \ 's'  : 'S',
+    \ }
+let g:airline_section_z = '%3p%% %3l/%L:%3v'
+let g:airline_section_z = '%3p%% %3l/%L:%3v'
+let g:airline#extensions#wordcount#formatter#default#fmt = '%d w'
+let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
+" let g:airline_section_b = ""  " hide section b (git related)
 
 " Changing 'modified' character to red 
 " let g:airline_detect_modified = 0 "if you're sticking the + in section_c you probably want to disable detection
@@ -77,7 +94,8 @@ let g:NERDTreeMapRefreshRoot = 'R'
 let g:NERDTreeMapOpenSplit = 'sp'
 let g:NERDTreeMapOpenVSplit = 'sv'
 let NERDTreeHighlightCursorline=1
-let NERDTreeStatusline = "On %{fugitive#head()}"
+" let NERDTreeStatusline = "On %{fugitive#head()}"
+let NERDTreeStatusline = ""
 let NERDTreeIgnore = ['\.settings$', '\.editorconfig','node_modules$','\.idea$','\.envrc','yarn-error.log', 'rspec_examples.txt', '\.swp$', '\.DS_Store$', '\.git$', '\.bundle$', '.keep$', '^tags', 'tags.lock$', 'tags.temp$']
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
@@ -285,6 +303,11 @@ nmap <C-s> <Plug>MarkdownPreview
 nmap <M-s> <Plug>MarkdownPreviewStop
 nmap <C-p> <Plug>MarkdownPreviewToggle
 
+" set to 1, the nvim will auto close current preview window when change
+" from markdown buffer to another buffer
+" default: 1
+let g:mkdp_auto_close = 0
+
 "
 " *** Vim-Markdown
 " *********************************************
@@ -294,24 +317,21 @@ let g:vim_markdown_new_list_item_indent = 2
 autocmd FileType markdown let g:indentLine_enabled = 0
 autocmd FileType markdown set concealcursor="ni"
 
-autocmd FileType markdown nmap <leader>m\ :Toc<cr>
-autocmd FileType markdown nmap <leader>todo C- [ ]
-autocmd FileType markdown nmap <leader>todo C- [ ]
-autocmd FileType markdown imap ,todo <esc>C- [ ]
-autocmd FileType markdown imap kkk <esc>ciw k8s
 autocmd FileType markdown imap cbsh <esc>ciw```shell<cr><esc>O
 autocmd FileType markdown imap cbjs <esc>ciw```javascript<cr><esc>O
 autocmd FileType markdown imap cbyaml <esc>ciw```yaml<cr><esc>O
-" autocmd Filetype markdown call ConfigMarkdown()
-" function ConfigMarkdown()
-" endfunction
+
+"
+" *** Vim-Checkbox
+" *********************************************
+
+let g:insert_checkbox_prefix = '- '
 
 " *** HighlightedYank
 " *********************************************
-let g:highlightedyank_highlight_duration = 270
-" highlight! link HighlightedyankRegion Visual
+" let g:highlightedyank_highlight_duration = 270
+highlight! link HighlightedyankRegion Visual
 
-"
 "
 " *** Vim Test
 " *********************************************
@@ -327,10 +347,9 @@ nmap <silent> <leader>r :TestNearest -strategy=basic<CR>
 nmap <silent> <leader>t :TestNearest<CR>
 
 "
-"
-"" Yggdroot/indentLine
+" Yggdroot/indentLine
 " *********************************************
-" let g:indentLine_enabled = 0
+let g:indentLine_enabled = 0
 let g:indentLine_char = '▏'
 " let g:indentLine_concealcursor = 'inc'
 " let g:indentLine_conceallevel = 2
@@ -345,12 +364,65 @@ let g:better_whitespace_filetypes_blacklist=['vimrc']
 "
 " TagBar
 " *********************************************
-let g:tagbar_type_markdown = {
-    \ 'ctagstype' : 'markdown',
-    \ 'kinds' : [
-        \ 'h:Heading_L1',
-        \ 'i:Heading_L2',
-        \ 'k:Heading_L3'
-    \ ]
-  \ }
 
+command! T TagbarToggle
+
+  " Ripper-tags - OS executable
+  if executable('ripper-tags') " gem install ripper-tags | ripper-tags -R --exclude=vendor
+    let g:tagbar_type_ruby = {
+        \ 'kinds'      : ['m:modules',
+                        \ 'c:classes',
+                        \ 'C:constants',
+                        \ 'F:singleton methods',
+                        \ 'f:methods',
+                        \ 'a:aliases'],
+        \ 'kind2scope' : { 'c' : 'class',
+                         \ 'm' : 'class' },
+        \ 'scope2kind' : { 'class' : 'c' },
+        \ 'ctagsbin'   : 'ripper-tags',
+        \ 'ctagsargs'  : ['-f', '-'],
+        \ }
+  endif
+
+  " " Js
+  " let g:tagbar_type_javascript = {
+  "     \ 'ctagstype': 'javascript',
+  "     \ 'kinds': [
+  "     \ 'A:arrays',
+  "     \ 'P:properties',
+  "     \ 'T:tags',
+  "     \ 'O:objects',
+  "     \ 'G:generator functions',
+  "     \ 'F:functions',
+  "     \ 'C:constructors/classes',
+  "     \ 'M:methods',
+  "     \ 'V:variables',
+  "     \ 'I:imports',
+  "     \ 'E:exports',
+  "     \ 'S:styled components'
+  "     \ ]}
+
+" Markdown2Ctags
+" *********************************************
+" Add support for markdown files in tagbar.
+let g:tagbar_type_markdown = {
+    \ 'ctagstype': 'markdown',
+    \ 'ctagsbin' : '/Users/outdam/.vim/plugged/markdown2ctags/markdown2ctags.py',
+    \ 'ctagsargs' : '-f - --sort=yes --sro=»',
+    \ 'kinds' : [
+        \ 's:sections',
+        \ 'i:images'
+    \ ],
+    \ 'sro' : '»',
+    \ 'kind2scope' : { 's' : 'section' },
+    \ 'sort': 0,
+    \ }
+
+
+
+" easy-escape
+" *********************************************
+" The unit of timeout is in ms. A very small timeout makes an input of real jj
+let g:easyescape_chars = { "j": 2 }
+let g:easyescape_timeout = 100
+inoremap jj <ESC>
