@@ -154,34 +154,6 @@ endfunction
 " *********************************************
 " DEV tools
 " *********************************************
-" *** Ale
-" *********************************************
-" *** neomake
-" *********************************************
-" function! MyOnBattery()
-"   if has('macunix')
-"     return match(system('pmset -g batt'), "Now drawing from 'Battery Power'") != -1
-"   elsif has('unix')
-"     return readfile('/sys/class/power_supply/AC/online') == ['0']
-"   endif
-"   return 0
-" endfunction
-
-" if MyOnBattery()
-"   " When writing a buffer (no delay).
-"   call neomake#configure#automake('w')
-" else
-"   " When reading a buffer (after 1s), and when writing (no delay).
-"   call neomake#configure#automake('nw', 1000)
-" endif
-" *** Deoplete
-" *********************************************
-" let g:deoplete#enable_at_startup = 1
-" " *** Deoplete-ternjs
-" " *********************************************
-" " " Whether to include the types of the completions in the result data. Default: 0
-" let g:deoplete#sources#ternjs#types = 1
-"
 " *** COC
 " *********************************************
 " TODO

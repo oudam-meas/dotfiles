@@ -37,9 +37,7 @@ Plug 'tpope/vim-surround'               " cs, ds, ys + {motion}
 Plug 'tpope/vim-repeat'                 " 'solve repeated the last native command inside that map, rather than the map as a whole'
 
 " *** Dev tools
-
-" Plug 'neomake/neomake'
-
+" " IntelliSense with COC nvim
 Plug 'Shougo/neco-vim'
 Plug 'neoclide/coc-neco'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
