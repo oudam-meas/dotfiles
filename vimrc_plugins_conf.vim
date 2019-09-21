@@ -159,13 +159,14 @@ endfunction
 " TODO
 " - [ ] learn codeAction
 " - [ ] learn fix-current
-"
-"
+
+
 "" Better display for messages
 set cmdheight=2
 
 " You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300
+
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
 
@@ -262,7 +263,8 @@ endif
 highlight CtrlPPrtCursor ctermbg=50
 
 " Mapping key
-nmap <leader><leader> :CtrlPBuffer<cr>
+" nmap <leader><leader> :CtrlPBuffer<cr>
+nmap <C-b> :CtrlPBuffer<cr>
 
 " CtrlP-CommandPalette
 nnoremap <leader>? :CtrlPCommandPalette<cr>
@@ -272,8 +274,8 @@ let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s' " Use ag in Ct
 " *** MarkdownPreview
 " *********************************************
 nmap <C-s> <Plug>MarkdownPreview
-nmap <M-s> <Plug>MarkdownPreviewStop
-nmap <C-p> <Plug>MarkdownPreviewToggle
+" nmap <M-s> <Plug>MarkdownPreviewStop
+" nmap <C-p> <Plug>MarkdownPreviewToggle
 
 " set to 1, the nvim will auto close current preview window when change
 " from markdown buffer to another buffer

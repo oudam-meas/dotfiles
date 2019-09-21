@@ -70,6 +70,7 @@ Plug 'bogado/file-line'
   Plug 'tpope/vim-bundler'
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-rails'
+
 "*** Vim ways
 
 Plug 'kana/vim-operator-user'
@@ -80,6 +81,7 @@ Plug 'wellle/targets.vim'               " object: a - arguments
 Plug 'metakirby5/codi.vim' "  interactive scratchpad like Numi, for programming languages
 Plug 'junegunn/vim-easy-align'          " motion: ga
 Plug 'zhou13/vim-easyescape'            " A visual distraction-free jj/jk to esc
+Plug 'easymotion/vim-easymotion'
 
 " *** Other plugins
 Plug 'machakann/vim-highlightedyank'
