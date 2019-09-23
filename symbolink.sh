@@ -64,13 +64,18 @@ ln -s ~/.dotfiles/eslintrc ~/.eslintrc
 rm -f ~/.ideavimrc
 ln -s ~/.dotfiles/ideavimrc ~/.ideavimrc
 
-rm -f ~/.vim/custom/plugin_customizations.vim
+# Start of vim custom
 mkdir -p ~/.vim/custom
+
+rm -f ~/.vim/custom/plugin_customizations.vim
 ln -s ~/.dotfiles/plugin_customizations.vim ~/.vim/custom/plugin_customizations.vim
 
 rm -f ~/.vim/custom/vimrc_plugins_conf.vim
-mkdir -p ~/.vim/custom
 ln -s ~/.dotfiles/vimrc_plugins_conf.vim ~/.vim/custom/vimrc_plugins_conf.vim
+
+rm -f ~/.vim/custom/vimrc_colorscheme_conf.vim
+ln -s ~/.dotfiles/vimrc_colorscheme_conf.vim ~/.vim/custom/vimrc_colorscheme_conf.vim
+# End of vim custom
 
 rm -f ~/.vim/syntax/ruby.vim
 mkdir -p ~/.vim/syntax

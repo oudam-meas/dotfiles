@@ -189,6 +189,13 @@ vmap <s-tab> <gv
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " *********************************************
+" Colorscheme Configuaraion
+" *********************************************
+if filereadable($HOME . "/.vim/custom/vimrc_colorscheme_conf.vim")
+  source ~/.vim/custom/vimrc_colorscheme_conf.vim
+endif
+
+" *********************************************
 " Plugin Customization
 " *********************************************
 if filereadable($HOME . "/.vim/custom/vimrc_plugins_conf.vim")
