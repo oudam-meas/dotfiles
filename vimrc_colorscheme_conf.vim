@@ -44,3 +44,4 @@ endif
 set background=dark
 let g:palenight_terminal_italics=1
 colorscheme palenight
+hi Search guibg=#3E4049 guifg=NONE
