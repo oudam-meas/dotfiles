@@ -78,21 +78,21 @@ Plug 'kana/vim-textobj-entire'          " object: e
 Plug 'kana/vim-textobj-line'            " object: l
 Plug 'kana/vim-textobj-user'            " requires bt vim-textobj-quotes
 Plug 'wellle/targets.vim'               " object: a - arguments
-Plug 'metakirby5/codi.vim' "  interactive scratchpad like Numi, for programming languages
+Plug 'metakirby5/codi.vim'              "  interactive scratchpad like Numi, for programming languages
 Plug 'junegunn/vim-easy-align'          " motion: ga
-" Plug 'zhou13/vim-easyescape'            " A visual distraction-free jj/jk to esc
 Plug 'easymotion/vim-easymotion'
+" Plug 'zhou13/vim-easyescape'           " A visual distraction-free jj/jk to esc
 
 " *** Other plugins
 Plug 'machakann/vim-highlightedyank'
 Plug 'simeji/winresizer'
 Plug 'kshenoy/vim-signature'
 
-  " markdown
-  Plug 'godlygeek/tabular' " tabular must come before vim-markdown
-  Plug 'plasticboy/vim-markdown'
-  Plug 'jkramer/vim-checkbox'
-  Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+" markdown
+Plug 'godlygeek/tabular' " tabular must come before vim-markdown
+Plug 'plasticboy/vim-markdown'
+Plug 'jkramer/vim-checkbox'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
 call plug#end()
 
@@ -102,25 +102,25 @@ call plug#end()
 
 filetype plugin indent on
 
+let mapleader=','
+
 syntax enable
 syntax on
 set cursorline
-set hidden                                                " All hiding unsaved buffer, and move on
+set hidden                                     " All hiding unsaved buffer, and move on
 set number
 set numberwidth=4
 
-" set backspace=indent,eol,start                            " Make backspace works like most program
-set laststatus=2                                          " Show the status line all the time
+set laststatus=2                               " Show the status line all the time
 set lazyredraw
 set nopaste
 set showcmd
 set ttyfast
-set visualbell                                            " Disable sound
+set visualbell                                 " Disable sound
 
-set autowrite                                             " autoload write
-set autoread                                              " autoload read
-au CursorHold,CursorHoldI,BufEnter * checktime
-" au BufWritePost,BufReadPost * checktime | NERDTreeFocus | execute 'normal R' | wincmd p
+set autowrite                                  " autoload write
+set autoread                                   " autoload read
+au CursorHold,CursorHoldI,BufEnter * checktime " improve checktime frequency
 
 set autoindent
 set expandtab
@@ -130,35 +130,25 @@ set smarttab
 set softtabstop=2
 set tabstop=2
 
-set nowrap                                                " Don't wrap lines
-set linebreak                                             " Wrap lines at convenient points
+set nowrap                                     " Don't wrap lines
+set linebreak                                  " Wrap lines at convenient points
 
-set noswapfile                                            " turn off swap file
-" Turn off backup file, and writebackup
-set nobackup
-set nowritebackup
+set noswapfile                                 " turn off swap file
+set nobackup                                   " disable creating backup file
+set nowritebackup                              " disable write backup
 
-" Search
-set incsearch                                             " Search: Find as you type search
-set hlsearch                                              " Search: Highlight search terms
-set ignorecase                                            " Search: Case-insensitive searching.
-set smartcase                                             " Search: But case-sensitive if expression contains a capital letter.
+set incsearch                                  " Search: Find as you type search
+set hlsearch                                   " Search: Highlight search terms
+set ignorecase                                 " Search: Case-insensitive searching.
+set smartcase                                  " Search: But case-sensitive if expression contains a capital letter.
 
 " Concealing
 set conceallevel=2
 set concealcursor="ni"
 
-" " Ex-command completion - If you’re used to the autocomplete menu provided by zsh,
-" set wildmenu
-" set wildmode=full
-" set wildignore=*.o,*.obj,*~   " Stuff to ignore when tab completing
-
 " Specifying Ruby path
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
 let g:python3_host_prog = '/usr/local/bin/python3'
-
-" Change default leader to ,
-let mapleader=','
 
 " *********************************************
 " Windows
@@ -170,12 +160,6 @@ nmap <c-h> <c-w>h
 nmap <c-l> <c-w>l
 
 " *********************************************
-" Keys mapping
-" *********************************************
-" nmap <leader><Space> :noh<CR>
-nmap <Space> :noh<CR>
-
-" *********************************************
 " Navigations
 " *********************************************
 " Easy tabs navigation: Command+Shift+[
@@ -185,8 +169,6 @@ map <c-S-[> gT
 " Indenting in or out for visual selected
 vmap <tab> >gv
 vmap <s-tab> <gv
-
-autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " *********************************************
 " Colorscheme Configuaraion
@@ -208,3 +190,12 @@ endif
 if filereadable($HOME . "/.dotfiles/vimrc_local.vim")
 	source ~/.dotfiles/vimrc_local.vim
 endif
+
+" To retire
+" set backspace=indent,eol,start                            " Make backspace works like most program
+" au BufWritePost,BufReadPost * checktime | NERDTreeFocus | execute 'normal R' | wincmd p
+
+" " Ex-command completion - If you’re used to the autocomplete menu provided by zsh,
+" set wildmenu
+" set wildmode=full
+" set wildignore=*.o,*.obj,*~   " Stuff to ignore when tab completing
