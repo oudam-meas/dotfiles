@@ -396,9 +396,9 @@ let g:tagbar_type_markdown = {
 " easy-escape
 " *********************************************
 " The unit of timeout is in ms. A very small timeout makes an input of real jj
-let g:easyescape_chars = { "j": 2 }
-let g:easyescape_timeout = 100
-inoremap jj <ESC>
+" let g:easyescape_chars = { "j": 2 }
+" let g:easyescape_timeout = 100
+" inoremap jj <ESC>
 
 " Vim-easymotion
 " *********************************************

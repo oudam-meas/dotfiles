@@ -80,7 +80,7 @@ Plug 'kana/vim-textobj-user'            " requires bt vim-textobj-quotes
 Plug 'wellle/targets.vim'               " object: a - arguments
 Plug 'metakirby5/codi.vim' "  interactive scratchpad like Numi, for programming languages
 Plug 'junegunn/vim-easy-align'          " motion: ga
-Plug 'zhou13/vim-easyescape'            " A visual distraction-free jj/jk to esc
+" Plug 'zhou13/vim-easyescape'            " A visual distraction-free jj/jk to esc
 Plug 'easymotion/vim-easymotion'
 
 " *** Other plugins
