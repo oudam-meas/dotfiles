@@ -23,10 +23,15 @@ if (empty($TMUX))
   endif
 endif
 
+" NeoDark
+" let g:neodark#use_256color = 1
+colorscheme neodark
+let g:neodark#solid_vertsplit = 1
+
 " OneDark
 " let g:onedark_terminal_italics=1
 " colorscheme onedark
-"
+
 " Gruvbox
 " let g:gruvbox_italic=1
 " let g:gruvbox_hls_cursor="aqua" " yank highlight
@@ -41,9 +46,11 @@ endif
 " let ayucolor="dark"   " for dark version of theme
 " colorscheme ayu
 
-set background=dark
-let g:palenight_terminal_italics=1
-colorscheme palenight
+" set background=dark
+" let g:palenight_terminal_italics=1
+" colorscheme palenight
+" hi Search guibg=#697098 guifg=NONE
+" hi IncSearch gui=underline,bold
 
-hi Search guibg=#697098 guifg=NONE
-hi IncSearch gui=underline,bold
+let g:airline_theme = "neodark"
+

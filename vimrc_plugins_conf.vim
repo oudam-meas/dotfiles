@@ -4,8 +4,6 @@
 "
 " *** Airline
 " *********************************************
-" let g:airline_theme='gruvbox'
-let g:airline_theme = "palenight"
 let g:airline#extensions#tagbar#enabled = 0
 let g:airline_powerline_fonts = 1
 " let g:airline#extensions#hunks#enabled = 1
@@ -168,7 +166,7 @@ nmap <leader>rn <Plug>(coc-rename)
 
 " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
 xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a <Plug>(coc-codeaction-selected)
 
 " Remap for do codeAction of current line
 nmap <leader>ac  <Plug>(coc-codeaction)
@@ -312,23 +310,6 @@ command! T TagbarToggle
         \ }
   endif
 
-  " " Js
-  " let g:tagbar_type_javascript = {
-  "     \ 'ctagstype': 'javascript',
-  "     \ 'kinds': [
-  "     \ 'A:arrays',
-  "     \ 'P:properties',
-  "     \ 'T:tags',
-  "     \ 'O:objects',
-  "     \ 'G:generator functions',
-  "     \ 'F:functions',
-  "     \ 'C:constructors/classes',
-  "     \ 'M:methods',
-  "     \ 'V:variables',
-  "     \ 'I:imports',
-  "     \ 'E:exports',
-  "     \ 'S:styled components'
-  "     \ ]}
 
 " Markdown2Ctags
 " *********************************************
@@ -345,14 +326,6 @@ let g:tagbar_type_markdown = {
     \ 'kind2scope' : { 's' : 'section' },
     \ 'sort': 0,
     \ }
-
-
-" easy-escape
-" *********************************************
-" The unit of timeout is in ms. A very small timeout makes an input of real jj
-" let g:easyescape_chars = { "j": 2 }
-" let g:easyescape_timeout = 100
-" inoremap jj <ESC>
 
 " Vim-easymotion
 " *********************************************
@@ -371,4 +344,11 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" easy-escape
+" *********************************************
+" The unit of timeout is in ms. A very small timeout makes an input of real jj
+" let g:easyescape_chars = { "j": 2 }
+" let g:easyescape_timeout = 100
+" inoremap jj <ESC>
 

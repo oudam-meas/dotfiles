@@ -8,21 +8,33 @@ call plug#begin('~/.vim/plugged')
 
 " *** Editor UI
 
-Plug 'joshdick/onedark.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'morhetz/gruvbox'
-Plug 'ayu-theme/ayu-vim'
-Plug 'drewtempelmeyer/palenight.vim'
+
+" " Colorscheme
+Plug 'KeitaNakamura/neodark.vim'
+" Plug 'joshdick/onedark.vim'
+" Plug 'rakr/vim-one'
+" Plug 'morhetz/gruvbox'
+" Plug 'ayu-theme/ayu-vim'
+" Plug 'drewtempelmeyer/palenight.vim'
 
 " /* Tags
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 Plug 'jszakmeister/markdown2ctags'
-Plug 'tmm1/ripper-tags'
+
+Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+
+  " Generate tags for Ruby
+  Plug 'tmm1/ripper-tags'
+
+  " Generate tags for js
+  " 1. install tern_for_vim
+    Plug 'ternjs/tern_for_vim'
+  " 2. npm install -g git+https://github.com/ramitos/jsctags.git
 
 " *** Git
 
