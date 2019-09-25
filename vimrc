@@ -23,17 +23,17 @@ Plug 'KeitaNakamura/neodark.vim'
 " Plug 'drewtempelmeyer/palenight.vim'
 
 " /* Tags
+Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'jszakmeister/markdown2ctags'
 
-Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 
   " Generate tags for Ruby
   Plug 'tmm1/ripper-tags'
 
-  " Generate tags for js
+  " Generate tags for js with jsctags
   " 1. install tern_for_vim
-    Plug 'ternjs/tern_for_vim'
+  " Plug 'ternjs/tern_for_vim'
   " 2. npm install -g git+https://github.com/ramitos/jsctags.git
 
 " *** Git

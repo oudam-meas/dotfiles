@@ -1,5 +1,3 @@
---exclude=node_modules
-
 --langdef=markdown
 --langmap=markdown:.mkd
 --regex-markdown=/^#[ \t]+(.*)/\1/h,Heading_L1/
