@@ -90,6 +90,8 @@ Plug 'kana/vim-textobj-entire'          " object: e
 Plug 'kana/vim-textobj-line'            " object: l
 Plug 'kana/vim-textobj-user'            " requires bt vim-textobj-quotes
 Plug 'wellle/targets.vim'               " object: a - arguments
+Plug 'michaeljsmith/vim-indent-object'  " object: I - indent
+
 Plug 'metakirby5/codi.vim'              "  interactive scratchpad like Numi, for programming languages
 Plug 'junegunn/vim-easy-align'          " motion: ga
 Plug 'easymotion/vim-easymotion'
