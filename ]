@@ -85,7 +85,6 @@ Plug 'bogado/file-line'
 
   " - [ ] Search and replace
   " Plugin 'eugen0329/vim-esearch'
-  " https://github.com/mhinz/vim-grepper
   "
 
 "*** Vim ways
