@@ -16,14 +16,12 @@ vmap <s-tab> <gv
 vmap <tab> >gv
 vmap <s-tab> <gv
 
-" Indenting in or out for visual selected
-vmap <tab> >gv
-vmap <s-tab> <gv
-
 let mapleader=','
 
 nmap <Space> :noh<CR>
-nmap <leader><Space> :noh<CR>
+
+"hh to delete current word
+imap hh <c-w>
 
 " replace currently selected text with default register
 " without yanking it
