@@ -263,6 +263,7 @@ highlight! link HighlightedyankRegion Visual
 " *********************************************
 let test#strategy = "dispatch"            " Using Dispatch strategy. Plugin 'tpope/vim-dispatch' is required'
 let test#ruby#bundle_exec = 0
+let test#java#runner = "gradletest"
 " let test#enabled_runners = ["ruby#rspec"] " select which runners to load by default, intead load all
 nmap <silent> <leader>. :TestLast<CR>
 nmap <silent> <leader>A :TestSuite<CR>
