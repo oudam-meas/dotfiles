@@ -5,13 +5,13 @@ source ~/.aliases
 ZSH_THEME=powerlevel10k/powerlevel10k
 
 # ** Environment Paths ** #
-export PATH=$PATH:~/bin/
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 export PATH="/usr/local/opt/node@10/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/Library/Python/3.7/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:./bin
 
 # ** Basic Config ** #
 export EDITOR=nvim
@@ -39,7 +39,14 @@ export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 plugins=(
   ssh-agent
   zsh-syntax-highlighting
+  docker
+  docker-compose
+  kubectl
 )
+
+fpath=($(brew --prefix)/share/zsh-completions $fpath)
+autoload -U compinit
+compinit
 
 # ** Evaluate plugins ** #
 eval "$(rbenv init -)"
@@ -65,4 +72,4 @@ function vaml() {
 ## Google cloud
 #export CLOUDSDK_COMPUTE_ZONE=australia-southeast1-a
 #export CLOUDSDK_COMPUTE_REGION=australia-southeast1
-
+source ~/.env
