@@ -82,4 +82,5 @@ alias hi=highlight
 alias hil="hi -l "
 
 alias clear_asl='sudo rm -rf /private/var/log/asl/*.asl'
-#
+
+alias wave='kubectl port-forward -n weave "$(kubectl get -n weave pod --selector=weave-scope-component=app -o jsonpath='{.items..metadata.name}')" 4040'
