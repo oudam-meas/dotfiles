@@ -1,8 +1,8 @@
 Host *
   AddKeysToAgent yes
   UseKeychain yes
-  IdentityFile ~/.ssh/id_rsa_tw
-  # IdentityFile ~/.ssh/id_rsa
+  # IdentityFile ~/.ssh/id_rsa_tw
+  IdentityFile ~/.ssh/id_rsa
 
 Host vpnmumbai
   HostName 13.234.164.6
