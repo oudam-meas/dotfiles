@@ -95,3 +95,6 @@ ln -s ~/.dotfiles/tmux-layouts/rails-books.session.sh ~/.tmux-layouts/rails-book
 
 rm -f ~/.ssh/config
 ln -s ~/.dotfiles/ssh_config ~/.ssh/config
+
+rm -f ~/.bundle/config
+ln -s ~/.dotfiles/bundle/config ~/.bundle/config
