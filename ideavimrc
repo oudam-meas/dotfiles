@@ -8,6 +8,14 @@ set hlsearch                                              " Search: Highlight se
 set ignorecase                                            " Search: Case-insensitive searching.
 set smartcase                                             " Search: But case-sensitive if expression contains a capital letter.
 
+" *********************************************
+" Commands and Keys Mapping
+" *********************************************
+let mapleader=','
+nnoremap <leader>s :so ~/.ideavimrc<cr>
+nmap <Space> :noh<CR>
+imap hh <c-w>
+
 " Tab to indent
 vmap <tab> >gv
 vmap <s-tab> <gv
@@ -16,27 +24,22 @@ vmap <s-tab> <gv
 vmap <tab> >gv
 vmap <s-tab> <gv
 
-let mapleader=','
-
-nmap <Space> :noh<CR>
-
-"hh to delete current word
-imap hh <c-w>
-
-" replace currently selected text with default register
-" without yanking it
+" replace currently selected text with default register without yanking it
 vnoremap <leader>p "0p
 vnoremap <leader>P "0P
 
-" *********************************************
-" Windows
-" *********************************************
-" navigations between splitted windows
+" Navigate between windows
 nmap <c-j> <c-w>j
 nmap <c-k> <c-w>k
 nmap <c-h> <c-w>h
 nmap <c-l> <c-w>l
 
-" \ should work while on editor normal mode
-nnoremap \ :action ActivateProjectToolWindow<CR>
 
+" **** Idea Actions
+
+nnoremap \ :action ActivateProjectToolWindow<CR>
+nnoremap <leader>oi :action OptimizeImports<CR>
+command! OI action OptimizeImports
+command! A action Test
+
+" **** End of Idea Actions
