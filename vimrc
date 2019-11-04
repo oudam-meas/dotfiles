@@ -165,6 +165,8 @@ set smartcase                                  " Search: But case-sensitive if e
 set conceallevel=2
 set concealcursor="ni"
 
+set nofoldenable
+
 " Specifying Ruby path
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
 let g:python3_host_prog = '/usr/local/bin/python3'
@@ -209,12 +211,3 @@ endif
 if filereadable($HOME . "/.dotfiles/vimrc_local.vim")
 	source ~/.dotfiles/vimrc_local.vim
 endif
-
-" To retire
-" set backspace=indent,eol,start                            " Make backspace works like most program
-" au BufWritePost,BufReadPost * checktime | NERDTreeFocus | execute 'normal R' | wincmd p
-
-" " Ex-command completion - If you’re used to the autocomplete menu provided by zsh,
-" set wildmenu
-" set wildmode=full
-" set wildignore=*.o,*.obj,*~   " Stuff to ignore when tab completing

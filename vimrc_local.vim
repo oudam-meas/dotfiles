@@ -4,7 +4,7 @@
 " vimrc file related
 command! Vimrc e ~/.dotfiles/vimrc
 command! VimrcConf e ~/.dotfiles/vimrc_plugins_conf.vim
-command! SoVimrc w | so ~/.vimrc | e |echo "sourced vimrc...!"
+command! SoVimrc w | so ~/.vimrc
 
 command! RetabFixTab set tabstop=2 shiftwidth=2 expandtab | retab | w
 
@@ -29,5 +29,6 @@ nmap <silent> <leader>PC :so ~/.vimrc<CR> \| :PlugClean<CR> \| :echo "reload and
 " tab to select
 " inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
 " autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 " autocmd FileType json syntax match Comment +\/\/.\+$+
