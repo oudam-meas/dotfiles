@@ -40,7 +40,6 @@ Thumbs.db
 ########
 .rbenv-gemsets
 .ruby-gemset
-.ruby-version
 .gems
 .rvmrc
 .byebug_history
@@ -50,6 +49,7 @@ coverage/
 # Rails #
 ########
 vendor/ruby
+vendor/bundle
 .vim-flavor
 /tags*
 /*.log
