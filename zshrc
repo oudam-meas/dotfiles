@@ -11,6 +11,8 @@ export PATH="/usr/local/opt/node@10/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/Library/Python/3.7/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
+export PATH=~/Library/Android/sdk/tools:$PATH
+export PATH=~/Library/Android/sdk/platform-tools:$PATH
 export PATH=$PATH:./bin
 
 # ** Basic Config ** #
@@ -19,6 +21,8 @@ export zshrc=~/.zshrc
 export vimrc=~/.vimrc
 export dotfiles=~/Dropbox/Backups/dotfiles
 export PG=~/Library/Application\ Support/Postgres
+export JMETER_HOME=/usr/local/Cellar/jmeter/5.2/libexec/bin/
+
 
 # ** Evaluate plugins ** #
 export TERM=xterm-256color-italic        # italic color is required for trueclor in tmux mode
@@ -44,9 +48,11 @@ plugins=(
   kubectl
 )
 
-fpath=($(brew --prefix)/share/zsh-completions $fpath)
-autoload -U compinit
-compinit
+[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+
+# fpath=($(brew --prefix)/share/zsh-completions $fpath)
+# autoload -U compinit
+# compinit
 
 # ** Evaluate plugins ** #
 eval "$(rbenv init -)"
@@ -59,6 +65,8 @@ export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
 source $ZSH/oh-my-zsh.sh
+
+eval `ssh-agent`
 
 # ** Custom powerlevel 10k ** #
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
@@ -73,3 +81,15 @@ function vaml() {
 #export CLOUDSDK_COMPUTE_ZONE=australia-southeast1-a
 #export CLOUDSDK_COMPUTE_REGION=australia-southeast1
 source ~/.env
+
+# export HEAD=$(git rev-parse --short HEAD)
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# Maven using openjdk
+export CPPFLAGS="-I/usr/local/opt/openjdk/include"
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
+
+# export TOMCAT="/usr/local/Cellar/tomcat/9.0.36"
+# export CATALICA_HOME="/usr/local/Cellar/tomcat/9.0.36/libexec"
