@@ -13,6 +13,7 @@ export PATH="$HOME/Library/Python/3.7/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 export PATH=~/Library/Android/sdk/tools:$PATH
 export PATH=~/Library/Android/sdk/platform-tools:$PATH
+export PATH=~/Library/Android/sdk/tools/bin:$PATH
 export PATH=$PATH:./bin
 
 # ** Basic Config ** #
@@ -22,6 +23,7 @@ export vimrc=~/.vimrc
 export dotfiles=~/Dropbox/Backups/dotfiles
 export PG=~/Library/Application\ Support/Postgres
 export JMETER_HOME=/usr/local/Cellar/jmeter/5.2/libexec/bin/
+export ANDROID_HOME=~/Library/Android/sdk/
 
 
 # ** Evaluate plugins ** #
@@ -56,6 +58,8 @@ plugins=(
 
 # ** Evaluate plugins ** #
 eval "$(rbenv init -)"
+eval "$(direnv hook zsh)"
+
 
 # ** Programming languages version manager ** #
 # nvm for node
@@ -93,3 +97,5 @@ export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
 # export TOMCAT="/usr/local/Cellar/tomcat/9.0.36"
 # export CATALICA_HOME="/usr/local/Cellar/tomcat/9.0.36/libexec"
+alias rni="kill $(lsof -t -i:8081); rm -rf ios/build/; rm -rf ios/pods; npm run pod-install; npm run ios"
+

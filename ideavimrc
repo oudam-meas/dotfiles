@@ -1,6 +1,7 @@
 set ideajoin                                              " to perform a join via the IDE
 set commentary
 set surround
+set argtextobj
 
 " Search
 set incsearch                                             " Search: Find as you type search
@@ -14,7 +15,6 @@ set smartcase                                             " Search: But case-sen
 let mapleader=','
 nnoremap <leader>s :so ~/.ideavimrc<cr>
 nmap <Space> :noh<CR>
-imap hh <c-w>
 
 " Tab to indent
 vmap <tab> >gv
@@ -37,7 +37,7 @@ nmap <c-l> <c-w>l
 
 " **** Idea Actions
 
-nnoremap \ :action ActivateProjectToolWindow<CR>
+nnoremap \ :action SelectInProjectView<CR>
 nnoremap <leader>oi :action OptimizeImports<CR>
 command! OI action OptimizeImports
 command! A action Test

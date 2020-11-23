@@ -16,11 +16,6 @@ Plug 'vim-airline/vim-airline-themes'
 
 " " Colorscheme
 Plug 'KeitaNakamura/neodark.vim'
-" Plug 'joshdick/onedark.vim'
-" Plug 'rakr/vim-one'
-" Plug 'morhetz/gruvbox'
-" Plug 'ayu-theme/ayu-vim'
-" Plug 'drewtempelmeyer/palenight.vim'
 
 " /* Tags
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
@@ -71,22 +66,17 @@ Plug 'bogado/file-line'
  Plug 'pangloss/vim-javascript' " dependency for vim-jsx
  Plug 'mxw/vim-jsx'
 
- " HTML
+ " " HTML
  Plug 'mattn/emmet-vim'
 
-  " " Devops
-  Plug 'ekalinin/Dockerfile.vim'
-  Plug 'andrewstuart/vim-kubernetes'
+" " Devops
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'andrewstuart/vim-kubernetes'
 
-  " " Ruby
-  Plug 'tpope/vim-bundler'
-  Plug 'tpope/vim-endwise'
-  Plug 'tpope/vim-rails'
-
-  " - [ ] Search and replace
-  " Plugin 'eugen0329/vim-esearch'
-  " https://github.com/mhinz/vim-grepper
-  "
+" " Ruby
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-rails'
 
 "*** Vim ways
 

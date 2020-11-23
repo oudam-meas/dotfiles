@@ -104,7 +104,6 @@ dump.rdb
 .envrc
 .agignore
 Procfile.local
-.envrc
 # Version Control #
 ###################
 .git
@@ -126,3 +125,6 @@ Procfile.local
 .idea/*
 
 *.code-workspace
+
+# Hisg temp
+src/login/ManualNRICEntryScreen.tsx

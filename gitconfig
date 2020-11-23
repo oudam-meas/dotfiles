@@ -38,7 +38,7 @@
   dfw = diff --color-words
   dsw = diff --staged --color-words
   dcw = diff --cached --color-words
-  pr = "!f() { ~/.dotfiles/bin/open-github-pr-page.sh; }; f"
+  ; pr = "!f() { ~/.dotfiles/bin/open-github-pr-page.sh; }; f"
   up = pull --rebase --prune
   undo = reset HEAD~1 --mixed
 	unstage = reset HEAD --
@@ -59,6 +59,10 @@
   pf = push --force-with-lease
   publish = "!git push -u origin \"$(git rev-parse --abbrev-ref HEAD)\""
   unpublish = "!git push origin :\"$(git rev-parse --abbrev-ref HEAD)\""
+  ps = pair set
+  pr = pair reset
+  pl = pair list
+  psh = pair show
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
