@@ -24,7 +24,7 @@ if (empty($TMUX))
 endif
 
 " NeoDark
-" let g:neodark#use_256color = 1
+let g:neodark#use_256color = 1
 colorscheme neodark
 let g:neodark#solid_vertsplit = 1
 

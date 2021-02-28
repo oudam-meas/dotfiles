@@ -5,6 +5,7 @@ source ~/.aliases
 ZSH_THEME=powerlevel10k/powerlevel10k
 
 # ** Environment Paths ** #
+# /usr/local/opt/openjdk/bin/java
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 export PATH="/usr/local/opt/node@10/bin:$PATH"
@@ -91,9 +92,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-# Maven using openjdk
-export CPPFLAGS="-I/usr/local/opt/openjdk/include"
-export PATH="/usr/local/opt/openjdk/bin:$PATH"
+# [Disabled] Maven using openjdk
+# export CPPFLAGS="-I/usr/local/opt/openjdk/include"
+# export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
 # export TOMCAT="/usr/local/Cellar/tomcat/9.0.36"
 # export CATALICA_HOME="/usr/local/Cellar/tomcat/9.0.36/libexec"

@@ -45,9 +45,9 @@ Plug 'tpope/vim-repeat'                 " 'solve repeated the last native comman
 
 " *** Dev tools
 " " IntelliSense with COC nvim
-Plug 'Shougo/neco-vim'
-Plug 'neoclide/coc-neco'
-Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
+" Plug 'Shougo/neco-vim'
+" Plug 'neoclide/coc-neco'
+" Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jiangmiao/auto-pairs'
@@ -63,8 +63,8 @@ Plug 'bogado/file-line'
  Plug 'tpope/vim-dispatch'
 
  " " javascript
- Plug 'pangloss/vim-javascript' " dependency for vim-jsx
- Plug 'mxw/vim-jsx'
+ " Plug 'pangloss/vim-javascript' " dependency for vim-jsx
+ " Plug 'mxw/vim-jsx'
 
  " " HTML
  Plug 'mattn/emmet-vim'

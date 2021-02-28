@@ -15,7 +15,7 @@
   remote = yellow
 
 [user]
-	name = Outdam Meas
+	name = Outdam
 	email = outdam.meas@thoughtworks.com
 
 [alias]
@@ -26,8 +26,10 @@
   ci = commit
   cm = commit -m
   cam = commit -a -m
-  amend = commit -a --amend
-  amendf = commit -a --amend --no-edit
+  amend = commit --amend
+  amendf = commit --amend --no-edit
+  aamend = commit -a --amend
+  aamendf = commit -a --amend --no-edit
   wip = !git add -A && git commit -m "WIP"
   br = branch
   bl = for-each-ref --count=30 --sort=-committerdate refs/heads/ --format='%(authordate:short) %(color:red)%(objectname:short) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - (%(color:green)%(committerdate:relative)%(color:reset))'
@@ -85,3 +87,5 @@
 
 [color "diff"]
 	new = green bold
+[credential]
+	helper = osxkeychain

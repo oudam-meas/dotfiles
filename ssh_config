@@ -2,8 +2,8 @@ Host *
   AddKeysToAgent yes
   UseKeychain yes
   # IdentityFile ~/.ssh/id_rsa_m
-  # IdentityFile ~/.ssh/id_rsa_tw
-  IdentityFile ~/.ssh/id_rsa
+  IdentityFile ~/.ssh/id_rsa_tw
+  # IdentityFile ~/.ssh/id_rsa
 
 Host terraform
   HostName 13.54.237.21

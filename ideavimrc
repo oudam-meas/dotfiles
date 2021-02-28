@@ -1,22 +1,37 @@
-set ideajoin                                              " to perform a join via the IDE
+
+""" Plugins --------------------------------
 set commentary
 set surround
 set argtextobj
+set easymotion " Doc: https://github.com/AlexPl292/IdeaVim-EasyMotion#supported-commands
+set multiple-cursors
 
-" Search
+set NERDTree   " Doc: https://github.com/JetBrains/ideavim/wiki/NERDTree-support
+nnoremap <leader><cr> :NERDTreeFind  "OR ":action SelectInProjectView<CR>
+nnoremap \|\| :NERDTreeToggle<CR>
+
+set highlightedyank
+let g:highlightedyank_highlight_color = "rgba(160, 160, 160, 155)"
+let g:highlightedyank_highlight_duration = "200"
+
+""" Mappings --------------------------------
+" Mapping Leader --------------------------------
+let mapleader='\'
+
+" Mappings for Windows Navigation --------------------------------
+nmap <c-j> <c-w>j
+nmap <c-k> <c-w>k
+nmap <c-h> <c-w>h
+nmap <c-l> <c-w>l
+
+" Mappings for Windows Navigation --------------------------------
 set incsearch                                             " Search: Find as you type search
 set hlsearch                                              " Search: Highlight search terms
 set ignorecase                                            " Search: Case-insensitive searching.
 set smartcase                                             " Search: But case-sensitive if expression contains a capital letter.
 
-" *********************************************
-" Commands and Keys Mapping
-" *********************************************
-let mapleader=','
-nnoremap <leader>s :so ~/.ideavimrc<cr>
 nmap <Space> :noh<CR>
-
-" Tab to indent
+" Indentation -------------------------------
 vmap <tab> >gv
 vmap <s-tab> <gv
 
@@ -24,22 +39,28 @@ vmap <s-tab> <gv
 vmap <tab> >gv
 vmap <s-tab> <gv
 
-" replace currently selected text with default register without yanking it
-vnoremap <leader>p "0p
-vnoremap <leader>P "0P
 
-" Navigate between windows
-nmap <c-j> <c-w>j
-nmap <c-k> <c-w>k
-nmap <c-h> <c-w>h
-nmap <c-l> <c-w>l
+""" Mapping With Actions --------------------------------
+" Help: list of actions: :actionlist [pattern]
 
+map <leader>` <Action>(ActivateTerminalToolWindow)
+" Debugging/Running
+map <leader>d <Action>(Debug)
+map <leader>b <Action>(ToggleLineBreakpoint)
+map <leader>c <Action>(Stop)
 
-" **** Idea Actions
+" Refactoring
+map <leader>r <Action>(RenameElement)
+map <leader>z <Action>(ToggleDistractionFreeMode)
 
-nnoremap \ :action SelectInProjectView<CR>
-nnoremap <leader>oi :action OptimizeImports<CR>
-command! OI action OptimizeImports
-command! A action Test
+map <leader>a <Action>(Annotate)
+map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
+map <S-Space> <Action>(GotoNextError)
 
-" **** End of Idea Actions
+map <leader>o <Action>(FileStructurePopup)
+" nnoremap <leader>oi :action OptimizeImports<CR>
+" command! A action Test
+
+" map <leader>f <Plug>(easymotion-s)
+" map <leader>e <Plug>(easymotion-f)
+

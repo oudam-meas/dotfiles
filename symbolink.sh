@@ -1,4 +1,3 @@
-rm -f ~/.vimrc
 tic -x ~/.dotfiles/xterm-256color-italic.terminfo
 tic -x ~/.dotfiles/tmux-256color.terminfo
 
@@ -14,7 +13,11 @@ ln -s ~/.dotfiles/aliases ~/.aliases
 rm -f ~/bin/code_tmux_shell
 ln -s ~/.dotfiles/code_tmux_shell ~/bin/code_tmux_shell
 
+rm -f ~/.vimrc
 ln -s ~/.dotfiles/vimrc ~/.vimrc
+
+rm -f ~/.vscode.vimrc
+ln -s ~/.dotfiles/.vscode.vimrc ~/.vscode.vimrc
 
 rm -rf ~/.tern-project
 ln -s ~/.dotfiles/tern-project ~/.tern-project

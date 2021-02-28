@@ -1,3 +1,4 @@
+alias aliases='vim ~/.aliases'
 # VIM_PATH='/usr/local/bin/vim'
 # alias v=$VIM_PATH
 # alias vi=$VIM_PATH
@@ -96,7 +97,10 @@ alias build_node4k8s='docker rmi $(docker images outdammeas/node4k8s -q) -f && i
 # kubectl
 alias kcbff='kubectl get config -n bff h365-bff -o yaml'
 alias kla='kubectl logs -l  app.kubernetes.io/name=pph-svc-activity -c pph-svc-activity -n services -f'
-alias klbff='kubectl logs -l  app.kubernetes.io/name=h365-bff -c h365-bff -n bff -f'
+alias klrw='kubectl logs -l  app.kubernetes.io/name=pph-svc-reward -c pph-svc-reward -n services -f'
+alias klreward='klrw'
+alias kluser='kubectl logs -l  app.kubernetes.io/name=pph-svc-user -c pph-svc-user -n services -f'
+alias klbff='kubectl logs -l  app.kubernetes.io/name=hisg-bff -c hisg-bff -n bff -f'
 alias klc='kubectl logs -l  app.kubernetes.io/name=pph-svc-challenge -c pph-svc-challenge -n services -f'
 alias klfb='kubectl logs -l  app.kubernetes.io/name=pph-svc-fitbit -c pph-svc-fitbit -n services -f'
 alias klg='kubectl logs -l  app.kubernetes.io/name=pph-svc-group -c pph-svc-group -n services -f'
@@ -111,5 +115,16 @@ alias ksfb='kubectl get secret -n services pph-svc-fitbit -o yaml'
 alias ksg='kubectl get secret -n services pph-svc-group -o yaml'
 alias kss='kubectl get secret -n services pph-svc-survey -o yaml'
 
-# node
-alias cov=open -a "Google Chrome" ~/Work/Repos/HPB/hisg-mobile-app/jest_report/coverage/lcov-report/index.html
+# scrcpy
+alias scrcpy_connect='adb connect 192.168.1.149:5555'
+
+# React
+alias rn_cc='watchman watch-del-all && rm -rf $TMPDIR/react-* && npm start -- --reset-cache'
+
+# Renovate
+alias rr='${PWD}/scripts/dry_run_with_debug.sh'
+
+# VSCODE 
+alias code='code-insiders'
+
+alias ydl='youtube-dl'
