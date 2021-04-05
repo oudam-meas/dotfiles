@@ -15,56 +15,53 @@
   remote = yellow
 
 [user]
-	name = Outdam
-	email = outdam.meas@thoughtworks.com
+	name = Outdam and James
+	email = outdam.meas+james.koh@thoughtworks.com
+  ;email = outdam.meas@thoughtworks.com
 
 [alias]
   aa = add -A
-  o = browse --
+  ; o = browse --
   st = status
 	s = status -s
-  ci = commit
+  ; ci = commit
   cm = commit -m
   cam = commit -a -m
   amend = commit --amend
   amendf = commit --amend --no-edit
-  aamend = commit -a --amend
-  aamendf = commit -a --amend --no-edit
+  ; aamend = commit -a --amend
+  ; aamendf = commit -a --amend --no-edit
   wip = !git add -A && git commit -m "WIP"
-  br = branch
-  bl = for-each-ref --count=30 --sort=-committerdate refs/heads/ --format='%(authordate:short) %(color:red)%(objectname:short) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - (%(color:green)%(committerdate:relative)%(color:reset))'
+  ; br = branch
+  ; bl = for-each-ref --count=30 --sort=-committerdate refs/heads/ --format='%(authordate:short) %(color:red)%(objectname:short) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - (%(color:green)%(committerdate:relative)%(color:reset))'
   co = checkout
   df = diff
   ds = diff --staged
-  dc = diff --cached
+  ; dc = diff --cached
   dfw = diff --color-words
   dsw = diff --staged --color-words
-  dcw = diff --cached --color-words
+  ; dcw = diff --cached --color-words
   ; pr = "!f() { ~/.dotfiles/bin/open-github-pr-page.sh; }; f"
-  up = pull --rebase --prune
-  undo = reset HEAD~1 --mixed
-	unstage = reset HEAD --
-  bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs git branch -d; }; f"
-  bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
-  l = log --graph --decorate --pretty=oneline --abbrev-commit --date=relative --color -n 20
-	last = log -1 HEAD
-  lg = log --graph --decorate --pretty=oneline --abbrev-commit --all --color
-  lga = log --all --graph --decorate --oneline --simplify-by-decoration
-  lgp = log -p
-	lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
-	adog = log --all --decorate --oneline --graph
-	glog = log --oneline --graph --abbrev-commit
-  ll = "!git --no-pager glog -25"
-  graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
-  ls = ls-file
-  ctags = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags'"
+  update = pull --rebase --prune
+  ; undo = reset HEAD~1 --mixed
+	; unstage = reset HEAD --
+  ; bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs git branch -d; }; f"
+  ; bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
+  l = log --graph --decorate --pretty=oneline --abbrev-commit --date=relative --color -n 25
+  ll = log --oneline --graph --abbrev-commit -25
+	; last = log -1 HEAD
+  ; lg = log --graph --decorate --pretty=oneline --abbrev-commit --all --color
+  ; lga = log --all --graph --decorate --oneline --simplify-by-decoration
+  ; lgp = log -p
+	; lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	; adog = log --all --decorate --oneline --graph
+	; glog = log --oneline --graph --abbrev-commit
+  ; graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
+  ; ls = ls-file
+  ; ctags = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags'"
   pf = push --force-with-lease
-  publish = "!git push -u origin \"$(git rev-parse --abbrev-ref HEAD)\""
-  unpublish = "!git push origin :\"$(git rev-parse --abbrev-ref HEAD)\""
-  ps = pair set
-  pr = pair reset
-  pl = pair list
-  psh = pair show
+  ; publish = "!git push -u origin \"$(git rev-parse --abbrev-ref HEAD)\""
+  ; unpublish = "!git push origin :\"$(git rev-parse --abbrev-ref HEAD)\""
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f

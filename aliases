@@ -1,70 +1,35 @@
-alias aliases='vim ~/.aliases'
-# VIM_PATH='/usr/local/bin/vim'
-# alias v=$VIM_PATH
-# alias vi=$VIM_PATH
-
-#NVIM_PATH='/Users/measoutdam/nvim-osx64/bin/nvim'
-# NVIM_PATH='/usr/local/bin/nvim'
+alias af='alias-finder'
 alias vim=nvim
 
-# Make nvim load in zsh faster
-# alias loadnvm=". /usr/local/opt/nvm/nvm.sh"
 
-# ls, the common ones I use a lot shortened for rapid fire usage
-alias l='ls -lFh'     #size,show type,human readable
-alias la='ls -lAFh'   #long list,show almost all,show type,human readable
-alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
-alias lst='ls -ltFh'  #long list,sorted by date,show type,human readable
-alias ll='ls -l'      #long list
-alias ldot='ls -ld .*'
-alias tmux a='tmux attach'
-alias dup='$DOTFILES/sync.sh'
-alias sym='~/dotfiles/symbolink.sh'
-alias dotfiles='cd ~/.dotfiles'
-alias notes='cd ~/Documents/notes'
-alias books='cd ~/Documents/notes/books'
-alias so='source'
-alias js='jobs'
-alias fgs='fg %./bin/rails'
-alias sr='screen -r'
-alias ss='screen -r server'
-alias sl='screen -list'
-alias react='cd ~/PlayGround/react'
-alias udacity='cd ~/go/src/github.com/udacity/d615'
+alias eal='vim ~/.aliases'
+alias ezrc='vim ~/.zshrc'
+alias egitignore='nvim ~/.gitignore_global'
+alias egitconfig='nvim ~/.gitconfig'
 
-alias zshrc='nvim ~/.zshrc' # Quick access to the ~/.zshrc file
-alias vimrc='nvim ~/.dotfiles/vimrc'
-alias vimrc_plug='nvim ~/.dotfiles/vimrc_plugins_conf.vim'
-alias gitignore='nvim ~/.gitignore_global'
-alias gitconfig='nvim ~/.gitconfig'
-alias Gemfile='nvim ./Gemfile'
-alias todo='nvim ~/Documents/notes/todo.md'
+# [TO removed] Use zsh common-aliases
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/common-aliases
+# alias l='ls -lFh'     #size,show type,human readable
+# alias la='ls -lAFh'   #long list,show almost all,show type,human readable
+# alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
+# alias lst='ls -ltFh'  #long list,sorted by date,show type,human readable
+# alias ll='ls -l'      #long list
+# alias ldot='ls -ld .*'
 
+# alias fgs='fg %./bin/rails'
+# alias t='tail -f'
+# alias -g G='| grep'
+# alias -g H='| head'
+# alias -g T='| tail'
+# alias -g CP='| pbcopy'
 alias grep='grep --color'
 
-alias t='tail -f'
-
-alias -g G='| grep'
-alias -g H='| head'
-alias -g T='| tail'
-alias -g CP='| pbcopy'
-alias rspeclf='rspec --only-failures'
 
 # alias google-chrome='open -a Google\ Chrome --args --disable-web-security'
 alias brewery='brew update && brew upgrade && brew cleanup'
 
-# Rails
-alias anti='i18n-tasks normalize | i18n-tasks missing | i18n-tasks unused'
-alias ss='spring stop'
-
 #ssh
-alias ssh="TERM=xterm-256color ssh"
-
-#tmux
-export BONGLOY_PATH=~/projects/bongloy-core
-alias tmux_bongloy='cd $BONGLOY_PATH && rm -f /tmp/tbs && tmux -S /tmp/tbs new -s bongloy && chgrp everyone /tmp/tbs'
-# export SESSION="vscode`pwd | md5`"
-# alias code_tmux='tmux attach-session -d -t $SESSION || tmux new-session -s $SESSION'
+# alias ssh="TERM=xterm-256color ssh"
 
 alias show_inet="ifconfig | grep 'inet ' | grep -v 'inet 127'"
 alias inet="show_inet && show_inet | pbcopy"
@@ -128,3 +93,15 @@ alias rr='${PWD}/scripts/dry_run_with_debug.sh'
 alias code='code-insiders'
 
 alias ydl='youtube-dl'
+alias v='vagrant'
+
+alias esvim="vim ~/.SpaceVim.d/init.toml"
+
+alias tp="terraform plan"
+alias ta="terraform apply"
+alias td="terraform destroy"
+alias tw="terraform workspace"
+
+# Open web url
+
+alias doc_tmux="open https://github.com/gpakosz/.tmux"

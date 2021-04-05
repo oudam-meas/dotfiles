@@ -139,3 +139,6 @@ note.md
 
 #https://marketplace.visualstudio.com/items?itemName=xyz.local-history
 .history
+
+.npmrc
+generate_tag_version.sh

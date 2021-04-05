@@ -1,34 +1,59 @@
+let mapleader='\'
+" does not support
+" set wildmenu
+" set wildmode=full
 
 """ Plugins --------------------------------
 set commentary
 set surround
 set argtextobj
+
+" Additional text objects: ae, ie
+set textobj-entire
+
+" <leader><leader>f
 set easymotion " Doc: https://github.com/AlexPl292/IdeaVim-EasyMotion#supported-commands
+
+" <A-n>, <A-x>, <A-p>, g<A-n>
+" A is 'alt'
+" Use 'Unicode Hex Input' as input source - https://stackoverflow.com/a/55221176
 set multiple-cursors
 
-set NERDTree   " Doc: https://github.com/JetBrains/ideavim/wiki/NERDTree-support
-nnoremap <leader><cr> :NERDTreeFind  "OR ":action SelectInProjectView<CR>
-nnoremap \|\| :NERDTreeToggle<CR>
+
+" 'gr' for normal and visual, or 'gr'<motion>
+" 'grr' for entire file
+set ReplaceWithRegister
 
 set highlightedyank
-let g:highlightedyank_highlight_color = "rgba(160, 160, 160, 155)"
+let g:highlightedyank_highlight_color = "rgba(160, 160, 160, 50)"
 let g:highlightedyank_highlight_duration = "200"
 
-""" Mappings --------------------------------
-" Mapping Leader --------------------------------
-let mapleader='\'
+set NERDTree   " Doc: https://github.com/JetBrains/ideavim/wiki/NERDTree-support
 
-" Mappings for Windows Navigation --------------------------------
+map EE :NERDTreeFind<CR>
+map <leader>e :NERDTreeFind<CR>
+command! EE NERDTreeFind
+command! T NERDTreeToggle
+nnoremap \|\| :NERDTreeToggle<CR>
+map <leader>tt :NERDTreeToggle<CR>
+
+""" Config   -------------------------------
+set incsearch   " Search: Find as you type search
+set hlsearch    " Search: Highlight search terms
+set ignorecase  " Search: Case-insensitive searching.
+set smartcase   " Search: But case-sensitive if expression contains a capital letter.
+
+""" Mappings --------------------------------
+
+" Windows: IDE windows-------------------------------
+command! TW action HideAllWindows
+map <leader>tw <Action>(HideAllWindows)
+
+" Windows: Mappings for Windows Navigation --------------------------------
 nmap <c-j> <c-w>j
 nmap <c-k> <c-w>k
 nmap <c-h> <c-w>h
 nmap <c-l> <c-w>l
-
-" Mappings for Windows Navigation --------------------------------
-set incsearch                                             " Search: Find as you type search
-set hlsearch                                              " Search: Highlight search terms
-set ignorecase                                            " Search: Case-insensitive searching.
-set smartcase                                             " Search: But case-sensitive if expression contains a capital letter.
 
 nmap <Space> :noh<CR>
 " Indentation -------------------------------
@@ -41,26 +66,42 @@ vmap <s-tab> <gv
 
 
 """ Mapping With Actions --------------------------------
-" Help: list of actions: :actionlist [pattern]
-
 map <leader>` <Action>(ActivateTerminalToolWindow)
+
 " Debugging/Running
-map <leader>d <Action>(Debug)
+map <leader>dc <Action>(DebugClass)
+map <leader>rc <Action>(RunClass)
 map <leader>b <Action>(ToggleLineBreakpoint)
 map <leader>c <Action>(Stop)
 
 " Refactoring
-map <leader>r <Action>(RenameElement)
-map <leader>z <Action>(ToggleDistractionFreeMode)
+map <leader>rn <Action>(RenameElement)
+map <leader>l <Action>(FindUsages)
+command! Fc action ReformatCode
 
-map <leader>a <Action>(Annotate)
-map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
+" Code Navigation
+map <c-p> <Action>(FindInPath)
 map <S-Space> <Action>(GotoNextError)
 
+" Git
+map <leader>a <Action>(Annotate)
+map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
 map <leader>o <Action>(FileStructurePopup)
-" nnoremap <leader>oi :action OptimizeImports<CR>
-" command! A action Test
+command! Blame action GitToolBox.ShowInlineBlame
+
+command! Rl action IdeaVim.ReloadVimRc.reload
+command! Rs action InvalidateCaches
+ " Toggle View Navigation
+command! Tnav action ViewNavigationBar
+command! Rr action Rerun
+map RR <Action>(Rerun)
+
+map <c--> <Action>(CollapseAllRegions)
+map <c-=> <Action>(ExpandAllRegions)
+
+command! Lfix action Javascript.Linters.EsLint.Fix
 
 " map <leader>f <Plug>(easymotion-s)
 " map <leader>e <Plug>(easymotion-f)
+" map <leader>z <Action>(ToggleDistractionFreeMode)
 
