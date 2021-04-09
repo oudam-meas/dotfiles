@@ -1,6 +1,9 @@
 export ZSH=~/.oh-my-zsh
-source ~/.aliases
-source ~/.env
+
+zstyle :bracketed-paste-magic paste-init backward-extend-paste
+
+[[ -f ~/.aliases.zsh ]] && source ~/.aliases.zsh
+[[ -f ~/.env ]] && source ~/.env
 
 # ** ZSH ** #
 ZSH_THEME=powerlevel10k/powerlevel10k
@@ -8,9 +11,8 @@ DISABLE_UPDATE_PROMPT=true
 VSCODE=code-insiders
 
 # ** Environment Paths ** #
-# /usr/local/opt/openjdk/bin/java
-export ANDROID_HOME=~/Library/Android/sdk/
 
+export ANDROID_HOME=~/Library/Android/sdk/
 export PATH="/bin:/usr/bin:/usr/local/bin:$PATH"
 export PATH="/usr/local/go/bin:$PATH"
 export PATH="$HOME/.tmuxifier/bin:$PATH"
@@ -18,6 +20,7 @@ export PATH="$HOME/Library/Python/3.7/bin:$PATH"
 export PATH="$ANDROID_HOME/tools:$PATH"
 export PATH="$ANDROID_HOME/platform-tools:$PATH"
 export PATH="$ANDROID_HOME/tools/bin:$PATH"
+
 # ** NPM **
 export PATH="$HOME/.npm-packages/bin:$PATH"
 # ** JENV **
@@ -30,16 +33,10 @@ export PATH="$HOME/.rvm/bin:$PATH"
 export EDITOR=nvim
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 
-# TMUX color in Iterm [To remove]
-# export TERM=xterm-256color-italic        # italic color is required for trueclor in tmux mode
-# unset LSCOLORS
-# export CLICOLOR=1
-# export CLICOLOR_FORCE=1
-
 # ** Plugins ** #
 plugins=(
   terraform
-  ssh-agent #eval `ssh-agent` - https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
+  ssh-agent # eval `ssh-agent` - https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
   zsh-syntax-highlighting
   docker
   docker-compose
@@ -61,6 +58,8 @@ plugins=(
   tmuxinator
   aws
 )
+
+[[ -f ~/.dotfiles/zsh_fix_paste_slowness.zsh ]] && source ~/.dotfiles/zsh_fix_paste_slowness.zsh
 
 # ** ssh-agent config ** #
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent

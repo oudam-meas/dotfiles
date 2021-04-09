@@ -15,8 +15,8 @@
   remote = yellow
 
 [user]
-	name = Outdam and James
-	email = outdam.meas+james.koh@thoughtworks.com
+	name = Outdam
+	email = outdam.meas@thoughtworks.com
   ;email = outdam.meas@thoughtworks.com
 
 [alias]
