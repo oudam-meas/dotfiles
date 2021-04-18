@@ -1,24 +1,23 @@
 alias af='alias-finder'
 alias vim=nvim
+alias vimm=mvim
+alias watch='watch '
+
+# LightEdit mode
+alias ide='idea -e'
 
 alias eal='vim ~/.aliases.zsh'
 alias erc='vim ~/.zshrc'
 alias egitignore='nvim ~/.gitignore_global'
 alias egitconfig='nvim ~/.gitconfig'
-
 alias grep='grep --color'
-
-# alias google-chrome='open -a Google\ Chrome --args --disable-web-security'
-alias brewery='brew update && brew upgrade && brew cleanup'
 
 alias show_inet="ifconfig | grep 'inet ' | grep -v 'inet 127'"
 alias inet="show_inet && show_inet | pbcopy"
 alias ctags="`brew --prefix`/bin/ctags"
-alias spoof="spoof-mac.py"
 
-# Boostnote
-export BOOSTNOTE="~/Library/Mobile\ Documents/com~apple~CloudDocs/Bootnote"
-alias bnote="cd $BOOSTNOTE"
+# Docker
+# https://github.com/akarzim/zsh-docker-aliases
 
 # Kubernetes - most shortcuts are already defined by zsh plugin
 alias kcsn='kcn kccc --namespace ' # kubectl config set-context $(kubectl config current-context) --namespace
@@ -73,11 +72,18 @@ alias v='vagrant'
 
 alias esvim="vim ~/.SpaceVim.d/init.toml"
 
-alias tp="terraform plan"
-alias ta="terraform apply"
-alias td="terraform destroy"
-alias tw="terraform workspace"
+
+alias tf="terraform"
+alias tfp="terraform plan"
+alias tfa="terraform apply"
+alias tfd="terraform destroy"
+alias tfw="terraform workspace"
 
 # Open web url
-
 alias doc_tmux="open https://github.com/gpakosz/.tmux"
+
+# AWS cli
+alias aws_set_profile="asp"
+alias aws_config_profile="acp"
+alias aws_get_profile="agp"
+alias aws_get_profiles="aws_profiles"

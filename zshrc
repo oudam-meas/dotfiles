@@ -1,6 +1,6 @@
+zmodload zsh/zprof
 export ZSH=~/.oh-my-zsh
-
-zstyle :bracketed-paste-magic paste-init backward-extend-paste
+export EDITOR=nvim
 
 [[ -f ~/.aliases.zsh ]] && source ~/.aliases.zsh
 [[ -f ~/.env ]] && source ~/.env
@@ -17,67 +17,58 @@ export PATH="/bin:/usr/bin:/usr/local/bin:$PATH"
 export PATH="/usr/local/go/bin:$PATH"
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 export PATH="$HOME/Library/Python/3.7/bin:$PATH"
+export PATH="$HOME/.npm-packages/bin:$PATH"
+export PATH="$HOME/.jenv/bin:$PATH"
+export PATH="$HOME/.rvm/bin:$PATH"
 export PATH="$ANDROID_HOME/tools:$PATH"
 export PATH="$ANDROID_HOME/platform-tools:$PATH"
 export PATH="$ANDROID_HOME/tools/bin:$PATH"
 
-# ** NPM **
-export PATH="$HOME/.npm-packages/bin:$PATH"
-# ** JENV **
-export PATH="$HOME/.jenv/bin:$PATH"
-# ** RVM Must be the last **
-export PATH="$HOME/.rvm/bin:$PATH"
+# ** Extra config for nvm ** #
+[[ -f ~/.dotfiles/zsh_configs/nvm.zsh ]] && source ~/.dotfiles/zsh_configs/nvm.zsh
 
-
-# ** Basic Config ** #
-export EDITOR=nvim
-export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 
 # ** Plugins ** #
 plugins=(
-  terraform
-  ssh-agent # eval `ssh-agent` - https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
+  ssh-agent          # eval `ssh-agent` - https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
   zsh-syntax-highlighting
   docker
-  docker-compose
   kubectl
   zsh-autosuggestions
   alias-finder
   common-aliases
-  direnv # the direnv hook. it eqv to: eval "$(direnv hook zsh)"
-  jenv   # init jenv:  eval "$(jenv init -)"
-  autojump # This plugin loads the autojump navigation tool
-  git-extras
-  osx
+  direnv             # the direnv hook. it eqv to: eval "$(direnv hook zsh)"
+  jenv               # init jenv:  eval "$(jenv init -)"
+  autojump           # This plugin loads the autojbmp navigation tool
   rvm
-  thefuck # use ESC ESC
-  vagrant # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vagrant
-  zsh_reload # src
-  vscode # VSCODE=code-insiders, https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vscode
-  tmux #https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux
-  tmuxinator
+  zsh_reload         # src
+  vscode             # VSCODE=code-insiders, https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vscode
+  tmux               # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux
+  zsh-docker-aliases # https://github.com/akarzim/zsh-docker-aliases\
+  nvm                # nvm auto load, and auto completion
+  colored-man-pages
   aws
+  # docker-compose
+  # terraform
+  # git-extras
+  # osx
+  # vagrant            # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vagrant
+  # thefuck            # use ESC ESC
 )
-
-[[ -f ~/.dotfiles/zsh_fix_paste_slowness.zsh ]] && source ~/.dotfiles/zsh_fix_paste_slowness.zsh
 
 # ** ssh-agent config ** #
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
+# Put these ettings before the line that sources oh-my-zsh
 # Work: id_rsa_tw
 # Personal: id_rsa
 zstyle :omz:plugins:ssh-agent identities id_rsa_tw id_rsa
 
-# Start OMZSH
-source $ZSH/oh-my-zsh.sh
+# ** Fix slowness when paste ** #
+[[ -f ~/.dotfiles/zsh_configs/zsh_fix_paste_slowness.zsh ]] && source ~/.dotfiles/zsh_configs/zsh_fix_paste_slowness.zsh
 
 # ** Custom powerlevel 10k ** #
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-if [[ -s $HOME/.rvm/scripts/rvm ]]; then
-  source $HOME/.rvm/scripts/rvm;
-fi
+# Start OMZSH
+source $ZSH/oh-my-zsh.sh
 
-alias rni="kill $(lsof -t -i:8081); rm -rf ios/build/; rm -rf ios/pods; npm run pod-install; npm run ios"
