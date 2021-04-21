@@ -86,3 +86,7 @@
 	new = green bold
 [credential]
 	helper = osxkeychain
+[pull]
+	rebase = true
+[rebase]
+	autostash = true
