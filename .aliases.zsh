@@ -87,3 +87,10 @@ alias aws_set_profile="asp"
 alias aws_config_profile="acp"
 alias aws_get_profile="agp"
 alias aws_get_profiles="aws_profiles"
+
+# Kube
+alias x="kubectx"
+
+# Project
+## login to ndi ami
+alias aws_login_ndi="~/Work/Repos/NDI/ndi-core-bootstrap/k8s/scripts/aws_authenticate_mfa.sh"

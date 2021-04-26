@@ -19,10 +19,11 @@ export PATH="$HOME/.tmuxifier/bin:$PATH"
 export PATH="$HOME/Library/Python/3.7/bin:$PATH"
 export PATH="$HOME/.npm-packages/bin:$PATH"
 export PATH="$HOME/.jenv/bin:$PATH"
-export PATH="$HOME/.rvm/bin:$PATH"
 export PATH="$ANDROID_HOME/tools:$PATH"
 export PATH="$ANDROID_HOME/platform-tools:$PATH"
 export PATH="$ANDROID_HOME/tools/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
 
 # ** Extra config for nvm ** #
 [[ -f ~/.dotfiles/zsh_configs/nvm.zsh ]] && source ~/.dotfiles/zsh_configs/nvm.zsh
@@ -40,7 +41,6 @@ plugins=(
   direnv             # the direnv hook. it eqv to: eval "$(direnv hook zsh)"
   jenv               # init jenv:  eval "$(jenv init -)"
   autojump           # This plugin loads the autojbmp navigation tool
-  rvm
   zsh_reload         # src
   vscode             # VSCODE=code-insiders, https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vscode
   tmux               # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux
@@ -48,6 +48,9 @@ plugins=(
   nvm                # nvm auto load, and auto completion
   colored-man-pages
   aws
+  kube-ps1
+  asdf
+  pyenv
   # docker-compose
   # terraform
   # git-extras

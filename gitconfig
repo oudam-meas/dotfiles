@@ -15,8 +15,9 @@
   remote = yellow
 
 [user]
-	name = Oudam Meas
-	email = oudam.eas@gmail.com
+	name = Outdam
+	email = outdam.meas@thoughtworks.com
+	signingkey = E731C4A16273AAA6
   ;email = outdam.meas@thoughtworks.com
 
 [alias]
@@ -90,3 +91,7 @@
 	rebase = true
 [rebase]
 	autostash = true
+[gpg]
+	program = gpg
+[commit]
+	gpgsign = true
