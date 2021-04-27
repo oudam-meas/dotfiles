@@ -17,7 +17,7 @@
 [user]
 	name = Outdam
 	email = outdam.meas@thoughtworks.com
-	signingkey = E731C4A16273AAA6
+	signingkey = BCB4C598FA8A6DD4
   ;email = outdam.meas@thoughtworks.com
 
 [alias]
@@ -95,3 +95,4 @@
 	program = gpg
 [commit]
 	gpgsign = true
+	; template = /Users/outdam/.ndi-aads-commit-message

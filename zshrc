@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 zmodload zsh/zprof
 export ZSH=~/.oh-my-zsh
 export EDITOR=nvim
@@ -24,6 +31,7 @@ export PATH="$ANDROID_HOME/platform-tools:$PATH"
 export PATH="$ANDROID_HOME/tools/bin:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
+export GPG_TTY=$(tty) # fix for GPG - clear-sign failed: Inappropriate ioctl for device
 
 # ** Extra config for nvm ** #
 [[ -f ~/.dotfiles/zsh_configs/nvm.zsh ]] && source ~/.dotfiles/zsh_configs/nvm.zsh
@@ -74,4 +82,3 @@ zstyle :omz:plugins:ssh-agent identities id_rsa_tw id_rsa
 
 # Start OMZSH
 source $ZSH/oh-my-zsh.sh
-
