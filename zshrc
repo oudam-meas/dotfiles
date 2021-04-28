@@ -9,7 +9,6 @@ export ZSH=~/.oh-my-zsh
 export EDITOR=nvim
 ZSH_THEME=powerlevel10k/powerlevel10k
 DISABLE_UPDATE_PROMPT=true
-VSCODE=code-insiders
 
 [[ -f ~/.aliases.zsh ]] && source ~/.aliases.zsh
 
@@ -19,6 +18,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="/bin:/usr/bin:/usr/local/bin:$PATH"
 export PATH="/usr/local/go/bin:$PATH"
 export PATH="$PYENV_ROOT/bin:$PATH"
+
 # export PATH="$HOME/Library/Python/3.7/bin:$PATH"
 # export PATH="$HOME/.npm-packages/bin:$PATH"
 # export PATH="$HOME/.jenv/bin:$PATH"
@@ -43,10 +43,8 @@ plugins=(
   jenv               # init jenv:  eval "$(jenv init -)"
   autojump           # This plugin loads the autojbmp navigation tool
   zsh_reload         # src
-  vscode             # VSCODE=code-insiders, https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vscode
   tmux               # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux
   zsh-docker-aliases # https://github.com/akarzim/zsh-docker-aliases\
-  nvm                # nvm auto load, and auto completion
   colored-man-pages
   aws
   kube-ps1
