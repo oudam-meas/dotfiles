@@ -51,12 +51,14 @@
     background_jobs         # presence of background jobs
     asdf                    # asdf version manager (https://github.com/asdf-vm/asdf)
     terraform               # terraform workspace (https://www.terraform.io)
-    aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
     load                  # CPU load
     time                    # current time
     direnv                  # direnv status (https://direnv.net/)
     # =========================[ Line #2 ]=========================
     newline                 # \n
+    aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
+    pcat_stack
+    pcat_env
     kubecontext             # current kubernetes context (https://kubernetes.io/)
     # disk_usage            # disk usage
     # ram                   # free RAM
@@ -107,6 +109,7 @@
     # proxy                 # system-wide http/https/ftp proxy
     # battery               # internal battery
     # wifi                  # wifi speed
+
     # example               # example user-defined segment (see prompt_example function below)
   )
 
@@ -1542,6 +1545,19 @@
     p10k segment -f 208 -i '⭐' -t 'hello, %n'
   }
 
+
+  function prompt_pcat_stack() {
+    # export PCAT_STACK=$([[ -f ~/Work/Repos/NDI/ndi-infra/tmp/init_vars ]] && cat ~/Work/Repos/NDI/ndi-infra/tmp/init_vars | grep -e '^STACK' | cut -d '=' -f 2)
+
+    [[ $PCAT_STACK ]] && p10k segment -f 208 -i 'stack' -t $PCAT_STACK
+  }
+
+  function prompt_pcat_env() {
+
+    # export PCAT_ENV=$([[ -f ~/Work/Repos/NDI/ndi-infra/tmp/init_vars ]] && cat ~/Work/Repos/NDI/ndi-infra/tmp/init_vars | grep -e '^ENVIRONMENT' | cut -d '=' -f 2)
+
+    [[ $PCAT_ENV ]] && p10k segment -f 208 -i 'env' -t $PCAT_ENV
+  }
   # User-defined prompt segments may optionally provide an instant_prompt_* function. Its job
   # is to generate the prompt segment for display in instant prompt. See
   # https://github.com/romkatv/powerlevel10k/blob/master/README.md#instant-prompt.
