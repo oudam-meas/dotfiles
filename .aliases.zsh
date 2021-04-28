@@ -3,9 +3,6 @@ alias vim=nvim
 alias vimm=mvim
 alias watch='watch '
 
-# LightEdit mode
-alias ide='idea -e'
-
 alias eal='vim ~/.aliases.zsh'
 alias erc='vim ~/.zshrc'
 alias egitignore='nvim ~/.gitignore_global'
@@ -18,21 +15,10 @@ alias ctags="`brew --prefix`/bin/ctags"
 
 # Docker
 # https://github.com/akarzim/zsh-docker-aliases
-
 # Kubernetes - most shortcuts are already defined by zsh plugin
-alias kcsn='kcn kccc --namespace ' # kubectl config set-context $(kubectl config current-context) --namespace
 
 alias hi=highlight
 alias hil="hi -l "
-
-alias clear_asl='sudo rm -rf /private/var/log/asl/*.asl'
-
-alias wave='kubectl port-forward -n weave "$(kubectl get -n weave pod --selector=weave-scope-component=app -o jsonpath='{.items..metadata.name}')" 4040'
-
-alias init_current='export CURRENT=$(date +%s)'
-
-alias build_node4k8s='docker rmi $(docker images outdammeas/node4k8s -q) -f && init_current && docker build . -t outdammeas/node4k8s:latest && docker tag outdammeas/node4k8s:latest outdammeas/node4k8s:${CURRENT}'
-
 
 # kubectl
 alias kcbff='kubectl get config -n bff h365-bff -o yaml'
@@ -54,32 +40,16 @@ alias ksc='kubectl get secret -n services pph-svc-challenge -o yaml'
 alias ksfb='kubectl get secret -n services pph-svc-fitbit -o yaml'
 alias ksg='kubectl get secret -n services pph-svc-group -o yaml'
 alias kss='kubectl get secret -n services pph-svc-survey -o yaml'
+alias build_node4k8s='docker rmi $(docker images outdammeas/node4k8s -q) -f && init_current && docker build . -t outdammeas/node4k8s:latest && docker tag outdammeas/node4k8s:latest outdammeas/node4k8s:${CURRENT}'
+alias wave='kubectl port-forward -n weave "$(kubectl get -n weave pod --selector=weave-scope-component=app -o jsonpath='{.items..metadata.name}')" 4040'
 
-# scrcpy
 alias scrcpy_connect='adb connect 192.168.1.149:5555'
-
-# React
 alias rn_cc='watchman watch-del-all && rm -rf $TMPDIR/react-* && npm start -- --reset-cache'
-
-# Renovate
-alias rr='${PWD}/scripts/dry_run_with_debug.sh'
-
-# VSCODE 
 alias code='code-insiders'
-
 alias ydl='youtube-dl'
 alias v='vagrant'
-
-alias esvim="vim ~/.SpaceVim.d/init.toml"
-
-
-alias tf="terraform"
-alias tfp="terraform plan"
-alias tfa="terraform apply"
-alias tfd="terraform destroy"
-alias tfw="terraform workspace"
-
-# Open web url
+alias evim="vim ~/.SpaceVim.d/init.toml"
+alias x="kubectx"
 alias doc_tmux="open https://github.com/gpakosz/.tmux"
 
 # AWS cli
@@ -88,9 +58,8 @@ alias aws_config_profile="acp"
 alias aws_get_profile="agp"
 alias aws_get_profiles="aws_profiles"
 
-# Kube
-alias x="kubectx"
-
 # Project
 ## login to ndi ami
 alias aws_login_ndi="~/Work/Repos/NDI/ndi-core-bootstrap/k8s/scripts/aws_authenticate_mfa.sh"
+
+

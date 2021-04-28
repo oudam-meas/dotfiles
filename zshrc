@@ -34,8 +34,6 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 plugins=(
   ssh-agent          # eval `ssh-agent` - https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
   zsh-syntax-highlighting
-  docker
-  kubectl
   zsh-autosuggestions
   alias-finder
   common-aliases
@@ -50,8 +48,8 @@ plugins=(
   kube-ps1
   asdf
   pyenv
+  terraform
   # docker-compose
-  # terraform
   # git-extras
   # osx
   # vagrant            # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vagrant
