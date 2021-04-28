@@ -4,20 +4,16 @@
 # if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
 #   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 # fi
-
 zmodload zsh/zprof
 export ZSH=~/.oh-my-zsh
 export EDITOR=nvim
-
-[[ -f ~/.aliases.zsh ]] && source ~/.aliases.zsh
-
-# ** ZSH ** #
 ZSH_THEME=powerlevel10k/powerlevel10k
 DISABLE_UPDATE_PROMPT=true
 VSCODE=code-insiders
 
-# ** Environment Paths ** #
+[[ -f ~/.aliases.zsh ]] && source ~/.aliases.zsh
 
+# ** Environment Paths ** #
 export GPG_TTY=$(tty) # fix for GPG - clear-sign failed: Inappropriate ioctl for device
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="/bin:/usr/bin:/usr/local/bin:$PATH"
@@ -32,7 +28,7 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 # export PATH="$ANDROID_HOME/tools/bin:$PATH"
 
 # ** Extra config for nvm ** #
-[[ -f ~/.dotfiles/zsh_configs/nvm.zsh ]] && source ~/.dotfiles/zsh_configs/nvm.zsh
+# [[ -f ~/.dotfiles/zsh_configs/nvm.zsh ]] && source ~/.dotfiles/zsh_configs/nvm.zsh
 
 # ** Plugins ** #
 plugins=(
