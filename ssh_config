@@ -1,1 +1,13 @@
-
+# Todo: setup ssh
+Host qa-tooling-server-1
+  Hostname 3.1.181.131
+  User ec2-user
+  IdentityFile  /Users/outdam/Work/Repos/NDI/ndi-core-bootstrap/team-secrets/infra/infra_ssh_key
+Host qa-tooling-server-2
+  Hostname 18.140.241.207
+  User ec2-user
+  IdentityFile /Users/outdam/Work/Repos/NDI/ndi-core-bootstrap/team-secrets/infra/infra_ssh_key
+Host stg-tooling-server
+  Hostname 52.74.66.101
+  User ec2-user
+  IdentityFile /Users/outdam/Work/Repos/NDI/ndi-core-bootstrap/team-secrets/infra/infra_ssh_key
