@@ -10,7 +10,6 @@ export ZSH=~/.oh-my-zsh
 export EDITOR=nvim
 
 [[ -f ~/.aliases.zsh ]] && source ~/.aliases.zsh
-[[ -f ~/.env ]] && source ~/.env
 
 # ** ZSH ** #
 ZSH_THEME=powerlevel10k/powerlevel10k
@@ -19,23 +18,21 @@ VSCODE=code-insiders
 
 # ** Environment Paths ** #
 
-export ANDROID_HOME=~/Library/Android/sdk/
+export GPG_TTY=$(tty) # fix for GPG - clear-sign failed: Inappropriate ioctl for device
+export PYENV_ROOT="$HOME/.pyenv"
 export PATH="/bin:/usr/bin:/usr/local/bin:$PATH"
 export PATH="/usr/local/go/bin:$PATH"
-export PATH="$HOME/.tmuxifier/bin:$PATH"
-export PATH="$HOME/Library/Python/3.7/bin:$PATH"
-export PATH="$HOME/.npm-packages/bin:$PATH"
-export PATH="$HOME/.jenv/bin:$PATH"
-export PATH="$ANDROID_HOME/tools:$PATH"
-export PATH="$ANDROID_HOME/platform-tools:$PATH"
-export PATH="$ANDROID_HOME/tools/bin:$PATH"
-export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-export GPG_TTY=$(tty) # fix for GPG - clear-sign failed: Inappropriate ioctl for device
+# export PATH="$HOME/Library/Python/3.7/bin:$PATH"
+# export PATH="$HOME/.npm-packages/bin:$PATH"
+# export PATH="$HOME/.jenv/bin:$PATH"
+# export ANDROID_HOME=~/Library/Android/sdk/
+# export PATH="$ANDROID_HOME/tools:$PATH"
+# export PATH="$ANDROID_HOME/platform-tools:$PATH"
+# export PATH="$ANDROID_HOME/tools/bin:$PATH"
 
 # ** Extra config for nvm ** #
 [[ -f ~/.dotfiles/zsh_configs/nvm.zsh ]] && source ~/.dotfiles/zsh_configs/nvm.zsh
-
 
 # ** Plugins ** #
 plugins=(

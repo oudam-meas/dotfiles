@@ -54,10 +54,10 @@
     aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
     load                  # CPU load
     time                    # current time
-    kubecontext             # current kubernetes context (https://kubernetes.io/)
     direnv                  # direnv status (https://direnv.net/)
     # =========================[ Line #2 ]=========================
     newline                 # \n
+    kubecontext             # current kubernetes context (https://kubernetes.io/)
     # disk_usage            # disk usage
     # ram                   # free RAM
     # swap                  # used swap

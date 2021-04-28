@@ -13,18 +13,18 @@
 [options]
   colorscheme = "SpaceVim"
   colorscheme_bg = "dark"
+  relativenumber = false
   enable_guicolors = true
   statusline_separator = "arrow"
   statusline_iseparator = "arrow"
-  buffer_index_type = 4
   enable_tabline_filetype_icon = true
   filetree_direction="left"
   filemanager = "nerdtree"
-  bootstrap_before = 'bootstrap#before'
-  # bootstrap_after = 'bootstrap#after'
-  relativenumber = false
   default_shell = 'VimShell'
   autocomplete_method = "coc"
+  buffer_index_type = 4
+  bootstrap_before = 'bootstrap#before'
+  # bootstrap_after = 'bootstrap#after'
 
 # load all spacevim themes - by default colorscheme layer is not loaded,
 [[layers]]
