@@ -11,7 +11,7 @@
 
 # All SpaceVim option below [option] section
 [options]
-  colorscheme = "SpaceVim"
+  colorscheme = "hybrid"
   colorscheme_bg = "dark"
   relativenumber = false
   enable_guicolors = true
