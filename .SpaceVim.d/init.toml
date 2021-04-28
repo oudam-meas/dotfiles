@@ -1,0 +1,97 @@
+# Todo:
+# Commentary
+# Search buffer
+#=============================================================================
+# dark_powered.toml --- dark powered configuration example for SpaceVim
+# Copyright (c) 2016-2020 Wang Shidong & Contributors
+# Author: Wang Shidong < wsdjeg at 163.com >
+# URL: https://spacevim.org
+# License: GPLv3
+#=============================================================================
+
+# All SpaceVim option below [option] section
+[options]
+  colorscheme = "SpaceVim"
+  colorscheme_bg = "dark"
+  enable_guicolors = true
+  statusline_separator = "arrow"
+  statusline_iseparator = "arrow"
+  buffer_index_type = 4
+  enable_tabline_filetype_icon = true
+  filetree_direction="left"
+  filemanager = "nerdtree"
+  bootstrap_before = 'bootstrap#before'
+  bootstrap_after = 'bootstrap#after'
+  relativenumber = false
+  default_shell = 'VimShell'
+  autocomplete_method = "coc"
+
+# load all spacevim themes - by default colorscheme layer is not loaded,
+[[layers]]
+  name = "colorscheme"
+
+[[layers]]
+  name = 'autocomplete'
+  auto_completion_return_key_behavior = "complete"
+  auto_completion_tab_key_behavior = "smart"
+
+[[layers]]
+  name = 'shell'
+  default_position = 'bottom'
+  default_height = 30
+
+[[layers]]
+  name = "lang#sh"
+[[layers]]
+  name = "denite"
+[[layers]]
+  name = "gtags"
+[[layers]]
+  name = "lang#ruby"
+[[layers]]
+  name = "lang#javascript"
+  enable = true
+[[layers]]
+  name = "lang#python"
+  enable = true
+
+[[layers]]
+  name = "ctrlp"
+  enable = true
+
+[[layers]]
+  name = "nerdcommenter"
+  enable = false
+
+[[layers]]
+  name = "git"
+
+[[layers]] 
+  name = 'lsp'
+  # filetypes = [
+  #   'javascript',
+  #   'typescript',
+  #   'ruby'
+  # ]
+[[custom_plugins]]
+  name = 'tpope/vim-commentary'
+  merged = false
+[[custom_plugins]]
+  name = 'machakann/vim-highlightedyank'
+  merged = false
+[[custom_plugins]]
+  repo = "peitalin/vim-jsx-typescript"
+[[custom_plugins]]
+  repo = "roxma/nvim-yarp"
+[[custom_plugins]]
+  repo = "roxma/vim-hug-neovim-rpc"
+[[custom_plugins]]
+  repo = "WolfgangMehner/bash-support"
+[[custom_plugins]]
+  repo = "hashivim/vim-vagrant.git"
+[[custom_plugins]]
+  repo = "ryanoasis/vim-devicons"
+[[custom_plugins]]
+  repo = "hashivim/vim-terraform"
+[[custom_plugins]]
+  repo = "junegunn/vim-easy-align"
