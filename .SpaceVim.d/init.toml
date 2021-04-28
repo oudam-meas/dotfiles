@@ -21,7 +21,7 @@
   filetree_direction="left"
   filemanager = "nerdtree"
   bootstrap_before = 'bootstrap#before'
-  bootstrap_after = 'bootstrap#after'
+  # bootstrap_after = 'bootstrap#after'
   relativenumber = false
   default_shell = 'VimShell'
   autocomplete_method = "coc"
@@ -48,39 +48,30 @@
   name = "gtags"
 [[layers]]
   name = "lang#ruby"
-[[layers]]
-  name = "lang#javascript"
-  enable = true
+# [[layers]]
+#   name = "lang#javascript"
+#   enable = true
 [[layers]]
   name = "lang#python"
   enable = true
-
 [[layers]]
   name = "ctrlp"
   enable = true
-
 [[layers]]
   name = "nerdcommenter"
   enable = false
-
 [[layers]]
   name = "git"
-
 [[layers]] 
   name = 'lsp'
-  # filetypes = [
-  #   'javascript',
-  #   'typescript',
-  #   'ruby'
-  # ]
 [[custom_plugins]]
   name = 'tpope/vim-commentary'
   merged = false
 [[custom_plugins]]
   name = 'machakann/vim-highlightedyank'
   merged = false
-[[custom_plugins]]
-  repo = "peitalin/vim-jsx-typescript"
+# [[custom_plugins]]
+#   repo = "peitalin/vim-jsx-typescript"
 [[custom_plugins]]
   repo = "roxma/nvim-yarp"
 [[custom_plugins]]

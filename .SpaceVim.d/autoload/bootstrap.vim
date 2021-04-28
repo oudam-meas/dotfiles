@@ -1,6 +1,6 @@
 function! bootstrap#before() abort
   " *********************************************
-  " Commands and Keys Mapping
+  " Basic config, Keys Mapping
   " *********************************************
   " Tab to indent
   vmap <tab> >gv
@@ -16,17 +16,11 @@ function! bootstrap#before() abort
   nmap <c-h> <c-w>h
   nmap <c-l> <c-w>l
 
-  " set timeoutlen=300
+  " Terminal
+  map <leader>` <Space>' 
 
-  " *********************************************
-  " Plugin: NERDTREE
-  " *********************************************
-  map \|\| :NERDTreeToggle<CR>
-  nmap EE :NERDTreeFind<CR>
-
-  " Create default mappings
-  let g:NERDCreateDefaultMappings = 1
-  let g:highlightedyank_highlight_duration = 100
+  " Clear Search
+  map <leader>/ :noh<CR>
 
   " *********************************************
   " Plugin: junegunn/vim-easy-align
@@ -37,21 +31,27 @@ function! bootstrap#before() abort
   " Start interactive EasyAlign for a motion/text object (e.g. gaip)
   nmap <leader>a <Plug>(EasyAlign)
 
-  map <leader>` <Space>'
-  map <leader>/ :noh<CR>
-endfunction
+  " *********************************************
+  " Plugin: NERDTREE
+  " *********************************************
+  map \|\| :NERDTreeToggle<CR>
+  nmap EE :NERDTreeFind<CR>
 
-function! bootstrap#after() abort
-  let g:neomake_javascript_eslint_maker =  {
-        \ 'exe': 'npx',
-        \ 'args': ['--quiet', 'eslint', '--format=compact'],
-        \ 'errorformat': '%E%f: line %l\, col %c\, Error - %m,' .
-        \   '%W%f: line %l\, col %c\, Warning - %m,%-G,%-G%*\d problems%#',
-        \ 'cwd': '%:p:h',
-        \ 'output_stream': 'stdout',
-        \ }
-
-  let g:neomake_javascript_jsx_enabled_makers = ['eslint']
-  let g:neoformat_enabled_javascript = ['npxprettier']
+  " Create default mappings
+  let g:NERDCreateDefaultMappings = 1
+  let g:highlightedyank_highlight_duration = 100
 endfunction
+" function! bootstrap#after() abort
+"   let g:neomake_javascript_eslint_maker =  {
+"         \ 'exe': 'npx',
+"         \ 'args': ['--quiet', 'eslint', '--format=compact'],
+"         \ 'errorformat': '%E%f: line %l\, col %c\, Error - %m,' .
+"         \   '%W%f: line %l\, col %c\, Warning - %m,%-G,%-G%*\d problems%#',
+"         \ 'cwd': '%:p:h',
+"         \ 'output_stream': 'stdout',
+"         \ }
+
+"   let g:neomake_javascript_jsx_enabled_makers = ['eslint']
+"   let g:neoformat_enabled_javascript = ['npxprettier']
+" endfunction
 
