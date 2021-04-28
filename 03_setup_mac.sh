@@ -5,4 +5,6 @@ cd
 
 # install spacevim
 curl -sLf https://spacevim.org/install.sh | bash
-cd ~/.Spacevim.d/ && rm -rf * && git clone https://github.com/oudam-meas/SpaceVim.d.git . 
+rm -rf ~/.SpaceVim.d
+ln -s ~/.dotfiles/.SpaceVim.d ~/.SpaceVim.d
+# cd ~/.Spacevim.d/ && rm -rf * && git clone https://github.com/oudam-meas/SpaceVim.d.git . 

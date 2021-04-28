@@ -104,3 +104,4 @@ ln -s ~/.dotfiles/autojump.txt ~/Library/autojump/autojump.txt
 
 rm -f ~/.bundle/config
 ln -s ~/.dotfiles/bundle/config ~/.bundle/config
+

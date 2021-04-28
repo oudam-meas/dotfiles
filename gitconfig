@@ -15,9 +15,9 @@
   remote = yellow
 
 [user]
-	name = Outdam
-	email = outdam.meas@thoughtworks.com
-	signingkey = BCB4C598FA8A6DD4
+	name = outdam
+	email = mstdam@gmail.com
+	signingkey = F156BAAC8A8C6ECD
   ;email = outdam.meas@thoughtworks.com
 
 [alias]
@@ -25,7 +25,7 @@
   ; o = browse --
   st = status
 	s = status -s
-  ; ci = commit
+  ci = commit
   cm = commit -m
   cam = commit -a -m
   amend = commit --amend
@@ -44,7 +44,7 @@
   ; dcw = diff --cached --color-words
   ; pr = "!f() { ~/.dotfiles/bin/open-github-pr-page.sh; }; f"
   update = pull --rebase --prune
-  ; undo = reset HEAD~1 --mixed
+  undo = reset HEAD~1 --mixed
 	; unstage = reset HEAD --
   ; bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs git branch -d; }; f"
   ; bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
@@ -60,7 +60,7 @@
   ; graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
   ; ls = ls-file
   ; ctags = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags'"
-  pf = push --force-with-lease
+  ; pf = push --force-with-lease
   ; publish = "!git push -u origin \"$(git rev-parse --abbrev-ref HEAD)\""
   ; unpublish = "!git push origin :\"$(git rev-parse --abbrev-ref HEAD)\""
 
