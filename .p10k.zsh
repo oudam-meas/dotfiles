@@ -51,7 +51,6 @@
     background_jobs         # presence of background jobs
     asdf                    # asdf version manager (https://github.com/asdf-vm/asdf)
     terraform               # terraform workspace (https://www.terraform.io)
-    load                  # CPU load
     time                    # current time
     direnv                  # direnv status (https://direnv.net/)
     # =========================[ Line #2 ]=========================
@@ -109,7 +108,7 @@
     # proxy                 # system-wide http/https/ftp proxy
     # battery               # internal battery
     # wifi                  # wifi speed
-
+    # load                  # CPU load
     # example               # example user-defined segment (see prompt_example function below)
   )
 
@@ -622,6 +621,7 @@
   #
   #   typeset -g POWERLEVEL9K_ASDF_NODEJS_SHOW_ON_UPGLOB='*.js|package.json'
   typeset -g POWERLEVEL9K_ASDF_SHOW_ON_UPGLOB=
+  typeset -g POWERLEVEL9K_ASDF_SHOW_ON_COMMAND="asdf|as"
 
   # Ruby version from asdf.
   typeset -g POWERLEVEL9K_ASDF_RUBY_FOREGROUND=168
