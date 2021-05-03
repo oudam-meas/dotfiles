@@ -48,9 +48,6 @@
   name = "gtags"
 [[layers]]
   name = "lang#ruby"
-# [[layers]]
-#   name = "lang#javascript"
-#   enable = true
 [[layers]]
   name = "lang#python"
   enable = true
@@ -70,19 +67,24 @@
 [[custom_plugins]]
   name = 'machakann/vim-highlightedyank'
   merged = false
-# [[custom_plugins]]
-#   repo = "peitalin/vim-jsx-typescript"
-[[custom_plugins]]
-  repo = "roxma/nvim-yarp"
 [[custom_plugins]]
   repo = "roxma/vim-hug-neovim-rpc"
 [[custom_plugins]]
   repo = "WolfgangMehner/bash-support"
-[[custom_plugins]]
-  repo = "hashivim/vim-vagrant.git"
 [[custom_plugins]]
   repo = "ryanoasis/vim-devicons"
 [[custom_plugins]]
   repo = "hashivim/vim-terraform"
 [[custom_plugins]]
   repo = "junegunn/vim-easy-align"
+[[custom_plugins]]
+  repo = "hashivim/vim-vagrant.git"
+[[custom_plugins]]
+  repo = "roxma/nvim-yarp"
+[[custom_plugins]]
+  repo = "konfekt/fastfold"
+# [[layers]]
+#   name = "lang#javascript"
+#   enable = true
+# [[custom_plugins]]
+#   repo = "peitalin/vim-jsx-typescript"
