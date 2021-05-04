@@ -15,8 +15,8 @@
   remote = yellow
 
 [user]
-	name = Outdam
-	email = outdam.meas@thoughtworks.com
+	name = outdam
+	email = mstdam@gmail.com
 	signingkey = F156BAAC8A8C6ECD
   ;email = outdam.meas@thoughtworks.com
 
@@ -95,4 +95,5 @@
 	program = gpg
 [commit]
 	gpgsign = true
+	template = /Users/outdam/.ndi-aads-commit-message
 	; template = /Users/outdam/.ndi-aads-commit-message

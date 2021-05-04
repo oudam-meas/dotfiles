@@ -60,6 +60,7 @@ alias aws_get_profiles="aws_profiles"
 
 # Project
 ## login to ndi ami
-alias aws_login_ndi="~/Work/Repos/NDI/ndi-core-bootstrap/k8s/scripts/aws_authenticate_mfa.sh"
+# /usr/local/bin/..
+alias aws_login_ndi="aws_authenticate_mfa.sh"
 
 
