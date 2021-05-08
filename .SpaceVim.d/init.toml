@@ -11,7 +11,7 @@
 
 # All SpaceVim option below [option] section
 [options]
-  colorscheme = "hybrid"
+  colorscheme = "hybrid" # requires layer name = "colorscheme"
   colorscheme_bg = "dark"
   relativenumber = false
   enable_guicolors = true
@@ -26,7 +26,7 @@
   bootstrap_before = 'bootstrap#before'
   # bootstrap_after = 'bootstrap#after'
 
-# load all spacevim themes - by default colorscheme layer is not loaded,
+# Add the colorscheme layer to enable all colorschemes
 [[layers]]
   name = "colorscheme"
 
@@ -41,22 +41,15 @@
   default_height = 30
 
 [[layers]]
-  name = "lang#sh"
+  name = "nerdcommenter"
+  enable = false
 [[layers]]
   name = "denite"
 [[layers]]
   name = "gtags"
 [[layers]]
-  name = "lang#ruby"
-[[layers]]
-  name = "lang#python"
-  enable = true
-[[layers]]
   name = "ctrlp"
   enable = true
-[[layers]]
-  name = "nerdcommenter"
-  enable = false
 [[layers]]
   name = "git"
 [[layers]] 
@@ -69,20 +62,25 @@
   merged = false
 [[custom_plugins]]
   repo = "roxma/vim-hug-neovim-rpc"
-[[custom_plugins]]
-  repo = "WolfgangMehner/bash-support"
-[[custom_plugins]]
-  repo = "ryanoasis/vim-devicons"
+[[layers]]
+  name = "lang#ruby"
+[[layers]]
+  name = "lang#python"
+  enable = true
 [[custom_plugins]]
   repo = "hashivim/vim-terraform"
 [[custom_plugins]]
   repo = "junegunn/vim-easy-align"
 [[custom_plugins]]
-  repo = "hashivim/vim-vagrant.git"
-[[custom_plugins]]
-  repo = "roxma/nvim-yarp"
-[[custom_plugins]]
-  repo = "konfekt/fastfold"
+  repo = "ryanoasis/vim-devicons"
+# [[custom_plugins]]
+#   repo = "roxma/nvim-yarp"
+# [[layers]]
+#   name = "lang#sh"
+# [[custom_plugins]]
+#   repo = "WolfgangMehner/bash-support"
+# [[custom_plugins]]
+#   repo = "hashivim/vim-vagrant.git"
 # [[layers]]
 #   name = "lang#javascript"
 #   enable = true

@@ -2,6 +2,11 @@ function! bootstrap#before() abort
   " *********************************************
   " Basic config, Keys Mapping
   " *********************************************
+  " search cases
+
+  set ignorecase
+  set smartcase
+
   " Tab to indent
   vmap <tab> >gv
   vmap <s-tab> <gv
@@ -48,7 +53,6 @@ function! bootstrap#before() abort
   let g:terraform_align=1
   let g:terraform_fmt_on_save=1
 
-  nmap zuz <Plug>(FastFoldUpdate)
 endfunction
 " function! bootstrap#after() abort
 "   let g:neomake_javascript_eslint_maker =  {
