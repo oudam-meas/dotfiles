@@ -48,7 +48,7 @@ alias rn_cc='watchman watch-del-all && rm -rf $TMPDIR/react-* && npm start -- --
 alias code='code-insiders'
 alias ydl='youtube-dl'
 alias v='vagrant'
-alias evim="vim ~/.SpaceVim.d/init.toml"
+alias evrc="vim ~/.SpaceVim.d/"
 alias x="kubectx"
 alias doc_tmux="open https://github.com/gpakosz/.tmux"
 
