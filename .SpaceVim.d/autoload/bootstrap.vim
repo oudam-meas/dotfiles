@@ -25,7 +25,7 @@ function! bootstrap#before() abort
   map <leader>` <Space>' 
 
   " Clear Search
-  map <leader>/ :noh<CR>
+  map <leader>h :noh<CR>
 
   " *********************************************
   " Plugin: junegunn/vim-easy-align
@@ -52,6 +52,11 @@ function! bootstrap#before() abort
 
   let g:terraform_align=1
   let g:terraform_fmt_on_save=1
+
+  " SpaceVim
+  " Search on the fly
+  map <leader>/ <space>s/
+  map <leader>? <space>ss
 
 endfunction
 " function! bootstrap#after() abort

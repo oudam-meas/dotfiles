@@ -9,9 +9,10 @@
 # License: GPLv3
 #=============================================================================
 
+# If used as symlink, the project root will change the the source directory
 # All SpaceVim option below [option] section
 [options]
-  colorscheme = "hybrid" # requires layer name = "colorscheme"
+  # colorscheme = "hybrid" # requires layer name = "colorscheme"
   colorscheme_bg = "dark"
   relativenumber = false
   enable_guicolors = true
