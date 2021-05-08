@@ -1,14 +1,20 @@
 tic -x ~/.dotfiles/xterm-256color-italic.terminfo
 tic -x ~/.dotfiles/tmux-256color.terminfo
 
-rm -f ~/.zshrc
-ln -f -s ~/.dotfiles/zshrc ~/.zshrc
-
 rm -f ~/.p10k.zsh
-ln -f -s ~/.dotfiles/p10k.zsh ~/.p10k.zsh
+ln -f -s ~/.dotfiles/.p10k.zsh ~/.p10k.zsh
 
 rm -f ~/.aliases
-ln -s ~/.dotfiles/aliases ~/.aliases
+ln -s ~/.dotfiles/.aliases.zsh ~/.aliases.zsh
+
+rm -f ~/.gitconfig
+ln -s ~/.dotfiles/gitconfig ~/.gitconfig
+
+rm -f ~/.gitignore_global
+ln -s ~/.dotfiles/gitignore_global ~/.gitignore_global
+
+rm -f ~/.zshrc
+ln -f -s ~/.dotfiles/zshrc ~/.zshrc
 
 rm -f ~/bin/code_tmux_shell
 ln -s ~/.dotfiles/code_tmux_shell ~/bin/code_tmux_shell
@@ -45,12 +51,6 @@ ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 
 rm -f ~/.agignore
 ln -s ~/.dotfiles/agignore ~/.agignore
-
-rm -f ~/.gitconfig
-ln -s ~/.dotfiles/gitconfig ~/.gitconfig
-
-rm -f ~/.gitignore_global
-ln -s ~/.dotfiles/gitignore_global ~/.gitignore_global
 
 rm -f ~/.pryrc
 ln -s ~/.dotfiles/pryrc ~/.pryrc
