@@ -1,24 +1,21 @@
-brew uninstall neovim
+# Tools
 brew install --HEAD neovim
-npm install neovim
-
-#tmux
-brew install reattach-to-user-namespace
+brew install autojump ctags curl git ripgrep
 
 # git
-brew install tmux diff-so-fancy curl git the_silver_searcher zsh zsh-completions ctags node rbenv reattach-to-user-namespace
-
-brew install autojump
+brew install diff-so-fancy 
 
 # Tmux
 brew install tmux
-cd
-git clone https://github.com/gpakosz/.tmux.git
-ln -s -f .tmux/.tmux.conf
-cp .tmux/.tmux.conf.local .
-brew install zsh-autosuggestions
-brew install zsh-syntax-highlighting
-brew install reattach-to-user-namespacea # enable in tmux.conf.local https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard#quick-summary
+brew install reattach-to-user-namespace # enable in tmux.conf.local https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard#quick-summary
+git clone https://github.com/gpakosz/.tmux.git ~/.tmux
+cd ~/ || exit
+ln -s -f ~/.tmux/.tmux.conf ~/.tmux.conf
+ln -s ~/.dotfiles/.tmux/.tmux.conf.local ~/.tmux.conf.local
+tmux source-file ~/.tmux.conf
 
-brew tap homebrew/cask-fonts
-brew install --cask font-hack-nerd-font
+# install spacevim
+curl -sLf https://spacevim.org/install.sh | bash
+# SpaceVim.d is source in different repo due to https://github.com/SpaceVim/SpaceVim/issues/4152
+# rm -rf ~/.SpaceVim.d
+# ln -s ~/.dotfiles/.SpaceVim.d ~/.SpaceVim.d 
