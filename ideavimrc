@@ -19,7 +19,6 @@ set easymotion " Doc: https://github.com/AlexPl292/IdeaVim-EasyMotion#supported-
 " Use 'Unicode Hex Input' as input source - https://stackoverflow.com/a/55221176
 set multiple-cursors
 
-
 " 'gr' for normal and visual, or 'gr'<motion>
 " 'grr' for entire file
 set ReplaceWithRegister
@@ -55,7 +54,7 @@ nmap <c-k> <c-w>k
 nmap <c-h> <c-w>h
 nmap <c-l> <c-w>l
 
-nmap <Space> :noh<CR>
+nmap <leader>h :noh<CR>
 " Indentation -------------------------------
 vmap <tab> >gv
 vmap <s-tab> <gv
@@ -99,8 +98,7 @@ map RR <Action>(Rerun)
 map <c--> <Action>(CollapseAllRegions)
 map <c-=> <Action>(ExpandAllRegions)
 
-command! Lfix action Javascript.Linters.EsLint.Fix
-
+" command! Lfix action Javascript.Linters.EsLint.Fix
 " map <leader>f <Plug>(easymotion-s)
 " map <leader>e <Plug>(easymotion-f)
 " map <leader>z <Action>(ToggleDistractionFreeMode)
