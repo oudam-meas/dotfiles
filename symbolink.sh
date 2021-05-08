@@ -46,62 +46,62 @@ ln -s ~/.dotfiles/screenrc ~/.screenrc
 
 rm -f ~/.tmux.conf
 ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
-# rm -f ~/.tmux.conf.local
-# ln -s ~/.dotfiles/tmux.conf.local ~/.tmux.conf.local
 
-rm -f ~/.agignore
-ln -s ~/.dotfiles/agignore ~/.agignore
+rm -f ~/.tmux.conf.local
+ln -s ~/.dotfiles/tmux.conf.local ~/.tmux.conf.local
 
-rm -f ~/.pryrc
-ln -s ~/.dotfiles/pryrc ~/.pryrc
-
-rm -f ~/.irbrc
-ln -s ~/.dotfiles/irbrc ~/.irbrc
+# rm -f ~/.agignore
+# ln -s ~/.dotfiles/agignore ~/.agignore
+# rm -f ~/.irbrc
+# ln -s ~/.dotfiles/irbrc ~/.irbrc
 
 rm -f ~/.vimrc.local
 ln -s ~/.dotfiles/vimrc.local ~/.vimrc.local
 
-rm -f ~/.eslintrc
-ln -s ~/.dotfiles/eslintrc ~/.eslintrc
-
 rm -f ~/.ideavimrc
 ln -s ~/.dotfiles/ideavimrc ~/.ideavimrc
 
+# rm -f ~/.pryrc
+# ln -s ~/.dotfiles/pryrc ~/.pryrc
+
+# rm -f ~/.eslintrc
+# ln -s ~/.dotfiles/eslintrc ~/.eslintrc
+
 # Start of vim custom
-mkdir -p ~/.vim/custom
+# mkdir -p ~/.vim/custom
 
-rm -f ~/.vim/custom/plugin_customizations.vim
-ln -s ~/.dotfiles/plugin_customizations.vim ~/.vim/custom/plugin_customizations.vim
+# rm -f ~/.vim/custom/plugin_customizations.vim
+# ln -s ~/.dotfiles/plugin_customizations.vim ~/.vim/custom/plugin_customizations.vim
 
-rm -f ~/.vim/custom/vimrc_plugins_conf.vim
-ln -s ~/.dotfiles/vimrc_plugins_conf.vim ~/.vim/custom/vimrc_plugins_conf.vim
+# rm -f ~/.vim/custom/vimrc_plugins_conf.vim
+# ln -s ~/.dotfiles/vimrc_plugins_conf.vim ~/.vim/custom/vimrc_plugins_conf.vim
 
-rm -f ~/.vim/custom/vimrc_colorscheme_conf.vim
-ln -s ~/.dotfiles/vimrc_colorscheme_conf.vim ~/.vim/custom/vimrc_colorscheme_conf.vim
+# rm -f ~/.vim/custom/vimrc_colorscheme_conf.vim
+# ln -s ~/.dotfiles/vimrc_colorscheme_conf.vim ~/.vim/custom/vimrc_colorscheme_conf.vim
 # End of vim custom
 
-rm -f ~/.vim/syntax/ruby.vim
-mkdir -p ~/.vim/syntax
-ln -s ~/.dotfiles/ruby.vim ~/.vim/syntax/ruby.vim
+# rm -f ~/.vim/syntax/ruby.vim
+# mkdir -p ~/.vim/syntax
+# ln -s ~/.dotfiles/ruby.vim ~/.vim/syntax/ruby.vim
 
-mkdir -p ~/.tmux-layouts/
-rm -f ~/.tmux-layouts/bongloy.session.sh
-ln -s ~/.dotfiles/tmux-layouts/bongloy.session.sh ~/.tmux-layouts/bongloy.session.sh
+# mkdir -p ~/.tmux-layouts/
+# rm -f ~/.tmux-layouts/bongloy.session.sh
+# ln -s ~/.dotfiles/tmux-layouts/bongloy.session.sh ~/.tmux-layouts/bongloy.session.sh
 
-mkdir -p ~/.tmux-layouts/
-rm -f ~/.tmux-layouts/aws-cloud-guru.session.sh
-ln -s ~/.dotfiles/tmux-layouts/aws-cloud-guru.session.sh ~/.tmux-layouts/aws-cloud-guru.session.sh
+# mkdir -p ~/.tmux-layouts/
+# rm -f ~/.tmux-layouts/aws-cloud-guru.session.sh
+# ln -s ~/.dotfiles/tmux-layouts/aws-cloud-guru.session.sh ~/.tmux-layouts/aws-cloud-guru.session.sh
 
-mkdir -p ~/.tmux-layouts/
-rm -f ~/.tmux-layouts/rails-books.session.sh
-ln -s ~/.dotfiles/tmux-layouts/rails-books.session.sh ~/.tmux-layouts/rails-books.session.sh
+# mkdir -p ~/.tmux-layouts/
+# rm -f ~/.tmux-layouts/rails-books.session.sh
+# ln -s ~/.dotfiles/tmux-layouts/rails-books.session.sh ~/.tmux-layouts/rails-books.session.sh
 
-rm -f ~/.ssh/config
-ln -s ~/.dotfiles/ssh_config ~/.ssh/config
+# rm -f ~/.ssh/config
+# ln -s ~/.dotfiles/ssh_config ~/.ssh/config
 
-rm -f ~/Library/autojump/autojump.txt
-ln -s ~/.dotfiles/autojump.txt ~/Library/autojump/autojump.txt
+# rm -f ~/Library/autojump/autojump.txt
+# ln -s ~/.dotfiles/autojump.txt ~/Library/autojump/autojump.txt
 
-rm -f ~/.bundle/config
-ln -s ~/.dotfiles/bundle/config ~/.bundle/config
+# rm -f ~/.bundle/config
+# ln -s ~/.dotfiles/bundle/config ~/.bundle/config
 
