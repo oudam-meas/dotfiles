@@ -15,11 +15,13 @@ DISABLE_UPDATE_PROMPT=true
 
 # ** Environment Paths ** #
 export GPG_TTY=$(tty) # fix for GPG - clear-sign failed: Inappropriate ioctl for device
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="/bin:/usr/bin:/usr/local/bin:$PATH"
-export PATH="/usr/local/go/bin:$PATH"
-export PATH="$PYENV_ROOT/bin:$PATH"
 
+# Export env PATH
+export PATH="/bin:/usr/bin:/usr/local/bin:$PATH"
+
+# export PATH="/usr/local/go/bin:$PATH"
+# export PYENV_ROOT="$HOME/.pyenv"
+# export PATH="$PYENV_ROOT/bin:$PATH"
 # export PATH="$HOME/Library/Python/3.7/bin:$PATH"
 # export PATH="$HOME/.npm-packages/bin:$PATH"
 # export PATH="$HOME/.jenv/bin:$PATH"
@@ -43,13 +45,13 @@ plugins=(
   autojump           # This plugin loads the autojbmp navigation tool
   zsh_reload         # src
   tmux               # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux
-  zsh-docker-aliases # https://github.com/akarzim/zsh-docker-aliases\
+  # zsh-docker-aliases # https://github.com/akarzim/zsh-docker-aliases\
   colored-man-pages
   aws
   kube-ps1
   asdf
-  pyenv
   terraform
+  # pyenv
   # docker-compose
   # git-extras
   # osx
