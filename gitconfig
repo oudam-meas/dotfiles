@@ -1,9 +1,8 @@
 [color]
-  diff = auto
   status = auto
   branch = auto
   interactive = auto
-	ui = auto
+	ui = true
   pager = true
 
 [color "status"]
@@ -38,9 +37,9 @@
   co = checkout
   df = diff
   ds = diff --staged
-  ; dc = diff --cached
   dfw = diff --color-words
   dsw = diff --staged --color-words
+  ; dc = diff --cached
   ; dcw = diff --cached --color-words
   ; pr = "!f() { ~/.dotfiles/bin/open-github-pr-page.sh; }; f"
   update = pull --rebase --prune
@@ -73,18 +72,20 @@
 [core]
 	editor = nvim
 	excludesfile = ~/.gitignore_global
-	pager = diff-so-fancy | less --tabs=4 -RFX
 
-[color "diff-highlight"]
-	oldNormal = red
-	oldHighlight = red 52
-	newNormal = green bold
-  newHighlight = green bold 22
-[diff-so-fancy]
-	markEmptyLines = false
+; [color "diff-highlight"]
+; 	oldNormal = red
+; 	oldHighlight = red 52
+; 	newNormal = green
+;   newHighlight = green 22
+; [diff-so-fancy]
+; 	markEmptyLines = false
+; [interactive]
+; 	diffFilter = diff-so-fancy --patch
 
-[color "diff"]
-	new = green bold
+; [color "diff"]
+; 	new = green bold
+
 [credential]
 	helper = osxkeychain
 [pull]
@@ -96,4 +97,5 @@
 [commit]
 	gpgsign = true
 	template = /Users/outdam/.ndi-aads-commit-message
-	; template = /Users/outdam/.ndi-aads-commit-message
+[interactive]
+	diffFilter = diff-so-fancy --patch
