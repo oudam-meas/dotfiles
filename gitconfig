@@ -20,41 +20,41 @@
   ;email = outdam.meas@thoughtworks.com
 
 [alias]
-  aa = add -A
-  ; o = browse --
-  st = status
-	s = status -s
-  ci = commit
-  cm = commit -m
-  cam = commit -a -m
-  amend = commit --amend
+  aa     = add -A
+  st     = status
+	s      = status -s
+  ci     = commit
+  cm     = commit -m
+  cam    = commit -a -m
+  amend  = commit --amend
   amendf = commit --amend --no-edit
   ; aamend = commit -a --amend
   ; aamendf = commit -a --amend --no-edit
-  wip = !git add -A && git commit -m "WIP"
+  o      = browse --
+  wip    = !git add -A && git commit -m "WIP"
   ; br = branch
   ; bl = for-each-ref --count=30 --sort=-committerdate refs/heads/ --format='%(authordate:short) %(color:red)%(objectname:short) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - (%(color:green)%(committerdate:relative)%(color:reset))'
-  co = checkout
-  df = diff
-  ds = diff --staged
-  dfw = diff --color-words
-  dsw = diff --staged --color-words
+  co     = checkout
+  df     = diff
+  ds     = diff --staged
+  dfw    = diff --color-words
+  dsw    = diff --staged --color-words
   ; dc = diff --cached
   ; dcw = diff --cached --color-words
   ; pr = "!f() { ~/.dotfiles/bin/open-github-pr-page.sh; }; f"
   update = pull --rebase --prune
-  undo = reset HEAD~1 --mixed
+  undo   = reset HEAD~1 --mixed
 	; unstage = reset HEAD --
   ; bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs git branch -d; }; f"
   ; bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
-  l = log --graph --decorate --pretty=oneline --abbrev-commit --date=relative --color -n 25
-  ll = log --oneline --graph --abbrev-commit -25
+  l      = log --graph --decorate --pretty=oneline --abbrev-commit --date=relative --color -n 25
+  ll     = log --oneline --graph --abbrev-commit -25
 	; last = log -1 HEAD
   ; lg = log --graph --decorate --pretty=oneline --abbrev-commit --all --color
   ; lga = log --all --graph --decorate --oneline --simplify-by-decoration
   ; lgp = log -p
 	; lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
-	; adog = log --all --decorate --oneline --graph
+	adog   = log --all --decorate --oneline --graph
 	; glog = log --oneline --graph --abbrev-commit
   ; graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
   ; ls = ls-file
@@ -62,6 +62,7 @@
   ; pf = push --force-with-lease
   ; publish = "!git push -u origin \"$(git rev-parse --abbrev-ref HEAD)\""
   ; unpublish = "!git push origin :\"$(git rev-parse --abbrev-ref HEAD)\""
+  patch  = !git --no-pager diff --no-color
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
@@ -72,19 +73,7 @@
 [core]
 	editor = nvim
 	excludesfile = ~/.gitignore_global
-
-; [color "diff-highlight"]
-; 	oldNormal = red
-; 	oldHighlight = red 52
-; 	newNormal = green
-;   newHighlight = green 22
-; [diff-so-fancy]
-; 	markEmptyLines = false
-; [interactive]
-; 	diffFilter = diff-so-fancy --patch
-
-; [color "diff"]
-; 	new = green bold
+	pager = diff-so-fancy | less --tabs=4 -RFXS --pattern '^(Date|added|deleted|modified): '
 
 [credential]
 	helper = osxkeychain
@@ -99,3 +88,20 @@
 	template = /Users/outdam/.ndi-aads-commit-message
 [interactive]
 	diffFilter = diff-so-fancy --patch
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	func = 146 bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[diff-so-fancy]
+	markEmptyLines = false
+	stripLeadingSymbols = false
+	rulerWidth = 100
