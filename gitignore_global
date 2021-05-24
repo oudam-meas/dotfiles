@@ -142,3 +142,5 @@ note.md
 
 .npmrc
 generate_tag_version.sh
+
+venv

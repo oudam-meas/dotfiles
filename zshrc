@@ -6,51 +6,41 @@
 # fi
 
 zmodload zsh/zprof
-export ZSH=~/.oh-my-zsh
-export EDITOR=nvim
+export EDITOR=nvim      # default editor
+export GPG_TTY=$(tty)   # fix for GPG - clear-sign failed: Inappropriate ioctl for device
+export ZSH=~/.oh-my-zsh # change ZSH variable
 ZSH_THEME=powerlevel10k/powerlevel10k
 DISABLE_UPDATE_PROMPT=true
 
+# ** Aliases ** #
 [[ -f ~/.aliases.zsh ]] && source ~/.aliases.zsh
 
 # ** Environment Paths ** #
-export GPG_TTY=$(tty) # fix for GPG - clear-sign failed: Inappropriate ioctl for device
-
-# Export env PATH
-export PATH="/bin:/usr/bin:/usr/local/bin:$PATH"
-
-# export PATH="/usr/local/go/bin:$PATH"
-# export PYENV_ROOT="$HOME/.pyenv"
-# export PATH="$PYENV_ROOT/bin:$PATH"
-# export PATH="$HOME/Library/Python/3.7/bin:$PATH"
-# export PATH="$HOME/.npm-packages/bin:$PATH"
-# export PATH="$HOME/.jenv/bin:$PATH"
-# export ANDROID_HOME=~/Library/Android/sdk/
-# export PATH="$ANDROID_HOME/tools:$PATH"
-# export PATH="$ANDROID_HOME/platform-tools:$PATH"
-# export PATH="$ANDROID_HOME/tools/bin:$PATH"
+[[ -f ~/.dotfiles/.export_vars.zsh ]] && source ~/.dotfiles/.export_vars.zsh
 
 # ** Extra config for nvm ** #
 # [[ -f ~/.dotfiles/zsh_configs/nvm.zsh ]] && source ~/.dotfiles/zsh_configs/nvm.zsh
 
 # ** Plugins ** #
+
 plugins=(
   ssh-agent          # eval `ssh-agent` - https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
   zsh-syntax-highlighting
   zsh-autosuggestions
   alias-finder
-  common-aliases
   direnv             # the direnv hook. it eqv to: eval "$(direnv hook zsh)"
   jenv               # init jenv:  eval "$(jenv init -)"
   autojump           # This plugin loads the autojbmp navigation tool
   zsh_reload         # src
   tmux               # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux
-  # zsh-docker-aliases # https://github.com/akarzim/zsh-docker-aliases\
   colored-man-pages
   aws
   kube-ps1
   asdf
-  terraform
+
+  # terraform
+  # common-aliases
+  # zsh-docker-aliases # https://github.com/akarzim/zsh-docker-aliases\
   # pyenv
   # docker-compose
   # git-extras

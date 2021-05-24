@@ -66,7 +66,6 @@ vmap <s-tab> <gv
 
 """ Mapping With Actions --------------------------------
 map <leader>` <Action>(ActivateTerminalToolWindow)
-
 " Debugging/Running
 map <leader>dc <Action>(DebugClass)
 map <leader>rc <Action>(RunClass)
@@ -90,16 +89,11 @@ command! Blame action GitToolBox.ShowInlineBlame
 
 command! Rl action IdeaVim.ReloadVimRc.reload
 command! Rs action InvalidateCaches
- " Toggle View Navigation
 command! Tnav action ViewNavigationBar
 command! Rr action Rerun
 map RR <Action>(Rerun)
 
-map <c--> <Action>(CollapseAllRegions)
-map <c-=> <Action>(ExpandAllRegions)
-
 " command! Lfix action Javascript.Linters.EsLint.Fix
-" map <leader>f <Plug>(easymotion-s)
-" map <leader>e <Plug>(easymotion-f)
 " map <leader>z <Action>(ToggleDistractionFreeMode)
+map <leader>z <Action>(ActiveToolwindowGroup)
 

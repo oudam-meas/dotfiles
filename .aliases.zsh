@@ -5,20 +5,20 @@ alias watch='watch '
 
 alias eal='vim ~/.aliases.zsh'
 alias erc='vim ~/.zshrc'
+alias evrc="vim ~/.SpaceVim.d/"
+alias eerc="vim ~/.dotfiles/.export_vars.zsh"
 alias egitignore='nvim ~/.gitignore_global'
-alias egitconfig='nvim ~/.gitconfig'
+alias egit='nvim ~/.gitconfig'
 alias grep='grep --color'
 
 alias show_inet="ifconfig | grep 'inet ' | grep -v 'inet 127'"
 alias inet="show_inet && show_inet | pbcopy"
 alias ctags="`brew --prefix`/bin/ctags"
 
-# Docker
-# https://github.com/akarzim/zsh-docker-aliases
-# Kubernetes - most shortcuts are already defined by zsh plugin
-
-alias hi=highlight
-alias hil="hi -l "
+# Project
+alias mi="make init"
+alias mp="make plan"
+alias map="make apply"
 
 # kubectl
 alias kcbff='kubectl get config -n bff h365-bff -o yaml'
@@ -48,7 +48,6 @@ alias rn_cc='watchman watch-del-all && rm -rf $TMPDIR/react-* && npm start -- --
 alias code='code-insiders'
 alias ydl='youtube-dl'
 alias v='vagrant'
-alias evrc="vim ~/.SpaceVim.d/"
 alias x="kubectx"
 alias doc_tmux="open https://github.com/gpakosz/.tmux"
 
