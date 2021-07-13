@@ -1,0 +1,6 @@
+# resolve spacevim start slowly - https://github.com/SpaceVim/SpaceVim/issues/1975#issuecomment-522243541
+# put these after asdf is loaded
+# these has to be used direnv, otherwise the zsh will load /usr/local/bin/ instead of shim
+export PYTHON_HOST_PROG=`which python2`
+export PYTHON3_HOST_PROG=`which python3`
+
