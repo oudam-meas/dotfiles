@@ -14,8 +14,8 @@
   remote              = yellow
 
 [user]
-	name                = outdam
-	email               = mstdam@gmail.com
+	name = Outdam Meas
+	email = outdam.meas@thoughtworks.com
 	signingkey          = F156BAAC8A8C6ECD
 
 [alias]
@@ -38,7 +38,7 @@
   ds                  = diff --staged
   dfw                 = diff --color-words
   dsw                 = diff --staged --color-words
-  ; dc = diff --cached
+  dc = diff --cached
   ; dcw = diff --cached --color-words
   ; pr = "!f() { ~/.dotfiles/bin/open-github-pr-page.sh; }; f"
   update              = pull --rebase --prune
@@ -61,7 +61,9 @@
   ; pf = push --force-with-lease
   ; publish = "!git push -u origin \"$(git rev-parse --abbrev-ref HEAD)\""
   ; unpublish = "!git push origin :\"$(git rev-parse --abbrev-ref HEAD)\""
-  patch               = !git --no-pager diff --no-color
+  patch           = !git --no-pager diff --no-color
+  switch2personal = !git config --global user.email "mstdam@gmail.com"
+  switch2work     = !git config --global user.email "outdam.meas@thoughtworks.com"
 
 [filter "lfs"]
 	clean               = git-lfs clean -- %f
@@ -71,7 +73,7 @@
 
 [core]
 	editor              = nvim
-	excludesfile        = ~/.gitignore_global
+	excludesfile = /Users/outdam/.gitignore_global
   pager               = diff-so-fancy | less --tabs=4 -RFXS
 
 [credential]
@@ -84,7 +86,7 @@
 	program             = gpg
 [commit]
 	gpgsign             = true
-	template            = /Users/outdam/.ndi-aads-commit-message
+	template = /Users/outdam/.ndi-aads-commit-message
 [interactive]
 	diffFilter          = diff-so-fancy --patch
 [color "diff-highlight"]
@@ -104,3 +106,9 @@
 	markEmptyLines      = false
 	stripLeadingSymbols = false
 	rulerWidth          = 100
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

@@ -91,6 +91,7 @@ command! Rl action IdeaVim.ReloadVimRc.reload
 command! Rs action InvalidateCaches
 command! Tnav action ViewNavigationBar
 command! Rr action Rerun
+command! Run action Run
 map RR <Action>(Rerun)
 
 " command! Lfix action Javascript.Linters.EsLint.Fix

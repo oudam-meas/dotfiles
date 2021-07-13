@@ -5,7 +5,7 @@ alias watch='watch '
 
 alias eal='vim ~/.aliases.zsh'
 alias erc='vim ~/.zshrc'
-alias evrc="vim ~/.SpaceVim.d/"
+alias evimrc="vim ~/.SpaceVim.d/"
 alias eerc="vim ~/.dotfiles/.export_vars.zsh"
 alias egitignore='nvim ~/.gitignore_global'
 alias egit='nvim ~/.gitconfig'
@@ -20,7 +20,10 @@ alias mi="make init"
 alias mp="make plan"
 alias map="make apply"
 
-# kubectl
+alias k='kubectl'
+alias x="kubectx"
+
+# kubectl hisg
 alias kcbff='kubectl get config -n bff h365-bff -o yaml'
 alias kla='kubectl logs -l  app.kubernetes.io/name=pph-svc-activity -c pph-svc-activity -n services -f'
 alias klrw='kubectl logs -l  app.kubernetes.io/name=pph-svc-reward -c pph-svc-reward -n services -f'
@@ -45,10 +48,8 @@ alias wave='kubectl port-forward -n weave "$(kubectl get -n weave pod --selector
 
 alias scrcpy_connect='adb connect 192.168.1.149:5555'
 alias rn_cc='watchman watch-del-all && rm -rf $TMPDIR/react-* && npm start -- --reset-cache'
-alias code='code-insiders'
 alias ydl='youtube-dl'
 alias v='vagrant'
-alias x="kubectx"
 alias doc_tmux="open https://github.com/gpakosz/.tmux"
 
 # AWS cli
@@ -62,4 +63,11 @@ alias aws_get_profiles="aws_profiles"
 # /usr/local/bin/..
 alias aws_login_ndi="aws_authenticate_mfa.sh"
 
+# Python
+alias pytest="python -m pytest"
 
+# Switch git useremail
+alias git_set_user_outdam="git config --global user.name 'Outdam Meas' && git config --global user.email 'mstdam@gmail.com'"
+alias git_set_user_outdam_tw="git config --global user.name 'Outdam Meas' && git config --global user.email 'outdam.meas@thoughtworks.com'"
+
+alias ep10k="vim ~/.p10k.zsh"

@@ -61,6 +61,9 @@ ln -s ~/.dotfiles/vimrc.local ~/.vimrc.local
 rm -f ~/.ideavimrc
 ln -s ~/.dotfiles/ideavimrc ~/.ideavimrc
 
+rm -f ~/.vscode.vimrc
+ln -s ~/.dotfiles/.vscode.vimrc ~/.vscode.vimrc
+
 ln -s -f ~/.dotfiles/.tool-version ~/.tool-versions
 ln -s -f ~/.dotfiles/.asdfrc ~/.asdfrc
 
