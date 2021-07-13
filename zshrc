@@ -23,7 +23,6 @@ export LESS='-R'
 # [[ -f ~/.dotfiles/zsh_configs/nvm.zsh ]] && source ~/.dotfiles/zsh_configs/nvm.zsh
 
 # ** Plugins ** #
-
 plugins=(
   ssh-agent          # eval `ssh-agent` - https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
   zsh-syntax-highlighting
