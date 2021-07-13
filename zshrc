@@ -13,10 +13,6 @@ ZSH_THEME=powerlevel10k/powerlevel10k
 DISABLE_UPDATE_PROMPT=true
 export LESS='-R'
 
-#resolve spacevim start slowly - https://github.com/SpaceVim/SpaceVim/issues/1975#issuecomment-522243541
-export PYTHON_HOST_PROG=`which python2`
-export PYTHON3_HOST_PROG=`which python3`
-
 # ** Aliases ** #
 [[ -f ~/.aliases.zsh ]] && source ~/.aliases.zsh
 
@@ -48,11 +44,10 @@ plugins=(
   # terraform
   # common-aliases
   # zsh-docker-aliases # https://github.com/akarzim/zsh-docker-aliases\
-  # pyenv
   # docker-compose
   # osx
   # vagrant            # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vagrant
-  # thefuck            # use ESC ESC
+  thefuck            # use ESC ESC
 )
 
 # ** ssh-agent config ** #
