@@ -28,7 +28,6 @@ plugins=(
   zsh-syntax-highlighting
   zsh-autosuggestions
   alias-finder
-  direnv             # the direnv hook. it eqv to: eval "$(direnv hook zsh)"
   jenv               # init jenv:  eval "$(jenv init -)"
   autojump           # This plugin loads the autojbmp navigation tool
   zsh_reload         # src
@@ -37,6 +36,7 @@ plugins=(
   aws
   kube-ps1
   asdf
+  direnv             # the direnv hook. it eqv to: eval "$(direnv hook zsh)"
   git-extras
   git
 
@@ -49,6 +49,7 @@ plugins=(
   thefuck            # use ESC ESC
 )
 
+# eval "$(asdf direnv hook zsh asdf)"
 # ** ssh-agent config ** #
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
 # Put these ettings before the line that sources oh-my-zsh
@@ -61,6 +62,7 @@ zstyle :omz:plugins:ssh-agent identities id_rsa_tw id_rsa
 
 # ** Custom powerlevel 10k ** #
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
 
 # Start OMZSH
 source $ZSH/oh-my-zsh.sh
