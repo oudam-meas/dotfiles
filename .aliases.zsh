@@ -2,6 +2,9 @@ alias af='alias-finder'
 alias vim=nvim
 alias vimm=mvim
 alias watch='watch '
+alias cat='bat --paging=never'
+
+alias preview="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 
 alias eal='vim ~/.aliases.zsh'
 alias erc='vim ~/.zshrc'
@@ -22,6 +25,9 @@ alias map="make apply"
 
 alias k='kubectl'
 alias x="kubectx"
+alias n="kubens"
+
+alias ji="jira"
 
 # kubectl hisg
 alias kcbff='kubectl get config -n bff h365-bff -o yaml'
@@ -61,7 +67,7 @@ alias aws_get_profiles="aws_profiles"
 # Project
 ## login to ndi ami
 # /usr/local/bin/..
-alias aws_login_ndi="aws_authenticate_mfa.sh"
+alias login_aws_ndi="aws_authenticate_mfa.sh"
 
 # Python
 alias pytest="python -m pytest"
