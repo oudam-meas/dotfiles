@@ -86,7 +86,7 @@
 	program             = gpg
 [commit]
 	gpgsign             = true
-	template = /Users/outdam/.ndi-aads-commit-message
+	template = /Users/outdam/.git-commit-template
 [interactive]
 	diffFilter          = diff-so-fancy --patch
 [color "diff-highlight"]
