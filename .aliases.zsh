@@ -3,6 +3,8 @@ alias vim=nvim
 alias vimm=mvim
 alias watch='watch '
 alias cat='bat --paging=never'
+alias ide='idea -e'
+alias kk='k9s'
 
 alias preview="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 
