@@ -1,100 +1,106 @@
 let mapleader='\'
-" does not support
-" set wildmenu
-" set wildmode=full
 
-""" Plugins --------------------------------
+command! Src action IdeaVim.ReloadVimRc.reload
+map <leader>rrc <Action>(IdeaVim.ReloadVimRc.reload)
+map <leader>rs <Action>(RestartIde)
+map <leader><space> :noh<cr>
+
+""" Plugins ---------------------------------------------
 set commentary
+set vim-paragraph-motion
+
+set ReplaceWithRegister
+nmap r  <Plug>ReplaceWithRegisterOperator
+xmap r <Plug>ReplaceWithRegisterVisual
+
+" Additional text objects: ai, ii, aI
+set textobj-indent
+
+"ysiw<surround>, cs<old-surround><new-surround>, missing yss<surround>
 set surround
+
+set highlightedyank
+let g:highlightedyank_highlight_color = "rgba(160, 160, 160, 125)"
+let g:highlightedyank_highlight_duration = "125"
+
 set argtextobj
+let g:argtextobj_pairs="(:),{:},[:]"
 
 " Additional text objects: ae, ie
 set textobj-entire
 
-" <leader><leader>f
 set easymotion " Doc: https://github.com/AlexPl292/IdeaVim-EasyMotion#supported-commands
+let g:EasyMotion_override_acejump = 0
+map <leader>es <Plug>(easymotion-s)
+map <leader>ef <Plug>(easymotion-f)
 
-" <A-n>, <A-x>, <A-p>, g<A-n>
-" A is 'alt'
-" Use 'Unicode Hex Input' as input source - https://stackoverflow.com/a/55221176
-set multiple-cursors
-
-" 'gr' for normal and visual, or 'gr'<motion>
-" 'grr' for entire file
-set ReplaceWithRegister
-
-set highlightedyank
-let g:highlightedyank_highlight_color = "rgba(160, 160, 160, 50)"
-let g:highlightedyank_highlight_duration = "200"
-
+" NERDTree
 set NERDTree   " Doc: https://github.com/JetBrains/ideavim/wiki/NERDTree-support
-
 map EE :NERDTreeFind<CR>
-map <leader>e :NERDTreeFind<CR>
-command! EE NERDTreeFind
-command! T NERDTreeToggle
 nnoremap \|\| :NERDTreeToggle<CR>
-map <leader>tt :NERDTreeToggle<CR>
+
+set multiple-cursors
+map <C-n> <Plug>NextWholeOccurrence
 
 """ Config   -------------------------------
 set incsearch   " Search: Find as you type search
 set hlsearch    " Search: Highlight search terms
 set ignorecase  " Search: Case-insensitive searching.
 set smartcase   " Search: But case-sensitive if expression contains a capital letter.
+set showmode    " Always show current mode
+set so=5
+
+""" Idea specific settings ------------------
+set ideajoin
+set ideastatusicon=gray
 
 """ Mappings --------------------------------
-
-" Windows: IDE windows-------------------------------
-command! TW action HideAllWindows
-map <leader>tw <Action>(HideAllWindows)
-
 " Windows: Mappings for Windows Navigation --------------------------------
 nmap <c-j> <c-w>j
 nmap <c-k> <c-w>k
 nmap <c-h> <c-w>h
 nmap <c-l> <c-w>l
 
-nmap <leader>h :noh<CR>
+" Windows: IDE windows-------------------------------
+map <leader>tw <Action>(HideAllWindows)
+map <leader>tnav <Action>(ViewNavigationBar)
+map <leader>z <Action>(ActiveToolwindowGroup)
+
 " Indentation -------------------------------
 vmap <tab> >gv
 vmap <s-tab> <gv
 
-" Indenting in or out for visual selected
-vmap <tab> >gv
-vmap <s-tab> <gv
-
-
 """ Mapping With Actions --------------------------------
+" Navigation
+map <c-p> <Action>(FindInPath)
+map <S-Space> <Action>(GotoNextError)
+map <leader>fs <Action>(FileStructurePopup)
 map <leader>` <Action>(ActivateTerminalToolWindow)
+vmap <leader>gs <Action>(GotoSymbol)
+
 " Debugging/Running
+map <leader>d <Action>(Debug)
 map <leader>dc <Action>(DebugClass)
 map <leader>rc <Action>(RunClass)
 map <leader>b <Action>(ToggleLineBreakpoint)
-map <leader>c <Action>(Stop)
+map <leader>cc <Action>(Stop)
+map <leader>z <Action>(ToggleDistractionFreeMode)
+" map RR <Action>(Rerun)
 
 " Refactoring
-map <leader>rn <Action>(RenameElement)
 map <leader>l <Action>(FindUsages)
-command! Fc action ReformatCode
-
-" Code Navigation
-map <c-p> <Action>(FindInPath)
-map <S-Space> <Action>(GotoNextError)
+map <leader>rn <Action>(RenameElement)
+map <leader>= <Action>(ReformatCode)
+map <leader>fl V<Action>(ReformatCode)
 
 " Git
-map <leader>a <Action>(Annotate)
-map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
-map <leader>o <Action>(FileStructurePopup)
-command! Blame action GitToolBox.ShowInlineBlame
+map <leader>ga <Action>(Annotate)
+map <leader>gh <Action>(Vcs.ShowTabbedFileHistory)
+map <leader>gb <Action>GitToolBox.ShowInlineBlame
 
-command! Rl action IdeaVim.ReloadVimRc.reload
-command! Rs action InvalidateCaches
-command! Tnav action ViewNavigationBar
-command! Rr action Rerun
-command! Run action Run
-map RR <Action>(Rerun)
+map U <C-R>
 
-" command! Lfix action Javascript.Linters.EsLint.Fix
-" map <leader>z <Action>(ToggleDistractionFreeMode)
-map <leader>z <Action>(ActiveToolwindowGroup)
+nnoremap S :%s//g<Left><Left>
 
+""" Helpers
+map <leader>cp <Action>(CopySourceRootPath)
