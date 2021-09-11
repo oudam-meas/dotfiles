@@ -58,6 +58,7 @@
     aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
     pcat_stack_and_env
     kubecontext             # current kubernetes context (https://kubernetes.io/)
+    pcat_current_card
     # disk_usage            # disk usage
     # ram                   # free RAM
     # swap                  # used swap
@@ -114,6 +115,12 @@
   function prompt_pcat_stack_and_env() {
     if [[ $PCAT_ENV && $PCAT_STACK ]]; then
       p10k segment -f 208 -i '' -t $PCAT_STACK/$PCAT_ENV
+    fi
+  }
+
+  function prompt_pcat_current_card() {
+    if [[ $CURRENT ]]; then
+      p10k segment -f 210 -i '' -t $CURRENT
     fi
   }
 
