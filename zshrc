@@ -1,18 +1,29 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+ZSH_THEME=powerlevel10k/powerlevel10k
+DISABLE_UPDATE_PROMPT=true
 
 zmodload zsh/zprof
 export EDITOR=nvim      # default editor
 export GPG_TTY=$(tty)   # fix for GPG - clear-sign failed: Inappropriate ioctl for device
 export ZSH=~/.oh-my-zsh # change ZSH variable
-ZSH_THEME=powerlevel10k/powerlevel10k
-DISABLE_UPDATE_PROMPT=true
 export LESS='-R'
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+# fix render issues in intellij
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+# skip p10k due to rendering issue in intellij
+# if [[ $__INTELLIJ_COMMAND_HISTFILE__ ]]; then
+#   ZSH_THEME="robbyrussell"
+# else
+#   ZSH_THEME="powerlevel10k/powerlevel10k"
+# fi
 
 # ** Aliases ** #
 [[ -f ~/.aliases.zsh ]] && source ~/.aliases.zsh
@@ -51,6 +62,8 @@ plugins=(
   # vagrant            # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vagrant
 )
 
+zle_highlight=(default:bold) # make valid command bold
+
 # resolve spacevim start slowly - https://github.com/SpaceVim/SpaceVim/issues/1975#issuecomment-522243541
 # put these after asdf is loaded
 export PYTHON_HOST_PROG=`which python2`
@@ -71,6 +84,5 @@ zstyle :omz:plugins:ssh-agent identities id_rsa_tw id_rsa
 batdiff() {
     git diff --name-only --diff-filter=d | xargs bat --diff
 }
-
 # Start OMZSH
 source $ZSH/oh-my-zsh.sh
