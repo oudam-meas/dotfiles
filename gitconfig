@@ -90,22 +90,22 @@
 [interactive]
 	diffFilter          = diff-so-fancy --patch
 [color "diff-highlight"]
-	oldNormal           = red bold
-	oldHighlight        = red bold 52
-	newNormal           = green bold
-	newHighlight        = green bold 22
+	oldNormal           = red
+	oldHighlight        = red 52
+	newNormal           = green
+	newHighlight        = green 22
 [color "diff"]
 	meta                = 11
 	frag                = magenta bold
 	func                = 146 bold
 	commit              = yellow bold
-	old                 = red bold
-	new                 = green bold
+	old                 = red
+	new                 = green
 	whitespace          = red reverse
 [diff-so-fancy]
 	markEmptyLines      = false
 	stripLeadingSymbols = false
-	rulerWidth          = 100
+	rulerWidth          = 1024
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
