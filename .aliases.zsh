@@ -7,6 +7,7 @@ alias ide='idea -e'
 alias kk='k9s'
 alias tm='tmux'
 alias cl='clear'
+alias lc='colorls -lA --sd'
 
 alias preview="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 

@@ -19,17 +19,19 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 # skip p10k due to rendering issue in intellij
-# if [[ $__INTELLIJ_COMMAND_HISTFILE__ ]]; then
-#   ZSH_THEME="robbyrussell"
-# else
-#   ZSH_THEME="powerlevel10k/powerlevel10k"
-# fi
+if [[ $__INTELLIJ_COMMAND_HISTFILE__ ]]; then
+  ZSH_THEME="robbyrussell"
+else
+  ZSH_THEME="powerlevel10k/powerlevel10k"
+fi
 
 # ** Aliases ** #
 [[ -f ~/.aliases.zsh ]] && source ~/.aliases.zsh
 
 # ** Environment Paths ** #
 [[ -f ~/.dotfiles/.export_vars.zsh ]] && source ~/.dotfiles/.export_vars.zsh
+
+# source $(dirname $(gem which colorls))/tab_complete.sh
 
 # ** Extra config for nvm ** #
 # [[ -f ~/.dotfiles/zsh_configs/nvm.zsh ]] && source ~/.dotfiles/zsh_configs/nvm.zsh
@@ -86,3 +88,4 @@ batdiff() {
 }
 # Start OMZSH
 source $ZSH/oh-my-zsh.sh
+export PATH="/usr/local/opt/openssl@3/bin:$PATH"
