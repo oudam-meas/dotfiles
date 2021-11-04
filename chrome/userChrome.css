@@ -1,0 +1,27 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* only needed once */
+
+/* change bookmark folder */
+/* .bookmark-item > .toolbarbutton-icon{ */
+/*    list-style-image: url("favicon.ico") !important; */
+/*    -moz-image-region: auto !important; */
+/* } */
+
+/* change default tab favicon */
+.tabbrowser-tab[label^="New Tab"] .tab-icon-image {
+  list-style-image: none !important;
+  width: 0 !important;
+  padding-left: 16px !important;
+  background: url("favicon.ico") !important; /* your custom icon */
+  background-size: 16px 16px !important;
+  background-repeat: no-repeat !important;
+}
+
+/* /1* Hide horizontal tab toolbar *1/ */
+#TabsToolbar {
+    visibility:collapse!important;
+}
+
+/* Hide "Tree Style Tabs" sidebar header */
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
+    display:none;
+}

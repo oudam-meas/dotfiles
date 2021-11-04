@@ -4,7 +4,7 @@ alias vimm=mvim
 alias watch='watch '
 alias cat='bat --paging=never'
 alias ide='idea -e'
-alias kk='k9s'
+alias k9='k9s'
 alias tm='tmux'
 alias cl='clear'
 alias lc='colorls -lA --sd'

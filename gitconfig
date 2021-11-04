@@ -64,6 +64,7 @@
   patch           = !git --no-pager diff --no-color
   switch2personal = !git config --global user.email "mstdam@gmail.com"
   switch2work     = !git config --global user.email "outdam.meas@thoughtworks.com"
+  snor = "!git show --name-only -r"
 
 [filter "lfs"]
 	clean               = git-lfs clean -- %f

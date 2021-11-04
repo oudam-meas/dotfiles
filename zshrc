@@ -44,7 +44,6 @@ plugins=(
   alias-finder
   jenv               # init jenv:  eval "$(jenv init -)"
   autojump           # This plugin loads the autojbmp navigation tool
-  zsh_reload         # src
   tmux               # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux
   colored-man-pages
   aws
