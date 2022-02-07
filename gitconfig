@@ -42,7 +42,17 @@
   ; dcw = diff --cached --color-words
   ; pr = "!f() { ~/.dotfiles/bin/open-github-pr-page.sh; }; f"
   update              = pull --rebase --prune
+  up                  = pull --rebase --prune
   undo                = reset HEAD~1 --mixed
+  ri1                  = rebase -i HEAD~1
+  ri2                  = rebase -i HEAD~2
+  ri3                  = rebase -i HEAD~3
+  ri4                  = rebase -i HEAD~4
+  ri5                  = rebase -i HEAD~5
+  ri6                  = rebase -i HEAD~6
+  ri7                  = rebase -i HEAD~7
+  ri8                  = rebase -i HEAD~8
+  ri9                  = rebase -i HEAD~9
 	; unstage = reset HEAD --
   ; bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs git branch -d; }; f"
   ; bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
@@ -64,7 +74,7 @@
   patch           = !git --no-pager diff --no-color
   switch2personal = !git config --global user.email "mstdam@gmail.com"
   switch2work     = !git config --global user.email "outdam.meas@thoughtworks.com"
-  snor = "!git show --name-only -r"
+  showname = "!git show --name-only -r"
 
 [filter "lfs"]
 	clean               = git-lfs clean -- %f

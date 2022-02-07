@@ -8,6 +8,10 @@ alias k9='k9s'
 alias tm='tmux'
 alias cl='clear'
 alias lc='colorls -lA --sd'
+alias da='direnv allow .'
+alias ez='exec zsh'
+alias asdfi='asdf install .'
+alias ssm='aws ssm start-session --target'
 
 alias preview="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 
@@ -18,6 +22,8 @@ alias eerc="vim ~/.dotfiles/.export_vars.zsh"
 alias egitignore='nvim ~/.gitignore_global'
 alias egit='nvim ~/.gitconfig'
 alias grep='grep --color'
+
+alias vfz='vim $(fzf)'
 
 alias show_inet="ifconfig | grep 'inet ' | grep -v 'inet 127'"
 alias inet="show_inet && show_inet | pbcopy"
@@ -72,7 +78,8 @@ alias aws_get_profiles="aws_profiles"
 # Project
 ## login to ndi ami
 # /usr/local/bin/..
-alias login_aws_ndi="aws_authenticate_mfa.sh"
+alias login_oea_aws="aws_authenticate_mfa.sh"
+alias idea_ndi="idea /Users/outdam/Work/Repos/NDI/"
 
 # Python
 alias pytest="python -m pytest"

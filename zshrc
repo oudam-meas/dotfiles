@@ -5,7 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-ZSH_THEME=powerlevel10k/powerlevel10k
+# ZSH_THEME=powerlevel10k/powerlevel10k
 DISABLE_UPDATE_PROMPT=true
 
 zmodload zsh/zprof
@@ -14,6 +14,7 @@ export GPG_TTY=$(tty)   # fix for GPG - clear-sign failed: Inappropriate ioctl f
 export ZSH=~/.oh-my-zsh # change ZSH variable
 export LESS='-R'
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export PATH="/usr/local/MacGPG2/bin:$PATH"
 
 # fix render issues in intellij
 export LC_ALL=en_US.UTF-8
@@ -24,6 +25,8 @@ if [[ $__INTELLIJ_COMMAND_HISTFILE__ ]]; then
 else
   ZSH_THEME="powerlevel10k/powerlevel10k"
 fi
+
+export jb_preferences_intellijidea="IntelliJIdea"
 
 # ** Aliases ** #
 [[ -f ~/.aliases.zsh ]] && source ~/.aliases.zsh
@@ -88,3 +91,5 @@ batdiff() {
 # Start OMZSH
 source $ZSH/oh-my-zsh.sh
 export PATH="/usr/local/opt/openssl@3/bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
