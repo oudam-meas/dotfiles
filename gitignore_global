@@ -145,3 +145,4 @@ generate_tag_version.sh
 
 venv
 node.md
+tmp.driveupload*
