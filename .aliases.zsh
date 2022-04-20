@@ -17,7 +17,7 @@ alias preview="fzf --preview 'bat --color=always --style=numbers --line-range=:5
 
 alias eal='vim ~/.aliases.zsh'
 alias erc='vim ~/.zshrc'
-alias evimrc="vim ~/.SpaceVim.d/"
+alias evimrc="vim ~/.dotfiles/.config/nvim/init.vim"
 alias eerc="vim ~/.dotfiles/.export_vars.zsh"
 alias egitignore='nvim ~/.gitignore_global'
 alias egit='nvim ~/.gitconfig'
@@ -33,12 +33,20 @@ alias ctags="`brew --prefix`/bin/ctags"
 alias mi="make init"
 alias mp="make plan"
 alias map="make apply"
+alias infra="cd /Users/outdam/Work/Repos/NDI/ndi-infra; git co master; git update; idea ../; tmux"
 
 alias k='kubectl'
 alias x="kubectx"
 alias n="kubens"
 
 alias ji="jira"
+
+alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+
+
+# Programming
+alias tfmt="terraform fmt"
+alias go="grc go"
 
 # kubectl hisg
 alias kcbff='kubectl get config -n bff h365-bff -o yaml'

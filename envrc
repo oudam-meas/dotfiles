@@ -2,9 +2,9 @@
 # use asdf
 
 # NDI
-export AWS_DEFAULT_REGION=ap-southeast-1
-export AWS_REGION=ap-southeast-1
-export AWS_ACCESS_KEY_ID=$(gopass cat persian-cat/aws_session_id)
-export AWS_SECRET_ACCESS_KEY=$(gopass cat persian-cat/aws_session_secret)
-export AWS_SESSION_TOKEN=$(gopass cat persian-cat/aws_session_token)
-export AWS_USERNAME=tw-outdam
+# export AWS_DEFAULT_REGION=ap-southeast-1
+# export AWS_REGION=ap-southeast-1
+# export AWS_ACCESS_KEY_ID=$(gopass cat persian-cat/aws_session_id)
+# export AWS_SECRET_ACCESS_KEY=$(gopass cat persian-cat/aws_session_secret)
+# export AWS_SESSION_TOKEN=$(gopass cat persian-cat/aws_session_token)
+# export AWS_USERNAME=tw-outdam

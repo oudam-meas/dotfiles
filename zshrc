@@ -5,7 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# ZSH_THEME=powerlevel10k/powerlevel10k
 DISABLE_UPDATE_PROMPT=true
 
 zmodload zsh/zprof
@@ -14,17 +13,10 @@ export GPG_TTY=$(tty)   # fix for GPG - clear-sign failed: Inappropriate ioctl f
 export ZSH=~/.oh-my-zsh # change ZSH variable
 export LESS='-R'
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-export PATH="/usr/local/MacGPG2/bin:$PATH"
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 
-# fix render issues in intellij
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-# skip p10k due to rendering issue in intellij
-if [[ $__INTELLIJ_COMMAND_HISTFILE__ ]]; then
-  ZSH_THEME="robbyrussell"
-else
-  ZSH_THEME="powerlevel10k/powerlevel10k"
-fi
+# For IntelliJ
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 export jb_preferences_intellijidea="IntelliJIdea"
 
@@ -33,11 +25,6 @@ export jb_preferences_intellijidea="IntelliJIdea"
 
 # ** Environment Paths ** #
 [[ -f ~/.dotfiles/.export_vars.zsh ]] && source ~/.dotfiles/.export_vars.zsh
-
-# source $(dirname $(gem which colorls))/tab_complete.sh
-
-# ** Extra config for nvm ** #
-# [[ -f ~/.dotfiles/zsh_configs/nvm.zsh ]] && source ~/.dotfiles/zsh_configs/nvm.zsh
 
 # ** Plugins ** #
 plugins=(
@@ -50,28 +37,16 @@ plugins=(
   tmux               # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux
   colored-man-pages
   aws
-  kube-ps1
+  # kube-ps1
   asdf
   direnv             # the direnv hook. it eqv to: eval "$(direnv hook zsh)"
-  git-extras
   git
   thefuck            # use ESC ESC
   jira
-
-  # terraform
-  # common-aliases
-  # zsh-docker-aliases # https://github.com/akarzim/zsh-docker-aliases\
-  # docker-compose
-  # osx
-  # vagrant            # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vagrant
 )
 
 zle_highlight=(default:bold) # make valid command bold
 
-# resolve spacevim start slowly - https://github.com/SpaceVim/SpaceVim/issues/1975#issuecomment-522243541
-# put these after asdf is loaded
-export PYTHON_HOST_PROG=`which python2`
-export PYTHON3_HOST_PROG=`which python3`
 # ** ssh-agent config ** #
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
 # Put these ettings before the line that sources oh-my-zsh
@@ -90,6 +65,6 @@ batdiff() {
 }
 # Start OMZSH
 source $ZSH/oh-my-zsh.sh
-export PATH="/usr/local/opt/openssl@3/bin:$PATH"
+# export PATH="/usr/local/opt/openssl@3/bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

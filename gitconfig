@@ -15,13 +15,14 @@
 
 [user]
 	name = Outdam Meas
-	email = outdam.meas@thoughtworks.com
+	email = mstdam@gmail.com
 	signingkey          = F156BAAC8A8C6ECD
 
 [alias]
   aa                  = add -A
   st                  = status
-	s                   = status -s
+  s                   = status -s
+  tst                 = !tig status
   ci                  = commit
   cm                  = commit -m
   cam                 = commit -a -m
@@ -39,20 +40,21 @@
   dfw                 = diff --color-words
   dsw                 = diff --staged --color-words
   dc = diff --cached
-  ; dcw = diff --cached --color-words
+  dcw = diff --cached --color-words
   ; pr = "!f() { ~/.dotfiles/bin/open-github-pr-page.sh; }; f"
   update              = pull --rebase --prune
   up                  = pull --rebase --prune
   undo                = reset HEAD~1 --mixed
-  ri1                  = rebase -i HEAD~1
-  ri2                  = rebase -i HEAD~2
-  ri3                  = rebase -i HEAD~3
-  ri4                  = rebase -i HEAD~4
-  ri5                  = rebase -i HEAD~5
-  ri6                  = rebase -i HEAD~6
-  ri7                  = rebase -i HEAD~7
-  ri8                  = rebase -i HEAD~8
-  ri9                  = rebase -i HEAD~9
+  ri1                 = rebase -i HEAD~1
+  ri2                 = rebase -i HEAD~2
+  ri3                 = rebase -i HEAD~3
+  ri4                 = rebase -i HEAD~4
+  ri5                 = rebase -i HEAD~5
+  ri6                 = rebase -i HEAD~6
+  ri7                 = rebase -i HEAD~7
+  ri8                 = rebase -i HEAD~8
+  ri9                 = rebase -i HEAD~9
+  sh                  = !git show | tig
 	; unstage = reset HEAD --
   ; bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs git branch -d; }; f"
   ; bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
@@ -83,7 +85,7 @@
 	required            = true
 
 [core]
-	editor              = nvim
+  editor              = nvim
 	excludesfile = /Users/outdam/.gitignore_global
   pager               = diff-so-fancy | less --tabs=4 -RFXS
 
@@ -99,7 +101,7 @@
 	gpgsign             = true
 	template = /Users/outdam/.git-commit-template
 [interactive]
-	diffFilter          = diff-so-fancy --patch
+	diffFilter = diff-so-fancy --patch
 [color "diff-highlight"]
 	oldNormal           = red
 	oldHighlight        = red 52
@@ -117,6 +119,9 @@
 	markEmptyLines      = false
 	stripLeadingSymbols = false
 	rulerWidth          = 1024
+	changeHunkIndicators = false
+[init]
+	defaultBranch = main
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
