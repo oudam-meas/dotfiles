@@ -1,9 +1,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 DISABLE_UPDATE_PROMPT=true
 
@@ -15,7 +15,6 @@ export LESS='-R'
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 
-# For IntelliJ
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 export jb_preferences_intellijidea="IntelliJIdea"
@@ -27,22 +26,28 @@ export jb_preferences_intellijidea="IntelliJIdea"
 [[ -f ~/.dotfiles/.export_vars.zsh ]] && source ~/.dotfiles/.export_vars.zsh
 
 # ** Plugins ** #
+
+eval "$(direnv hook zsh)"
+
 plugins=(
   ssh-agent          # eval `ssh-agent` - https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
   zsh-syntax-highlighting
   zsh-autosuggestions
-  alias-finder
-  jenv               # init jenv:  eval "$(jenv init -)"
   autojump           # This plugin loads the autojbmp navigation tool
   tmux               # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux
   colored-man-pages
   aws
-  # kube-ps1
+  kube-ps1
   asdf
-  direnv             # the direnv hook. it eqv to: eval "$(direnv hook zsh)"
-  git
   thefuck            # use ESC ESC
-  jira
+
+  # alias-finder
+  # jenv               # init jenv:  eval "$(jenv init -)"
+  # git
+  # jira
+
+  # Disabled due to slowness #
+  # direnv             # the direnv hook. it eqv to: eval "$(direnv hook zsh)"
 )
 
 zle_highlight=(default:bold) # make valid command bold
