@@ -1,8 +1,7 @@
 alias af='alias-finder'
 alias vim=nvim
-alias vimm=mvim
 alias watch='watch '
-alias cat='bat --paging=never'
+# alias cat='bat --paging=never'
 alias ide='idea -e'
 alias k9='k9s'
 alias tm='tmux'
@@ -13,7 +12,7 @@ alias ez='exec zsh'
 alias asdfi='asdf install .'
 alias ssm='aws ssm start-session --target'
 
-alias preview="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
+# alias preview="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 
 alias eal='vim ~/.aliases.zsh'
 alias erc='vim ~/.zshrc'
